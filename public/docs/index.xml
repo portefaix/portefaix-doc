@@ -102,7 +102,7 @@ just a few small guidelines you need to fo&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The Portefaix docs are published at &lt;a href=&#34;https://portefaix.xyz/&#34;&gt;portefaix.xyz&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The source for the docs is in the
-&lt;a href=&#34;https://github.com/nlamirault/portefaix/&#34;&gt;nlamirault/portefaix repo&lt;/a&gt; on GitHub.
+&lt;a href=&#34;https://github.com/portefaix/portefaix/&#34;&gt;portefaix/portefaix repo&lt;/a&gt; on GitHub.
 We use &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; to format and generate our website, and
 &lt;a href=&#34;https://www.netlify.com/&#34;&gt;Netlify&lt;/a&gt; to manage the deployment of the site.&lt;/p&gt;
 &lt;h2 id=&#34;versioning&#34;&gt;Versioning&lt;/h2&gt;
@@ -1207,9 +1207,9 @@ aks-core-19506595-vmss000000   Ready    agent   8h    v1.18.10
 &lt;h3 id=&#34;infrastructure&#34;&gt;Infrastructure&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Development environment&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Google Cloud Platform&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/1&#34;&gt;#1&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Amazon AWS&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/2&#34;&gt;#2&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Microsoft Azure&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/3&#34;&gt;#3&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Google Cloud Platform&lt;/span&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/1&#34;&gt;#1&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Amazon AWS&lt;/span&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/2&#34;&gt;#2&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Microsoft Azure&lt;/span&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/3&#34;&gt;#3&lt;/a&gt; ]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;core&#34;&gt;Core&lt;/h3&gt;
 &lt;ul&gt;
@@ -1239,21 +1239,21 @@ aks-core-19506595-vmss000000   Ready    agent   8h    v1.18.10
 &lt;h2 id=&#34;v2&#34;&gt;v2&lt;/h2&gt;
 &lt;h3 id=&#34;service-mesh-cloud-providers&#34;&gt;Service Mesh Cloud Providers&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://cloud.google.com/traffic-director/&#34;&gt;Traffic Director&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/8&#34;&gt;#8&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://aws.amazon.com/fr/app-mesh/&#34;&gt;AWS App Mesh&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/9&#34;&gt;#9&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/service-fabric-mesh/&#34;&gt;Service Fabric Mesh&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/10&#34;&gt;#10&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://cloud.google.com/traffic-director/&#34;&gt;Traffic Director&lt;/a&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/8&#34;&gt;#8&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://aws.amazon.com/fr/app-mesh/&#34;&gt;AWS App Mesh&lt;/a&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/9&#34;&gt;#9&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/service-fabric-mesh/&#34;&gt;Service Fabric Mesh&lt;/a&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/10&#34;&gt;#10&lt;/a&gt; ]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;backlog&#34;&gt;Backlog&lt;/h2&gt;
 &lt;h3 id=&#34;cloud-providers&#34;&gt;Cloud providers&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Terraform code for Scaleway&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/17&#34;&gt;#17&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Terraform code for Digital Ocean&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/18&#34;&gt;#18&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Terraform code for Scaleway&lt;/span&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/17&#34;&gt;#17&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Terraform code for Digital Ocean&lt;/span&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/18&#34;&gt;#18&lt;/a&gt; ]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;secrets-store-csi-driver&#34;&gt;Secrets Store CSI Driver&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp&#34;&gt;GCP Secret manager&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/4&#34;&gt;#4&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/aws/containers-roadmap/issues/895&#34;&gt;Amazon Secrets manager&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/5&#34;&gt;#5&lt;/a&gt; ]&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/Azure/secrets-store-csi-driver-provider-azure&#34;&gt;Azure Vault&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/6&#34;&gt;#6&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp&#34;&gt;GCP Secret manager&lt;/a&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/4&#34;&gt;#4&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/aws/containers-roadmap/issues/895&#34;&gt;Amazon Secrets manager&lt;/a&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/5&#34;&gt;#5&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/Azure/secrets-store-csi-driver-provider-azure&#34;&gt;Azure Vault&lt;/a&gt; [ &lt;a href=&#34;https://github.com/portefaix/portefaix/issues/6&#34;&gt;#6&lt;/a&gt; ]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;managing-cloud-services-via-kubernetes-crds&#34;&gt;Managing Cloud Services via Kubernetes CRDs&lt;/h3&gt;
 &lt;ul&gt;

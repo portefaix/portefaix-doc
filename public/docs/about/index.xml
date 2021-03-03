@@ -102,7 +102,7 @@ just a few small guidelines you need to fo&lt;/p&gt;
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The Portefaix docs are published at &lt;a href=&#34;https://portefaix.xyz/&#34;&gt;portefaix.xyz&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The source for the docs is in the
-&lt;a href=&#34;https://github.com/nlamirault/portefaix/&#34;&gt;nlamirault/portefaix repo&lt;/a&gt; on GitHub.
+&lt;a href=&#34;https://github.com/portefaix/portefaix/&#34;&gt;portefaix/portefaix repo&lt;/a&gt; on GitHub.
 We use &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; to format and generate our website, and
 &lt;a href=&#34;https://www.netlify.com/&#34;&gt;Netlify&lt;/a&gt; to manage the deployment of the site.&lt;/p&gt;
 &lt;h2 id=&#34;versioning&#34;&gt;Versioning&lt;/h2&gt;

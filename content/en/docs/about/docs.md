@@ -13,7 +13,7 @@ Welcome to the Portefaix documentation!
 The Portefaix docs are published at [portefaix.xyz](https://portefaix.xyz/).
 
 The source for the docs is in the
-[nlamirault/portefaix repo](https://github.com/nlamirault/portefaix/) on GitHub.
+[portefaix/portefaix repo](https://github.com/portefaix/portefaix/) on GitHub.
 We use [Hugo](https://gohugo.io/) to format and generate our website, and
 [Netlify](https://www.netlify.com/) to manage the deployment of the site.
 

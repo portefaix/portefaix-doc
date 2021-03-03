@@ -47,7 +47,7 @@ pygmentsStyle = "tango"
 [[menu.main]]
     name = "GitHub"
     weight = -99
-    url = "https://github.com/nlamirault/portefaix/"
+    url = "https://github.com/portefaix/portefaix-doc/"
 
 # Docsy: Configure the format of URLs per section.
 #[permalinks]
@@ -98,9 +98,9 @@ copyright = "Nicolas Lamirault"
 privacy_policy = "https://policies.google.com/privacy"
 
 # GitHub repository for in-page links to editing a page and opening and issues.
-github_repo = "https://github.com/nlamirault/portefaix"
+github_repo = "https://github.com/portefaix/portefaix-doc"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/nlamirault/portefaix"
+github_project_repo = "https://github.com/portefaix/portefaix-doc"
 
 RSSLink = "/index.xml"
 author = "portefaix.xyz" # add your company name
@@ -136,12 +136,12 @@ githubbranch = "v0.5.0-branch"
 [[params.versions]]
   version = "master"
   githubbranch = "master"
-  url = "https://master.portefaix.xyz"
+  url = "https://wwww.portefaix.xyz"
 
-[[params.versions]]
-  version = "v0.2"
-  githubbranch = "v0.2-branch"
-  url = "https://v0.4.0.portefaix.xyz"
+# [[params.versions]]
+#   version = "v0.1.0"
+#   githubbranch = "v0.1.0"
+#   url = "https://v0.1.0.portefaix.xyz"
 
 
 # Docsy: User interface configuration
@@ -160,8 +160,8 @@ breadcrumb_disable = false
 [params.ui.feedback]
 enable = true
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
-yes = 'Glad to hear it! Please <a href="https://github.com/nlamirault/portefaix/issues/new">tell us how we can improve</a>.'
-no = 'Sorry to hear that. Please <a href="https://github.com/nlamirault/portefaix/issues/new">tell us how we can improve</a>.'
+yes = 'Glad to hear it! Please <a href="https://github.com/portefaix/portefaix-doc/issues/new">tell us how we can improve</a>.'
+no = 'Sorry to hear that. Please <a href="https://github.com/portefaix/portefaix-doc/issues/new">tell us how we can improve</a>.'
 
 
 [params.links]
@@ -170,12 +170,12 @@ no = 'Sorry to hear that. Please <a href="https://github.com/nlamirault/portefai
 	name ="Twitter"
 	url = "https://twitter.com/nlamirault"
 	icon = "fab fa-twitter"
-        desc = "Follow us on Twitter to get the latest news"
+  desc = "Twitter to get the latest news"
 [[params.links.user]]
 	name = "GitHub"
-	url = "https://github.com/nlamirault/portefaix"
+	url = "https://github.com/portefaix/portefaix-doc"
 	icon = "fab fa-github"
-        desc = "Development takes place here!"
+  desc = "Development takes place here!"
 # [[params.links.user]]
 # 	name = "Slack"
 # 	url = "https://Portefaix.slack.com/join/shared_invite/zt-cpr020z4-PfcAue_2nw67~iIDy7maAQ"
