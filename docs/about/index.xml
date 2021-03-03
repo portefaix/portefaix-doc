@@ -1,0 +1,36 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – About</title><link>/docs/about/</link><description>Recent content in About on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/about/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Portefaix</title><link>/docs/about/portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/portefaix/</guid><description>
+&lt;p>The Portefaix project is dedicated to create an infrastructure on Cloud Providers
+and deploy Cloud Native applications into a Kubernetes cluster.&lt;/p>
+&lt;h2 id="getting-started-with-portefaix">Getting started with Portefaix&lt;/h2>
+&lt;p>Read the &lt;a href="/docs/started/overview/">Portefaix overview&lt;/a> for an
+introduction to the Portefaix architecture.&lt;/p>
+&lt;p>Follow the &lt;a href="/docs/started/getting-started/">getting-started guide&lt;/a> to set up
+your environment and install Portefaix.&lt;/p>
+&lt;h2 id="roadmaps">Roadmaps&lt;/h2>
+&lt;p>To see what&amp;rsquo;s coming up in future versions of Portefaix, refer to the &lt;a href="/docs/other-guides/roadmap/">Portefaix roadmap&lt;/a>.&lt;/p>
+&lt;h2 id="getting-involved">Getting involved&lt;/h2>
+&lt;p>There are many ways to contribute to Portefaix, and we welcome contributions!
+Read the &lt;a href="/docs/about/contributing">contributor&amp;rsquo;s guide&lt;/a> to get started on the
+code, and get to know the community in the
+&lt;a href="/docs/about/community">community guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Contributing to Portefaix</title><link>/docs/about/contributing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/contributing/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Work In Progress&lt;/h4>
+&lt;/div>
+&lt;h2 id="getting-started-as-a-portefaix-contributor">Getting started as a Portefaix contributor&lt;/h2>
+&lt;p>This document is the single source of truth for how to contribute to the code base.
+We&amp;rsquo;d love to accept your patches and contributions to this project. There are
+just a few small guidelines you need to fo&lt;/p></description></item><item><title>Docs: Community</title><link>/docs/about/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/community/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Work In Progress&lt;/h4>
+&lt;/div></description></item><item><title>Docs: Docs</title><link>/docs/about/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/docs/</guid><description>
+&lt;p>Welcome to the Portefaix documentation!&lt;/p>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The Portefaix docs are published at &lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a>.&lt;/p>
+&lt;p>The source for the docs is in the
+&lt;a href="https://github.com/nlamirault/portefaix/">nlamirault/portefaix repo&lt;/a> on GitHub.
+We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our website, and
+&lt;a href="https://www.netlify.com/">Netlify&lt;/a> to manage the deployment of the site.&lt;/p>
+&lt;h2 id="versioning">Versioning&lt;/h2>
+&lt;p>&lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a> points to the &lt;strong>master&lt;/strong> branch of the docs. You can access
+other versions by clicking the version dropdown at top right of the website
+menu bar.&lt;/p></description></item></channel></rss>

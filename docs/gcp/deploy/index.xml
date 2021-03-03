@@ -1,0 +1,311 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Deploying Portefaix</title><link>/docs/gcp/deploy/</link><description>Recent content in Deploying Portefaix on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/gcp/deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Install Portefaix</title><link>/docs/gcp/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="gcloud"/>&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>Authenticate on the Google Cloud Platform:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ gcloud auth application-default login
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable APIs:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk gcp-enable-apis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a bucket for the Terraform tfstates:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk gcp-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/portefaix.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># GCP&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_master_authorized_networks&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#39;[{&amp;#34;cidr_block&amp;#34;: &amp;#34;x.x.x.x/32&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;Home&amp;#34;}]&amp;#39;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh gcp
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a id="terraform">&lt;/a>&lt;/p>
+&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="vpc">VPC&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="cloud-dns">Cloud DNS&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="cloud-nat">Cloud NAT&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-ips/cloud-nat &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/cloud-nat &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="gke">GKE&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kubernetes-components">Kubernetes components&lt;/h3>
+&lt;h4 id="sops">Sops&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+Outputs:
+&lt;span style="color:#000">email&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxxxx-sops@xxxxxxxxxxxx.iam.gserviceaccount.com
+&lt;span style="color:#000">key&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> projects/xxxxxxxxxxxx/locations/europe-west1/keyRings/xxxxxxxxxxxx-sops/cryptoKeys/xxxxxxxxxxxx-sops
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="observability">Observability&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+Outputs:
+&lt;span style="color:#000">loki_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxx-loki@xxxxxxxxxx.iam.gserviceaccount.com
+&lt;span style="color:#000">prometheus_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxx-loki@xxxxxxxxxx.iam.gserviceaccount.com
+&lt;span style="color:#000">tempo_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxx-tempo@xxxxxxxxxx.iam.gserviceaccount.com
+&lt;span style="color:#000">thanos_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxx-thanos@xxxxxxxxxx.iam.gserviceaccount.com
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="cert-manager">Cert Manager&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/cert-manager &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+Outputs:
+&lt;span style="color:#000">cert_manager_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxxx-cert-manager@xxxxxxxxxxx.iam.gserviceaccount.com
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="external-dns">External DNS&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+Outputs:
+&lt;span style="color:#000">external_dns_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxxx-external-dns@xxxxxxxxxxx.iam.gserviceaccount.com
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="velero">Velero&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+Outputs:
+&lt;span style="color:#000">velero_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxxx-velero@xxxxxxxxxxx.iam.gserviceaccount.com
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="vector">Vector&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+Outputs:
+&lt;span style="color:#000">vector_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxxx-vector@xxxxxxxxxxx.iam.gserviceaccount.com
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/gcp/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/inspec-portefaix/</guid><description>
+&lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-debug
+Test infrastructure
+────────────────────────────── Platform Details ──────────────────────────────
+Name: gcp
+Families: cloud, api
+Release: google-api-client-v0.34.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You could upload JSON results file to &lt;a href="https://heimdall-lite.mitre.org/">Heimdall Lite&lt;/a> to display ressults&lt;/p>
+&lt;h2 id="cis-kubernetes-benchmark">CIS Kubernetes Benchmark&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-gcp-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gcp-cis">GCP CIS&lt;/h2>
+&lt;p>You could perform tests accoring the &lt;a href="https://opensource.googleblog.com/2020/08/assess-security-of-cloud-deployments.html">GCP CIS&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gcp-vpc">GCP-VPC&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vpc.png"
+alt="VPC"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>vpc-1&lt;/code>&lt;/td>
+&lt;td>Ensure default network is deleted&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vpc-2&lt;/code>&lt;/td>
+&lt;td>Ensure network is correctly configure&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gcp-gke">GCP-GKE&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-gke.png"
+alt="GKE"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>gke-1&lt;/code>&lt;/td>
+&lt;td>Stackdriver Logging and Monitoring is configured&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-2&lt;/code>&lt;/td>
+&lt;td>Basic Authentication is disabled&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-3&lt;/code>&lt;/td>
+&lt;td>Ensure GKE Nodes are not public&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-4&lt;/code>&lt;/td>
+&lt;td>Ensure the GKE Control Plane is not public&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-5&lt;/code>&lt;/td>
+&lt;td>Ensure the Network Policy managed addon is enabled&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-6&lt;/code>&lt;/td>
+&lt;td>Ensure OAuth Access Scopes and dedicated Service Accounts for node pools&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-7&lt;/code>&lt;/td>
+&lt;td>Ensure GKE Node Pools should use the COS or COS_CONTAINERD Operating System&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-8&lt;/code>&lt;/td>
+&lt;td>GKE Workload Identity should be enabled on all node pools&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-9&lt;/code>&lt;/td>
+&lt;td>GKE Shielded Nodes should be enabled on all NodePools&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-10&lt;/code>&lt;/td>
+&lt;td>Ensure instances have labels&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>gke-11&lt;/code>&lt;/td>
+&lt;td>Ensure instances have tags&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gcp-sops">GCP-Sops&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-sops.png"
+alt="Sops"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>sops-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>sops-2&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gcp-observability">GCP-Observability&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-observability.png"
+alt="Observability"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>grafana-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>prometheus-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>thanos-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>thanos-2&lt;/code>&lt;/td>
+&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>thanos-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki-2&lt;/code>&lt;/td>
+&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo-2&lt;/code>&lt;/td>
+&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gcp-velero">GCP-Velero&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-velero.png"
+alt="Velero"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>velero-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>velero-2&lt;/code>&lt;/td>
+&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>velero-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gcp-vector">GCP-Vector&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vector.png"
+alt="Vector"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>vector-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vector-2&lt;/code>&lt;/td>
+&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vector-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="gcp-external-dns">GCP-External-DNS&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-external-dns.png"
+alt="External-DNS"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>external_dns-1&lt;/code>&lt;/td>
+&lt;td>Ensure service account and IAM binding exists&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/gcp/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/uninstall-portefaix/</guid><description>
+&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="gke">GKE&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-destroy &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

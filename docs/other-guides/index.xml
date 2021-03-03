@@ -1,0 +1,64 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Further Setup and Troubleshooting</title><link>/docs/other-guides/</link><description>Recent content in Further Setup and Troubleshooting on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/other-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Roadmap</title><link>/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/roadmap/</guid><description>
+&lt;h2 id="v1">v1&lt;/h2>
+&lt;h3 id="infrastructure">Infrastructure&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Development environment&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Google Cloud Platform&lt;/span> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/1">#1&lt;/a> ]&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Amazon AWS&lt;/span> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/2">#2&lt;/a> ]&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Microsoft Azure&lt;/span> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/3">#3&lt;/a> ]&lt;/li>
+&lt;/ul>
+&lt;h3 id="core">Core&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Flux v2 bootstrap&lt;/span>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Sops (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
+&lt;/ul>
+&lt;h3 id="observability">Observability&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Monitoring: Prometheus, Thanos, Alertmanager (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Logging: Loki, FluentBit, Vector (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> Tracing: Tempo (GKE, EKS, AKS)&lt;/li>
+&lt;/ul>
+&lt;h3 id="networking">Networking&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> External-DNS, Cert-Manager (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Oauth2-Proxy (GKE, EKS, AKS)&lt;/li>
+&lt;/ul>
+&lt;h3 id="service-mesh">Service Mesh&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Open Service Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
+&lt;/ul>
+&lt;h3 id="chaos">Chaos&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Chaos Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Litmus Chaos (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
+&lt;/ul>
+&lt;h2 id="v2">v2&lt;/h2>
+&lt;h3 id="service-mesh-cloud-providers">Service Mesh Cloud Providers&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://cloud.google.com/traffic-director/">Traffic Director&lt;/a> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/8">#8&lt;/a> ]&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://aws.amazon.com/fr/app-mesh/">AWS App Mesh&lt;/a> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/9">#9&lt;/a> ]&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://docs.microsoft.com/en-us/azure/service-fabric-mesh/">Service Fabric Mesh&lt;/a> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/10">#10&lt;/a> ]&lt;/li>
+&lt;/ul>
+&lt;h2 id="backlog">Backlog&lt;/h2>
+&lt;h3 id="cloud-providers">Cloud providers&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Terraform code for Scaleway&lt;/span> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/17">#17&lt;/a> ]&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Terraform code for Digital Ocean&lt;/span> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/18">#18&lt;/a> ]&lt;/li>
+&lt;/ul>
+&lt;h3 id="secrets-store-csi-driver">Secrets Store CSI Driver&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp">GCP Secret manager&lt;/a> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/4">#4&lt;/a> ]&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/aws/containers-roadmap/issues/895">Amazon Secrets manager&lt;/a> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/5">#5&lt;/a> ]&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/Azure/secrets-store-csi-driver-provider-azure">Azure Vault&lt;/a> [ &lt;a href="https://github.com/nlamirault/portefaix/issues/6">#6&lt;/a> ]&lt;/li>
+&lt;/ul>
+&lt;h3 id="managing-cloud-services-via-kubernetes-crds">Managing Cloud Services via Kubernetes CRDs&lt;/h3>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/aws/aws-controllers-k8s">AWS Controllers for Kubernetes (ACK)&lt;/a>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/Azure/azure-service-operator">Azure Service Operator (for Kubernetes)&lt;/a>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://cloud.google.com/config-connector/docs/overview">Google Config Connector&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Troubleshooting</title><link>/docs/other-guides/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/troubleshooting/</guid><description>
+&lt;p>This page presents some hints for troubleshooting specific problems that you
+may encounter.&lt;/p>
+&lt;h2 id="next-steps">Next steps&lt;/h2>
+&lt;p>Visit the &lt;a href="/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
+and community forums where you can ask for help.&lt;/p></description></item></channel></rss>

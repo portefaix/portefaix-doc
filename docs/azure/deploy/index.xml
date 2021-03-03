@@ -1,0 +1,95 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Deployment</title><link>/docs/azure/deploy/</link><description>Recent content in Deployment on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/azure/deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Install Portefaix</title><link>/docs/azure/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="azure">&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>Export Azure credentials:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AZURE_SUBSCRIPTION_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxx&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
+&lt;p>Create a &lt;a href="https://portal.azure.com/#create/Microsoft.StorageAccount">Storage Account&lt;/a> :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-storage-account &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+XXXXXXXXXXX
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You could see the Key on the output.&lt;/p>
+&lt;p>Create storage container for Terraform states:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-storage-container &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev &lt;span style="color:#000">KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the Service Principal for Terraform:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-sp &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#4e9a06">&amp;#34;appId&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxxx&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;displayName&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;portefaix-dev&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;name&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;http://portefaix-dev&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;password&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span>,
+&lt;span style="color:#4e9a06">&amp;#34;tenant&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Extract informations and configure portefaix configuration file (&lt;code>hack/config/portefaix.sh&lt;/code>):&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>SUBSCRIPTION_ID&lt;/code>&lt;/li>
+&lt;li>&lt;code>CLIENT_ID&lt;/code>&lt;/li>
+&lt;li>&lt;code>CLIENT_SECRET&lt;/code>&lt;/li>
+&lt;li>&lt;code>ARM_TENANT_ID&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh azure
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Set permissions:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-permissions &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="virtual-network">Virtual Network&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/vnet &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="nat-gateway">NAT Gateway&lt;/h3>
+&lt;p>Public IP addresses :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/public-ips/nat-gateway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>NAT Gateway service:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/nat-gateway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>### AKS&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/aks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kubernetes-components">Kubernetes components&lt;/h3>
+&lt;h4 id="sops">Sops&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="observability">Observability&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="velero">Velero&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/azure/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/inspec-portefaix/</guid><description>
+&lt;h2 id="inspec">Inspec&lt;/h2>
+&lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
+&lt;p>Check:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk inspec-debug
+Test infrastructure
+────────────────────────────── Platform Details ──────────────────────────────
+Name: azure
+Families: cloud, api
+Release: azure_mgmt_resources-v0.17.8
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You could upload JSON results file to &lt;a href="https://heimdall-lite.mitre.org/">Heimdall Lite&lt;/a> to display ressults&lt;/p>
+&lt;h3 id="microsoft-azure-cis-foundations">Microsoft Azure CIS Foundations&lt;/h3>
+&lt;p>You could perform tests accoring the &lt;a href="https://azure.microsoft.com/fr-fr/resources/cis-microsoft-azure-foundations-security-benchmark/">CIS Microsoft Azure Foundations Security Benchmark&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="inspec-aks">Inspec-AKS&lt;/h3>
+&lt;p>&lt;img src="/docs/images/inspec-azure-aks.png"
+alt="AKS"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>resourcegroup-1&lt;/code>&lt;/td>
+&lt;td>Check that resource group exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>aks-1&lt;/code>&lt;/td>
+&lt;td>Ensure logging to Azure Monitor is configured&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>aks-2&lt;/code>&lt;/td>
+&lt;td>Ensure RBAC is enabled&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>aks-3&lt;/code>&lt;/td>
+&lt;td>Ensure API Server Authorized IP Ranges are configured&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item></channel></rss>

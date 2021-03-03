@@ -1,0 +1,299 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Deployment</title><link>/docs/aws/deploy/</link><description>Recent content in Deployment on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/aws/deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="aws">&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>.
+Then &lt;a href="https://console.aws.amazon.com/iam/home?#/security_credentials">API Keys&lt;/a>,
+and configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/portefaix.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># AWS&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_ACCESS_KEY_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;.....&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_SECRET_ACCESS_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;.....&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_DEFAULT_REGION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;...&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_REGION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;....&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
+&lt;p>Create a S3 bucket for Terraform states:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk aws-s3-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a DynamoDB table :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk aws-dynamodb-create-table &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="vpc--internet-gateway">VPC / Internet Gateway&lt;/h3>
+&lt;p>Create an Elastic IP for Internet Gateway:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/elastic_ips/internet-gateway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the VPC and Internet Gateway :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>### EKS&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/eks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kubernetes-components">Kubernetes components&lt;/h3>
+&lt;h4 id="sops">Sops&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+Outputs:
+&lt;span style="color:#000">kms_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:kms:eu-west-3:447241706233:key/cf77f24a-00db-4d6a-8b4b-a8dec3976ff2
+&lt;span style="color:#000">role_arn_eks&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::447241706233:role/portefaix-staging-eks-sops-eks
+&lt;span style="color:#000">role_arn_users&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::447241706233:role/portefaix-staging-eks-sops-users
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="observability">Observability&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+Outputs:
+&lt;span style="color:#000">loki_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-loki
+&lt;span style="color:#000">prometheus_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-loki
+&lt;span style="color:#000">tempo_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-tempo
+&lt;span style="color:#000">thanos_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-thanos
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="external-dns">External DNS&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+Outputs:
+&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxx:role/portefaix-staging-eks-external-dns
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="velero">Velero&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+Outputs:
+&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxxxxxx:role/portefaix-staging-eks-velero
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="vector">Vector&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+Outputs:
+&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxxxxxx:role/portefaix-staging-eks-vector
+&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="cert-manager">Cert-Manager&lt;/h4>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/cert-manager &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+Outputs:
+&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxxxxxx:role/portefaix-staging-eks-cert-manager
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
+&lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
+&lt;p>Check:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-debug
+Test infrastructure
+────────────────────────────── Platform Details ──────────────────────────────
+Name: aws
+Families: cloud, api
+Release: train-aws: v0.1.15, aws-sdk-core: v3.94.0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You could upload JSON results file to &lt;a href="https://heimdall-lite.mitre.org/">Heimdall Lite&lt;/a> to display ressults&lt;/p>
+&lt;h2 id="cis-aws-foundations-benchmark">CIS AWS Foundations Benchmark&lt;/h2>
+&lt;p>You could perform tests according to the &lt;a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis.html">CIS AWS Foundations Benchmark&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-aws-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="cis-kubernetes-benchmark">CIS Kubernetes Benchmark&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-aws-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="aws-vpc">AWS-VPC&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-vpc.png"
+alt="VPC"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>vpc-1&lt;/code>&lt;/td>
+&lt;td>Ensure that VPC exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vpc-2&lt;/code>&lt;/td>
+&lt;td>Ensure that VPC have an Internet Gateway&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vpc-3&lt;/code>&lt;/td>
+&lt;td>Check AWS Security Groups does not have undesirable rules&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vpc-4&lt;/code>&lt;/td>
+&lt;td>Ensure that VPC Subnets exists&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="aws-eks">AWS-EKS&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/eks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-eks.png"
+alt="EKS"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>eks-1&lt;/code>&lt;/td>
+&lt;td>Ensure the AWS EKS Cluster is running a minimal version&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eks-2&lt;/code>&lt;/td>
+&lt;td>Ensure the AWS EKS Cluster control plane has audit logs enabled&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eks-3&lt;/code>&lt;/td>
+&lt;td>Ensure the AWS EKS Cluster is not public&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eks-4&lt;/code>&lt;/td>
+&lt;td>Ensure the AWS EKS Cluster has application secrets encryption enabled&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eks-5&lt;/code>&lt;/td>
+&lt;td>Ensure AWS EKS Cluster Subnets are specific&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>eks-6&lt;/code>&lt;/td>
+&lt;td>Ensure AWS EKS Cluster Nodegroups do not allow remote access from all IPs&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="aws-sops">AWS-Sops&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-sops.png"
+alt="Sops"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>sops-1&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>sops-1&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="aws-observability">AWS-Observability&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-observability.png"
+alt="Observability"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>grafana-1&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>prometheus-1&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>thanos-1&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>thanos-2&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 log bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>thanos-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>thanos-4&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki-1&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki-2&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 log bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>loki-4&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo-1&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo-2&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 log bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>tempo-4&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="aws-velero">AWS-Velero&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-velero.png"
+alt="Velero"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>velero-1&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>velero-2&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 log bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>velero-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>velero-4&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="aws-vector">AWS-Vector&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-vector.png"
+alt="Vector"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Code&lt;/th>
+&lt;th>Description&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code>vector-1&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vector-2&lt;/code>&lt;/td>
+&lt;td>Ensure that S3 log bucket exist and tags correcly set&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vector-3&lt;/code>&lt;/td>
+&lt;td>Ensure that Kms key exist&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code>vector-4&lt;/code>&lt;/td>
+&lt;td>Ensure IAM roles and policies exists&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item></channel></rss>
