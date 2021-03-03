@@ -56,7 +56,7 @@ Create the VPC and Internet Gateway :
 ❯ make terraform-apply SERVICE=iac/aws/vpc ENV=staging
 ```
 
-### EKS
+### EKS
 
 ```shell
 ❯ make terraform-apply SERVICE=iac/aws/eks ENV=staging

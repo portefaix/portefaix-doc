@@ -1,26 +1,11 @@
 +++
-title = "Installing Portefaix"
-description = "Overview of installation choices for various environments"
+title = "Getting Started"
+description = "Getting started"
 weight = 20
 
 +++
 
-This document provides information about setting up Portefaix in various
-environments.
-
-## Before you begin
-
-It's important that you have some knowledge of the following systems and tools:
-
-* [Terraform](https://terraform.io)
-* [Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
-* [Kustomize](https://kustomize.io/)
-* [Helm](https://helm.sh)
-
-## Overview of installation options
-
-The following section describes the options in more detail and links to the
-relevant instructions.
+## Installation
 
 <a id="installation-guides"></a>
 ## Installing Portefaix
@@ -34,20 +19,21 @@ a single-node cluster which you can use on a desktop or server or in the cloud).
 
 Choose the Portefaix deployment guide for your chosen cloud:
 
-  * To use Portefaix on Google Kubernetes Engine (GKE),
-    follow the [GKE deployment guide](/docs/gcp/deploy/).
-  * To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
-    follow the [EKS deployment guide](/docs/aws/deploy/).
-  * To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
-    follow the [AKS deployment guide](/docs/azure/deploy/).
-  * To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
-	  follow the [ACK deployment guide](/docs/alicloud/deploy).
-  <!-- * To use Portefaix on IBM Cloud (IKS),
-	  follow the [IKS deployment guide](/docs/ibm/).
-  * To use Portefaix on IBM Cloud (IKS),
-	  follow the [IKS deployment guide](/docs/ibm/).
-  * To use Portefaix on IBM Cloud (IKS),
-	  follow the [IKS deployment guide](/docs/ibm/). -->
+* To use Portefaix on Google Kubernetes Engine (GKE),
+follow the [GKE deployment guide](/docs/gcp/deploy/).
+* To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
+follow the [EKS deployment guide](/docs/aws/deploy/).
+* To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
+follow the [AKS deployment guide](/docs/azure/deploy/).
+* To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
+    follow the [ACK deployment guide](/docs/alicloud/deploy).
+
+<!-- * To use Portefaix on IBM Cloud (IKS),
+    follow the [IKS deployment guide](/docs/ibm/).
+* To use Portefaix on IBM Cloud (IKS),
+    follow the [IKS deployment guide](/docs/ibm/).
+* To use Portefaix on IBM Cloud (IKS),
+    follow the [IKS deployment guide](/docs/ibm/). -->
 
 ## Deployment quick reference
 

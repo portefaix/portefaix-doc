@@ -1,5 +1,5 @@
 +++
 title = "Monitoring"
 description = "Monitoring stack"
-weight = 75
+weight = 10
 +++

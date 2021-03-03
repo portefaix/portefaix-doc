@@ -1,5 +1,5 @@
 +++
 title = "Certificates"
 description = "The certificates management"
-weight = 05
+weight = 40
 +++

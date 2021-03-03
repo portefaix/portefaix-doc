@@ -1,5 +1,5 @@
 +++
 title = "DNS"
 description = "DNS"
-weight = 05
+weight = 30
 +++

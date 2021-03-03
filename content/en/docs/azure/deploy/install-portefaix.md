@@ -85,7 +85,7 @@ NAT Gateway service:
 ❯ make terraform-apply SERVICE=iac/azure/nat-gateway ENV=dev
 ```
 
-### AKS
+### AKS
 
 ```shell
 ❯ make terraform-apply SERVICE=iac/azure/aks ENV=dev

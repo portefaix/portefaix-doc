@@ -1,7 +1,7 @@
 +++
 title = "Authentication and Authorization"
 description = "Authentication and authorization support for Portefaix in AWS"
-weight = 90
+weight = 10
 +++
 
 This section shows the how to setup Portefaix with authentication and authorization support in Amazon Webservices (AWS)
