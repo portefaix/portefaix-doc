@@ -1,7 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Portefaix on AWS</title><link>/docs/aws/</link><description>Recent content in Portefaix on AWS on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Deployment</title><link>/docs/aws/deploy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Portefaix on AWS</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/</link><description>Recent content in Portefaix on AWS on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://portefaix.github.io/portefaix-doc/docs/aws/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Deployment</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Work In Progress&lt;/h4>
-&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/authentication/</guid><description>
+&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Amazon Webservices (AWS)&lt;/p>
 &lt;h2 id="configure-aws">Configure AWS&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
@@ -14,4 +14,4 @@ Done
 NAME STATUS ROLES AGE VERSION
 ip-10-0-31-216.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
 ip-10-0-40-203.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting Deployments on AWS EKS</title><link>/docs/aws/troubleshooting-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/troubleshooting-aws/</guid><description/></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting Deployments on AWS EKS</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/troubleshooting-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/troubleshooting-aws/</guid><description/></item></channel></rss>

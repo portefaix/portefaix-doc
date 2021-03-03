@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Getting Started</title><link>/docs/started/</link><description>Recent content in Getting Started on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Portefaix Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Getting Started</title><link>https://portefaix.github.io/portefaix-doc/docs/started/</link><description>Recent content in Getting Started on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://portefaix.github.io/portefaix-doc/docs/started/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Portefaix Overview</title><link>https://portefaix.github.io/portefaix-doc/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/started/overview/</guid><description>
 &lt;p>Portefaix is a platform for data scientists who want to build and experiment with
 ML pipelines. Portefaix is also for ML engineers and operational teams who want
 to deploy ML systems to various environments for development, testing, and
@@ -7,7 +7,7 @@ production-level serving.&lt;/p>
 &lt;p>Portefaix is &lt;em>the ML toolkit for Kubernetes&lt;/em>.
 The following diagram shows Portefaix as a platform for arranging the
 components of your ML system on top of Kubernetes:&lt;/p>
-&lt;p>&lt;img src="/docs/images/Portefaix-overview-platform-diagram.svg"
+&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/Portefaix-overview-platform-diagram.svg"
 alt="An architectural overview of Portefaix on Kubernetes"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;p>Portefaix builds on &lt;a href="https://kubernetes.io/">Kubernetes&lt;/a> as a system for
@@ -17,8 +17,8 @@ specify the ML tools required for your workflow. Then you can deploy the
 workflow to various clouds, local, and on-premises platforms for experimentation and
 for production use.&lt;/p>
 &lt;h2 id="next-steps">Next steps&lt;/h2>
-&lt;p>See how to &lt;a href="/docs/started/getting-started/">install Portefaix&lt;/a> depending on
-your chosen environment (local, cloud, or on-premises).&lt;/p></description></item><item><title>Docs: Installing Portefaix</title><link>/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/getting-started/</guid><description>
+&lt;p>See how to &lt;a href="https://portefaix.github.io/portefaix-doc/docs/started/getting-started/">install Portefaix&lt;/a> depending on
+your chosen environment (local, cloud, or on-premises).&lt;/p></description></item><item><title>Docs: Installing Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/started/getting-started/</guid><description>
 &lt;p>This document provides information about setting up Portefaix in various
 environments.&lt;/p>
 &lt;h2 id="before-you-begin">Before you begin&lt;/h2>
@@ -42,13 +42,13 @@ a single-node cluster which you can use on a desktop or server or in the cloud).
 &lt;p>Choose the Portefaix deployment guide for your chosen cloud:&lt;/p>
 &lt;ul>
 &lt;li>To use Portefaix on Google Kubernetes Engine (GKE),
-follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
 &lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
-follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
 &lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
-follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
 &lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
-follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;!-- * To use Portefaix on IBM Cloud (IKS),
 follow the [IKS deployment guide](/docs/ibm/).
@@ -110,4 +110,4 @@ corresponding tools for each platform.&lt;/p>
 &lt;/table>
 &lt;/div>
 &lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
-&lt;p>See the &lt;a href="/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;p>See the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item></channel></rss>

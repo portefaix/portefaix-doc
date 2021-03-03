@@ -1,28 +1,28 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Documentation</title><link>/docs/</link><description>Recent content in Documentation on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Portefaix</title><link>/docs/about/portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/portefaix/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Documentation</title><link>https://portefaix.github.io/portefaix-doc/docs/</link><description>Recent content in Documentation on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://portefaix.github.io/portefaix-doc/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/about/portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/about/portefaix/</guid><description>
 &lt;p>The Portefaix project is dedicated to create an infrastructure on Cloud Providers
 and deploy Cloud Native applications into a Kubernetes cluster.&lt;/p>
 &lt;h2 id="getting-started-with-portefaix">Getting started with Portefaix&lt;/h2>
-&lt;p>Read the &lt;a href="/docs/started/overview/">Portefaix overview&lt;/a> for an
+&lt;p>Read the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/started/overview/">Portefaix overview&lt;/a> for an
 introduction to the Portefaix architecture.&lt;/p>
-&lt;p>Follow the &lt;a href="/docs/started/getting-started/">getting-started guide&lt;/a> to set up
+&lt;p>Follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/started/getting-started/">getting-started guide&lt;/a> to set up
 your environment and install Portefaix.&lt;/p>
 &lt;h2 id="roadmaps">Roadmaps&lt;/h2>
-&lt;p>To see what&amp;rsquo;s coming up in future versions of Portefaix, refer to the &lt;a href="/docs/other-guides/roadmap/">Portefaix roadmap&lt;/a>.&lt;/p>
+&lt;p>To see what&amp;rsquo;s coming up in future versions of Portefaix, refer to the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/other-guides/roadmap/">Portefaix roadmap&lt;/a>.&lt;/p>
 &lt;h2 id="getting-involved">Getting involved&lt;/h2>
 &lt;p>There are many ways to contribute to Portefaix, and we welcome contributions!
-Read the &lt;a href="/docs/about/contributing">contributor&amp;rsquo;s guide&lt;/a> to get started on the
+Read the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/about/contributing">contributor&amp;rsquo;s guide&lt;/a> to get started on the
 code, and get to know the community in the
-&lt;a href="/docs/about/community">community guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Contributing to Portefaix</title><link>/docs/about/contributing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/contributing/</guid><description>
+&lt;a href="https://portefaix.github.io/portefaix-doc/docs/about/community">community guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Contributing to Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/about/contributing/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/about/contributing/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Work In Progress&lt;/h4>
 &lt;/div>
 &lt;h2 id="getting-started-as-a-portefaix-contributor">Getting started as a Portefaix contributor&lt;/h2>
 &lt;p>This document is the single source of truth for how to contribute to the code base.
 We&amp;rsquo;d love to accept your patches and contributions to this project. There are
-just a few small guidelines you need to fo&lt;/p></description></item><item><title>Docs: Community</title><link>/docs/about/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/community/</guid><description>
+just a few small guidelines you need to fo&lt;/p></description></item><item><title>Docs: Community</title><link>https://portefaix.github.io/portefaix-doc/docs/about/community/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/about/community/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Work In Progress&lt;/h4>
-&lt;/div></description></item><item><title>Docs: Docs</title><link>/docs/about/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/about/docs/</guid><description>
+&lt;/div></description></item><item><title>Docs: Docs</title><link>https://portefaix.github.io/portefaix-doc/docs/about/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/about/docs/</guid><description>
 &lt;p>Welcome to the Portefaix documentation!&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The Portefaix docs are published at &lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a>.&lt;/p>
@@ -33,7 +33,7 @@ We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our we
 &lt;h2 id="versioning">Versioning&lt;/h2>
 &lt;p>&lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a> points to the &lt;strong>master&lt;/strong> branch of the docs. You can access
 other versions by clicking the version dropdown at top right of the website
-menu bar.&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
+menu bar.&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="aws">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>.
@@ -89,7 +89,7 @@ Outputs:
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/cert-manager &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 Outputs:
 &lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxxxxxx:role/portefaix-staging-eks-cert-manager
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/azure/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/install-portefaix/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/azure/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/azure/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="azure">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Export Azure credentials:&lt;/p>
@@ -138,7 +138,7 @@ XXXXXXXXXXX
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="velero">Velero&lt;/h4>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/gcp/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/install-portefaix/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="gcloud"/>&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Authenticate on the Google Cloud Platform:&lt;/p>
@@ -192,7 +192,7 @@ Outputs:
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 Outputs:
 &lt;span style="color:#000">vector_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxxx-vector@xxxxxxxxxxx.iam.gserviceaccount.com
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Portefaix Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Portefaix Overview</title><link>https://portefaix.github.io/portefaix-doc/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/started/overview/</guid><description>
 &lt;p>Portefaix is a platform for data scientists who want to build and experiment with
 ML pipelines. Portefaix is also for ML engineers and operational teams who want
 to deploy ML systems to various environments for development, testing, and
@@ -201,7 +201,7 @@ production-level serving.&lt;/p>
 &lt;p>Portefaix is &lt;em>the ML toolkit for Kubernetes&lt;/em>.
 The following diagram shows Portefaix as a platform for arranging the
 components of your ML system on top of Kubernetes:&lt;/p>
-&lt;p>&lt;img src="/docs/images/Portefaix-overview-platform-diagram.svg"
+&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/Portefaix-overview-platform-diagram.svg"
 alt="An architectural overview of Portefaix on Kubernetes"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;p>Portefaix builds on &lt;a href="https://kubernetes.io/">Kubernetes&lt;/a> as a system for
@@ -211,8 +211,8 @@ specify the ML tools required for your workflow. Then you can deploy the
 workflow to various clouds, local, and on-premises platforms for experimentation and
 for production use.&lt;/p>
 &lt;h2 id="next-steps">Next steps&lt;/h2>
-&lt;p>See how to &lt;a href="/docs/started/getting-started/">install Portefaix&lt;/a> depending on
-your chosen environment (local, cloud, or on-premises).&lt;/p></description></item><item><title>Docs: Registration Flow</title><link>/docs/components/dns/registration-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/registration-flow/</guid><description>
+&lt;p>See how to &lt;a href="https://portefaix.github.io/portefaix-doc/docs/started/getting-started/">install Portefaix&lt;/a> depending on
+your chosen environment (local, cloud, or on-premises).&lt;/p></description></item><item><title>Docs: Registration Flow</title><link>https://portefaix.github.io/portefaix-doc/docs/components/dns/registration-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/components/dns/registration-flow/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Out of date&lt;/h4>
 This guide contains outdated information pertaining to Kubeflow 1.0. This guide
@@ -220,7 +220,7 @@ needs to be updated for Kubeflow 1.1.
 &lt;/div>
 &lt;p>This guide is for Kubeflow users who are logging in to Kubeflow for the first
 time. The user may be the person who deployed Kubeflow, or another person who
-has permission to access the Kubeflow cluster and use Kubeflow.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
+has permission to access the Kubeflow cluster and use Kubeflow.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-debug
@@ -239,7 +239,7 @@ Release: train-aws: v0.1.15, aws-sdk-core: v3.94.0
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-aws-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="aws-vpc">AWS-VPC&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-vpc.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-aws-vpc.png"
 alt="VPC"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -270,7 +270,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="aws-eks">AWS-EKS&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/eks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-eks.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-aws-eks.png"
 alt="EKS"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -309,7 +309,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="aws-sops">AWS-Sops&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-sops.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-aws-sops.png"
 alt="Sops"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -332,7 +332,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="aws-observability">AWS-Observability&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-observability.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-aws-observability.png"
 alt="Observability"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -403,7 +403,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="aws-velero">AWS-Velero&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-velero.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-aws-velero.png"
 alt="Velero"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -434,7 +434,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="aws-vector">AWS-Vector&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-vector.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-aws-vector.png"
 alt="Vector"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -462,7 +462,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure IAM roles and policies exists&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/azure/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/inspec-portefaix/</guid><description>
+&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/azure/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/azure/deploy/inspec-portefaix/</guid><description>
 &lt;h2 id="inspec">Inspec&lt;/h2>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>
@@ -479,7 +479,7 @@ Release: azure_mgmt_resources-v0.17.8
 &lt;p>You could perform tests accoring the &lt;a href="https://azure.microsoft.com/fr-fr/resources/cis-microsoft-azure-foundations-security-benchmark/">CIS Microsoft Azure Foundations Security Benchmark&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="inspec-aks">Inspec-AKS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/inspec-azure-aks.png"
+&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-azure-aks.png"
 alt="AKS"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -507,7 +507,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure API Server Authorized IP Ranges are configured&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/gcp/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/inspec-portefaix/</guid><description>
+&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-debug
 Test infrastructure
@@ -525,7 +525,7 @@ Release: google-api-client-v0.34.1
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gcp-vpc">GCP-VPC&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vpc.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-gcp-vpc.png"
 alt="VPC"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -548,7 +548,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="gcp-gke">GCP-GKE&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-gke.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-gcp-gke.png"
 alt="GKE"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -607,7 +607,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="gcp-sops">GCP-Sops&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-sops.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-gcp-sops.png"
 alt="Sops"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -630,7 +630,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="gcp-observability">GCP-Observability&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-observability.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-gcp-observability.png"
 alt="Observability"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -689,7 +689,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="gcp-velero">GCP-Velero&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-velero.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-gcp-velero.png"
 alt="Velero"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -716,7 +716,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="gcp-vector">GCP-Vector&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vector.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-gcp-vector.png"
 alt="Vector"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -743,7 +743,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table>
 &lt;h2 id="gcp-external-dns">GCP-External-DNS&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-external-dns.png"
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/inspec-gcp-external-dns.png"
 alt="External-DNS"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;table>
@@ -759,7 +759,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure service account and IAM binding exists&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Installing Portefaix</title><link>/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/getting-started/</guid><description>
+&lt;/table></description></item><item><title>Docs: Installing Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/started/getting-started/</guid><description>
 &lt;p>This document provides information about setting up Portefaix in various
 environments.&lt;/p>
 &lt;h2 id="before-you-begin">Before you begin&lt;/h2>
@@ -783,13 +783,13 @@ a single-node cluster which you can use on a desktop or server or in the cloud).
 &lt;p>Choose the Portefaix deployment guide for your chosen cloud:&lt;/p>
 &lt;ul>
 &lt;li>To use Portefaix on Google Kubernetes Engine (GKE),
-follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
 &lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
-follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
 &lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
-follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
 &lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
-follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+follow the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;!-- * To use Portefaix on IBM Cloud (IKS),
 follow the [IKS deployment guide](/docs/ibm/).
@@ -851,11 +851,11 @@ corresponding tools for each platform.&lt;/p>
 &lt;/table>
 &lt;/div>
 &lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
-&lt;p>See the &lt;a href="/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/gcp/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/uninstall-portefaix/</guid><description>
+&lt;p>See the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/uninstall-portefaix/</guid><description>
 &lt;h2 id="terraform">Terraform&lt;/h2>
 &lt;h3 id="gke">GKE&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-destroy &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/authentication/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Amazon Webservices (AWS)&lt;/p>
 &lt;h2 id="configure-aws">Configure AWS&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
@@ -868,7 +868,7 @@ Done
 NAME STATUS ROLES AGE VERSION
 ip-10-0-31-216.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
 ip-10-0-40-203.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/authentication/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Google Cloud Platform (GCP).&lt;/p>
 &lt;h2 id="configure-gcloud">Configure Gcloud&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh gcp
@@ -880,7 +880,7 @@ Done
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
 NAME STATUS ROLES AGE VERSION
 gke-xxxxxxxxxx-cluster-g-core-5d5d62be-tf15 Ready &amp;lt;none&amp;gt; 7h37m v1.18.10-gke.601
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Access Control for Azure Deployment</title><link>/docs/azure/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/authentication/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Access Control for Azure Deployment</title><link>https://portefaix.github.io/portefaix-doc/docs/azure/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/azure/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Microsoft Azure (AZURE)&lt;/p>
 &lt;h2 id="configure-azure">Configure Azure&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh azure
@@ -892,7 +892,7 @@ Done
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
 NAME STATUS ROLES AGE VERSION
 aks-core-19506595-vmss000000 Ready agent 8h v1.18.10
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Roadmap</title><link>/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/roadmap/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Roadmap</title><link>https://portefaix.github.io/portefaix-doc/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/other-guides/roadmap/</guid><description>
 &lt;h2 id="v1">v1&lt;/h2>
 &lt;h3 id="infrastructure">Infrastructure&lt;/h3>
 &lt;ul>
@@ -950,9 +950,9 @@ aks-core-19506595-vmss000000 Ready agent 8h v1.18.10
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/aws/aws-controllers-k8s">AWS Controllers for Kubernetes (ACK)&lt;/a>&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/Azure/azure-service-operator">Azure Service Operator (for Kubernetes)&lt;/a>&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://cloud.google.com/config-connector/docs/overview">Google Config Connector&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Troubleshooting</title><link>/docs/other-guides/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/troubleshooting/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Troubleshooting</title><link>https://portefaix.github.io/portefaix-doc/docs/other-guides/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/other-guides/troubleshooting/</guid><description>
 &lt;p>This page presents some hints for troubleshooting specific problems that you
 may encounter.&lt;/p>
 &lt;h2 id="next-steps">Next steps&lt;/h2>
-&lt;p>Visit the &lt;a href="/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
-and community forums where you can ask for help.&lt;/p></description></item><item><title>Docs: Troubleshooting Deployments on AWS EKS</title><link>/docs/aws/troubleshooting-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/troubleshooting-aws/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Azure AKS</title><link>/docs/azure/troubleshooting-azure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/troubleshooting-azure/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on GCP GKE</title><link>/docs/gcp/troubleshooting-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/troubleshooting-gcp/</guid><description/></item></channel></rss>
+&lt;p>Visit the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
+and community forums where you can ask for help.&lt;/p></description></item><item><title>Docs: Troubleshooting Deployments on AWS EKS</title><link>https://portefaix.github.io/portefaix-doc/docs/aws/troubleshooting-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/aws/troubleshooting-aws/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Azure AKS</title><link>https://portefaix.github.io/portefaix-doc/docs/azure/troubleshooting-azure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/azure/troubleshooting-azure/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on GCP GKE</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/troubleshooting-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/troubleshooting-gcp/</guid><description/></item></channel></rss>
