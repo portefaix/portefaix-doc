@@ -1,4 +1,4 @@
-# baseURL = "/"
+baseURL = "https://portefaix.github.io/portefaix-doc/"
 title = "Portefaix"
 description = "Portefaix - A Kubernetes experience"
 
