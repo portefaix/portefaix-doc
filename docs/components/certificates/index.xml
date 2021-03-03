@@ -1,1 +1,16 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Certificates</title><link>/docs/components/certificates/</link><description>Recent content in Certificates on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/certificates/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Certificates</title><link>/docs/components/certificates/</link><description>Recent content in Certificates on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/certificates/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Cert-Manager</title><link>/docs/components/certificates/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/cert-manager/</guid><description>
+&lt;h2 id="cert-manager">Cert-Manager&lt;/h2>
+&lt;p>Automatically provision and manage TLS certificates in Kubernetes&lt;/p>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/jetstack/cert-manager">cert-manager&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>1.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/cert-manager-crds.png"
+alt="Cert-Manager CRD"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;p>&lt;img src="/docs/images/cert-manager.png"
+alt="Cert-Manager"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Let's Encrypt</title><link>/docs/components/certificates/letsencrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/letsencrypt/</guid><description>
+&lt;h2 id="lets-encrypt">Let&amp;rsquo;s Encrypt&lt;/h2>
+&lt;p>Create a &lt;a href="https://cert-manager.io/docs/concepts/issuer/">cluster issuer&lt;/a> to use Let&amp;rsquo;s Encrypt.&lt;/p></description></item></channel></rss>

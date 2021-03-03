@@ -28,12 +28,46 @@ just a few small guidelines you need to fo&lt;/p></description></item><item><tit
 &lt;p>The Portefaix docs are published at &lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a>.&lt;/p>
 &lt;p>The source for the docs is in the
 &lt;a href="https://github.com/portefaix/portefaix/">portefaix/portefaix repo&lt;/a> on GitHub.
-We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our website, and
-&lt;a href="https://www.netlify.com/">Netlify&lt;/a> to manage the deployment of the site.&lt;/p>
+We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our website.&lt;/p>
 &lt;h2 id="versioning">Versioning&lt;/h2>
 &lt;p>&lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a> points to the &lt;strong>master&lt;/strong> branch of the docs. You can access
 other versions by clicking the version dropdown at top right of the website
-menu bar.&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
+menu bar.&lt;/p></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/authentication/</guid><description>
+&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Amazon Webservices (AWS)&lt;/p>
+&lt;h2 id="configure-aws">Configure AWS&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+Setup credentials
+Done
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>aws &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+ip-10-0-31-216.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
+ip-10-0-40-203.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Cert-Manager</title><link>/docs/components/certificates/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/cert-manager/</guid><description>
+&lt;h2 id="cert-manager">Cert-Manager&lt;/h2>
+&lt;p>Automatically provision and manage TLS certificates in Kubernetes&lt;/p>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/jetstack/cert-manager">cert-manager&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>1.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/cert-manager-crds.png"
+alt="Cert-Manager CRD"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;p>&lt;img src="/docs/images/cert-manager.png"
+alt="Cert-Manager"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
+&lt;h2 id="external-dns">External DNS&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/external-dns.png"
+alt="External DNS"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="aws">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>.
@@ -57,7 +91,7 @@ and configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/port
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/elastic_ips/internet-gateway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the VPC and Internet Gateway :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>### EKS&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="eks">EKS&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/eks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kubernetes-components">Kubernetes components&lt;/h3>
 &lt;h4 id="sops">Sops&lt;/h4>
@@ -129,7 +163,7 @@ XXXXXXXXXXX
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/public-ips/nat-gateway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>NAT Gateway service:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/nat-gateway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>### AKS&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="aks">AKS&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/aks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kubernetes-components">Kubernetes components&lt;/h3>
 &lt;h4 id="sops">Sops&lt;/h4>
@@ -192,35 +226,150 @@ Outputs:
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 Outputs:
 &lt;span style="color:#000">vector_service_account&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> xxxxxxxxxxx-vector@xxxxxxxxxxx.iam.gserviceaccount.com
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Portefaix Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
-&lt;p>Portefaix is a platform for data scientists who want to build and experiment with
-ML pipelines. Portefaix is also for ML engineers and operational teams who want
-to deploy ML systems to various environments for development, testing, and
-production-level serving.&lt;/p>
-&lt;h2 id="conceptual-overview">Conceptual overview&lt;/h2>
-&lt;p>Portefaix is &lt;em>the ML toolkit for Kubernetes&lt;/em>.
-The following diagram shows Portefaix as a platform for arranging the
-components of your ML system on top of Kubernetes:&lt;/p>
-&lt;p>&lt;img src="/docs/images/Portefaix-overview-platform-diagram.svg"
-alt="An architectural overview of Portefaix on Kubernetes"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;p>Portefaix builds on &lt;a href="https://kubernetes.io/">Kubernetes&lt;/a> as a system for
-deploying, scaling, and managing complex systems.&lt;/p>
-&lt;p>Using the Portefaix configuration interfaces (see &lt;a href="#interfaces">below&lt;/a>) you can
-specify the ML tools required for your workflow. Then you can deploy the
-workflow to various clouds, local, and on-premises platforms for experimentation and
-for production use.&lt;/p>
-&lt;h2 id="next-steps">Next steps&lt;/h2>
-&lt;p>See how to &lt;a href="/docs/started/getting-started/">install Portefaix&lt;/a> depending on
-your chosen environment (local, cloud, or on-premises).&lt;/p></description></item><item><title>Docs: Registration Flow</title><link>/docs/components/dns/registration-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/registration-flow/</guid><description>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Out of date&lt;/h4>
-This guide contains outdated information pertaining to Kubeflow 1.0. This guide
-needs to be updated for Kubeflow 1.1.
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Loki</title><link>/docs/components/logging/loki/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/loki/</guid><description>
+&lt;h2 id="loki">Loki&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/loki.png"
+alt="Loki"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
+&lt;p>This document provides information about setting up Portefaix in various
+environments.&lt;/p>
+&lt;h2 id="before-you-begin">Before you begin&lt;/h2>
+&lt;p>It&amp;rsquo;s important that you have some knowledge of the following systems and tools:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://terraform.io">Terraform&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">Kubernetes&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://kustomize.io/">Kustomize&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://helm.sh">Helm&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Prometheus Operator</title><link>/docs/components/monitoring/prometheus-operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus-operator/</guid><description>
+&lt;h2 id="prometheus-operator">Prometheus Operator&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="checks">Checks&lt;/h2>
+&lt;ul>
+&lt;li>CRD:&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get crd&lt;span style="color:#000;font-weight:bold">|&lt;/span>grep coreos
+alertmanagerconfigs.monitoring.coreos.com 2020-11-08T17:11:39Z
+alertmanagers.monitoring.coreos.com 2020-11-08T17:11:40Z
+podmonitors.monitoring.coreos.com 2020-11-08T17:11:40Z
+probes.monitoring.coreos.com 2020-11-08T17:11:40Z
+prometheuses.monitoring.coreos.com 2020-11-08T17:11:41Z
+prometheusrules.monitoring.coreos.com 2020-11-08T17:11:41Z
+servicemonitors.monitoring.coreos.com 2020-11-08T17:11:42Z
+thanosrulers.monitoring.coreos.com 2020-11-08T17:11:42Z
+&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>Deployment of the Prometheus Operator&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get deployments.apps -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
+NAME READY UP-TO-DATE AVAILABLE AGE
+kube-prometheus-stack-operator 1/1 &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 26m
+❯ kubectl get svc -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
+NAME TYPE CLUSTER-IP EXTERNAL-IP PORT&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>S&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> AGE
+kube-prometheus-stack-operator ClusterIP 10.40.16.153 &amp;lt;none&amp;gt; 443/TCP 27m
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="components">Components&lt;/h2>
+&lt;!--
+&lt;img src="/docs/images/prometheus-operator-crds.png"
+alt="Cert-Manager CRD"
+class="mt-3 mb-3 border border-info rounded"> -->
+&lt;p>&lt;img src="/docs/images/prometheus-operator.png"
+alt="Prometheus-Operator"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
+&lt;h2 id="promtail">Promtail&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/promtail.png"
+alt="Promtail"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Getting Started</title><link>/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/getting-started/</guid><description>
+&lt;h2 id="installation">Installation&lt;/h2>
+&lt;p>&lt;a id="installation-guides">&lt;/a>&lt;/p>
+&lt;h2 id="installing-portefaix">Installing Portefaix&lt;/h2>
+&lt;p>There are various ways to install Portefaix. Choose one of the following options
+to suit your environment (public cloud, existing Kubernetes cluster, or
+a single-node cluster which you can use on a desktop or server or in the cloud).&lt;/p>
+&lt;p>&lt;a id="cloud">&lt;/a>&lt;/p>
+&lt;h3 id="installing-portefaix-on-a-public-cloud">Installing Portefaix on a public cloud&lt;/h3>
+&lt;p>Choose the Portefaix deployment guide for your chosen cloud:&lt;/p>
+&lt;ul>
+&lt;li>To use Portefaix on Google Kubernetes Engine (GKE),
+follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
+follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
+follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
+follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;!-- * To use Portefaix on IBM Cloud (IKS),
+follow the [IKS deployment guide](/docs/ibm/).
+* To use Portefaix on IBM Cloud (IKS),
+follow the [IKS deployment guide](/docs/ibm/).
+* To use Portefaix on IBM Cloud (IKS),
+follow the [IKS deployment guide](/docs/ibm/). -->
+&lt;h2 id="deployment-quick-reference">Deployment quick reference&lt;/h2>
+&lt;p>Below is a matrix of the platforms where you can deploy Portefaix and the
+corresponding tools for each platform.&lt;/p>
+&lt;div class="table-responsive">
+&lt;table class="table table-bordered">
+&lt;thead class="thead-light">
+&lt;tr>
+&lt;th>Cloud Provider&lt;/th>
+&lt;th>Sops&lt;/th>
+&lt;th>Tfsec&lt;/th>
+&lt;th>Inspec&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Google Cloud Platform&lt;/td>
+&lt;td>&lt;a href="https://cloud.google.com/security-key-management"> GCP KMS &lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Amazon AWS&lt;/td>
+&lt;td>&lt;a href="https://aws.amazon.com/kms/">AWS KMS&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Microsoft Azure&lt;/td>
+&lt;td>&lt;a href="https://azure.microsoft.com/en-us/services/key-vault/">Azure KeyVault&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AlibabaCloud&lt;/td>
+&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Scaleway&lt;/td>
+&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Digital Ocean&lt;/td>
+&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 &lt;/div>
-&lt;p>This guide is for Kubeflow users who are logging in to Kubeflow for the first
-time. The user may be the person who deployed Kubeflow, or another person who
-has permission to access the Kubeflow cluster and use Kubeflow.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
+&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
+&lt;p>See the &lt;a href="/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-debug
@@ -759,116 +908,76 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure service account and IAM binding exists&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Installing Portefaix</title><link>/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/getting-started/</guid><description>
-&lt;p>This document provides information about setting up Portefaix in various
-environments.&lt;/p>
-&lt;h2 id="before-you-begin">Before you begin&lt;/h2>
-&lt;p>It&amp;rsquo;s important that you have some knowledge of the following systems and tools:&lt;/p>
+&lt;/table></description></item><item><title>Docs: Let's Encrypt</title><link>/docs/components/certificates/letsencrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/letsencrypt/</guid><description>
+&lt;h2 id="lets-encrypt">Let&amp;rsquo;s Encrypt&lt;/h2>
+&lt;p>Create a &lt;a href="https://cert-manager.io/docs/concepts/issuer/">cluster issuer&lt;/a> to use Let&amp;rsquo;s Encrypt.&lt;/p></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
+&lt;h2 id="prometheus">Prometheus&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://terraform.io">Terraform&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">Kubernetes&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://kustomize.io/">Kustomize&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://helm.sh">Helm&lt;/a>&lt;/li>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="overview-of-installation-options">Overview of installation options&lt;/h2>
-&lt;p>The following section describes the options in more detail and links to the
-relevant instructions.&lt;/p>
-&lt;p>&lt;a id="installation-guides">&lt;/a>&lt;/p>
-&lt;h2 id="installing-portefaix">Installing Portefaix&lt;/h2>
-&lt;p>There are various ways to install Portefaix. Choose one of the following options
-to suit your environment (public cloud, existing Kubernetes cluster, or
-a single-node cluster which you can use on a desktop or server or in the cloud).&lt;/p>
-&lt;p>&lt;a id="cloud">&lt;/a>&lt;/p>
-&lt;h3 id="installing-portefaix-on-a-public-cloud">Installing Portefaix on a public cloud&lt;/h3>
-&lt;p>Choose the Portefaix deployment guide for your chosen cloud:&lt;/p>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/prometheus.png"
+alt="Prometheus"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Vector</title><link>/docs/components/logging/vector/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/vector/</guid><description>
+&lt;h2 id="vector">Vector&lt;/h2>
 &lt;ul>
-&lt;li>To use Portefaix on Google Kubernetes Engine (GKE),
-follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
-follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
-follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
-follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;!-- * To use Portefaix on IBM Cloud (IKS),
-follow the [IKS deployment guide](/docs/ibm/).
-* To use Portefaix on IBM Cloud (IKS),
-follow the [IKS deployment guide](/docs/ibm/).
-* To use Portefaix on IBM Cloud (IKS),
-follow the [IKS deployment guide](/docs/ibm/). -->
-&lt;h2 id="deployment-quick-reference">Deployment quick reference&lt;/h2>
-&lt;p>Below is a matrix of the platforms where you can deploy Portefaix and the
-corresponding tools for each platform.&lt;/p>
-&lt;div class="table-responsive">
-&lt;table class="table table-bordered">
-&lt;thead class="thead-light">
-&lt;tr>
-&lt;th>Cloud Provider&lt;/th>
-&lt;th>Sops&lt;/th>
-&lt;th>Tfsec&lt;/th>
-&lt;th>Inspec&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Google Cloud Platform&lt;/td>
-&lt;td>&lt;a href="https://cloud.google.com/security-key-management"> GCP KMS &lt;/a>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Amazon AWS&lt;/td>
-&lt;td>&lt;a href="https://aws.amazon.com/kms/">AWS KMS&lt;/a>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Microsoft Azure&lt;/td>
-&lt;td>&lt;a href="https://azure.microsoft.com/en-us/services/key-vault/">Azure KeyVault&lt;/a>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>AlibabaCloud&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Scaleway&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Digital Ocean&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;/div>
-&lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
-&lt;p>See the &lt;a href="/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/gcp/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/uninstall-portefaix/</guid><description>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/Vector.png"
+alt="Vector"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
+&lt;h2 id="alertmanager">Alertmanager&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/alertmanager.png"
+alt="Alertmanager"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
+&lt;h2 id="node-exporter">Node Exporter&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/node-exporter.png"
+alt="Node Exporter"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/gcp/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/uninstall-portefaix/</guid><description>
 &lt;h2 id="terraform">Terraform&lt;/h2>
 &lt;h3 id="gke">GKE&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-destroy &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/authentication/</guid><description>
-&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Amazon Webservices (AWS)&lt;/p>
-&lt;h2 id="configure-aws">Configure AWS&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-Setup credentials
-Done
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>aws &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
-NAME STATUS ROLES AGE VERSION
-ip-10-0-31-216.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
-ip-10-0-40-203.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/authentication/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Kube State Metrics</title><link>/docs/components/monitoring/kube-state-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/kube-state-metrics/</guid><description>
+&lt;h2 id="kube-state-metrics">Kube State Metrics&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/kube-state-metrics.png"
+alt="Kube-State-Metrics"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Thanos</title><link>/docs/components/monitoring/thanos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/thanos/</guid><description>
+&lt;h2 id="thanos">Thanos&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Thanos-community/kube-Thanos-stack">kube-Thanos-stack&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/thanos.png"
+alt="Thanos"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
+&lt;h2 id="grafana">Grafana&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Grafana-community/kube-Grafana-stack">kube-Grafana-stack&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/Grafana.png"
+alt="Grafana"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Google Cloud Platform (GCP).&lt;/p>
 &lt;h2 id="configure-gcloud">Configure Gcloud&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh gcp

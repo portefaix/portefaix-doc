@@ -28,8 +28,7 @@ just a few small guidelines you need to fo&lt;/p></description></item><item><tit
 &lt;p>The Portefaix docs are published at &lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a>.&lt;/p>
 &lt;p>The source for the docs is in the
 &lt;a href="https://github.com/portefaix/portefaix/">portefaix/portefaix repo&lt;/a> on GitHub.
-We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our website, and
-&lt;a href="https://www.netlify.com/">Netlify&lt;/a> to manage the deployment of the site.&lt;/p>
+We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our website.&lt;/p>
 &lt;h2 id="versioning">Versioning&lt;/h2>
 &lt;p>&lt;a href="https://portefaix.xyz/">portefaix.xyz&lt;/a> points to the &lt;strong>master&lt;/strong> branch of the docs. You can access
 other versions by clicking the version dropdown at top right of the website

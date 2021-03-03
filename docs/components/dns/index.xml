@@ -1,9 +1,10 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – DNS</title><link>/docs/components/dns/</link><description>Recent content in DNS on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/dns/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Registration Flow</title><link>/docs/components/dns/registration-flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/registration-flow/</guid><description>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Out of date&lt;/h4>
-This guide contains outdated information pertaining to Kubeflow 1.0. This guide
-needs to be updated for Kubeflow 1.1.
-&lt;/div>
-&lt;p>This guide is for Kubeflow users who are logging in to Kubeflow for the first
-time. The user may be the person who deployed Kubeflow, or another person who
-has permission to access the Kubeflow cluster and use Kubeflow.&lt;/p></description></item></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – DNS</title><link>/docs/components/dns/</link><description>Recent content in DNS on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/dns/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
+&lt;h2 id="external-dns">External DNS&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/external-dns.png"
+alt="External DNS"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item></channel></rss>

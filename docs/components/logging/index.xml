@@ -1,1 +1,28 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Logging</title><link>/docs/components/logging/</link><description>Recent content in Logging on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/logging/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Logging</title><link>/docs/components/logging/</link><description>Recent content in Logging on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/logging/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Loki</title><link>/docs/components/logging/loki/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/loki/</guid><description>
+&lt;h2 id="loki">Loki&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/loki.png"
+alt="Loki"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
+&lt;h2 id="promtail">Promtail&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/promtail.png"
+alt="Promtail"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Vector</title><link>/docs/components/logging/vector/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/vector/</guid><description>
+&lt;h2 id="vector">Vector&lt;/h2>
+&lt;ul>
+&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
+&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="components">Components&lt;/h2>
+&lt;p>&lt;img src="/docs/images/Vector.png"
+alt="Vector"
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item></channel></rss>
