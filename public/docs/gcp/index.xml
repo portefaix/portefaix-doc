@@ -1,0 +1,87 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portefaix – Portefaix on GCP</title>
+    <link>/docs/gcp/</link>
+    <description>Recent content in Portefaix on GCP on Portefaix</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="/docs/gcp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Deploying Portefaix</title>
+      <link>/docs/gcp/deploy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/gcp/deploy/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Work In Progress&lt;/h4&gt;
+
+    
+
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;/docs/images/portefaix_gcp.png&#34;
+alt=&#34;Portefaix infrastructure&#34;
+class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://cloud.google.com/sdk/docs/install&#34;&gt;gcloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Install &lt;a href=&#34;https://www.terraform.io/downloads.html&#34;&gt;terraform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;A project created on Google Cloud Platform.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt; Edit &lt;code&gt;iac/gcp/gcp.prod.mk&lt;/code&gt; or add another file named &lt;code&gt;iac/gcp/gcp.&amp;lt;ENVIRONMENT&amp;gt;.mk&lt;/code&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Authentication and Authorization</title>
+      <link>/docs/gcp/authentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/gcp/authentication/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This section shows the how to setup Portefaix with authentication and authorization support in Google Cloud Platform (GCP).&lt;/p&gt;
+&lt;h2 id=&#34;configure-gcloud&#34;&gt;Configure Gcloud&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;❯ . ./portefaix.sh gcp
+&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt; Portefaix &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+Setup credentials
+Done
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;configure-kubectl&#34;&gt;Configure kubectl&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;❯ make kubernetes-credentials &lt;span style=&#34;color:#000&#34;&gt;CLOUD&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gcp &lt;span style=&#34;color:#000&#34;&gt;ENV&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;prod
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;❯ kubectl get nodes
+NAME                                                  STATUS   ROLES    AGE     VERSION
+gke-xxxxxxxxxx-cluster-g-core-5d5d62be-tf15   Ready    &amp;lt;none&amp;gt;   7h37m   v1.18.10-gke.601
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Troubleshooting Deployments on GCP GKE</title>
+      <link>/docs/gcp/troubleshooting-gcp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/gcp/troubleshooting-gcp/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

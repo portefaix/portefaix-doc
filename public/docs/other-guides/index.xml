@@ -1,0 +1,107 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portefaix – Further Setup and Troubleshooting</title>
+    <link>/docs/other-guides/</link>
+    <description>Recent content in Further Setup and Troubleshooting on Portefaix</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="/docs/other-guides/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Roadmap</title>
+      <link>/docs/other-guides/roadmap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/other-guides/roadmap/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;v1&#34;&gt;v1&lt;/h2&gt;
+&lt;h3 id=&#34;infrastructure&#34;&gt;Infrastructure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Development environment&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Google Cloud Platform&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/1&#34;&gt;#1&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Amazon AWS&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/2&#34;&gt;#2&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Terraform code for Microsoft Azure&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/3&#34;&gt;#3&lt;/a&gt; ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;core&#34;&gt;Core&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Flux v2 bootstrap&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Sops (&lt;i class=&#34;fas fa-check&#34;&gt; GKE &lt;/i&gt;, &lt;i class=&#34;fas fa-check&#34;&gt; EKS &lt;/i&gt;, AKS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;observability&#34;&gt;Observability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Monitoring: Prometheus, Thanos, Alertmanager (&lt;i class=&#34;fas fa-check&#34;&gt; GKE &lt;/i&gt;, &lt;i class=&#34;fas fa-check&#34;&gt; EKS &lt;/i&gt;, AKS)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Logging: Loki, FluentBit, Vector (&lt;i class=&#34;fas fa-check&#34;&gt; GKE &lt;/i&gt;, EKS, AKS)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Tracing: Tempo (GKE, EKS, AKS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;networking&#34;&gt;Networking&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; External-DNS, Cert-Manager (&lt;i class=&#34;fas fa-check&#34;&gt; GKE &lt;/i&gt;, &lt;i class=&#34;fas fa-check&#34;&gt; EKS &lt;/i&gt;, AKS)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Oauth2-Proxy (GKE, EKS, AKS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;service-mesh&#34;&gt;Service Mesh&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Open Service Mesh (&lt;i class=&#34;fas fa-check&#34;&gt; GKE &lt;/i&gt;, EKS, AKS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;chaos&#34;&gt;Chaos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Chaos Mesh (&lt;i class=&#34;fas fa-check&#34;&gt; GKE &lt;/i&gt;, EKS, AKS)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Litmus Chaos (&lt;i class=&#34;fas fa-check&#34;&gt; GKE &lt;/i&gt;, EKS, AKS)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;v2&#34;&gt;v2&lt;/h2&gt;
+&lt;h3 id=&#34;service-mesh-cloud-providers&#34;&gt;Service Mesh Cloud Providers&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://cloud.google.com/traffic-director/&#34;&gt;Traffic Director&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/8&#34;&gt;#8&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://aws.amazon.com/fr/app-mesh/&#34;&gt;AWS App Mesh&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/9&#34;&gt;#9&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/service-fabric-mesh/&#34;&gt;Service Fabric Mesh&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/10&#34;&gt;#10&lt;/a&gt; ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;backlog&#34;&gt;Backlog&lt;/h2&gt;
+&lt;h3 id=&#34;cloud-providers&#34;&gt;Cloud providers&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Terraform code for Scaleway&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/17&#34;&gt;#17&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;code&gt;WIP&lt;/code&gt; Terraform code for Digital Ocean&lt;/span&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/18&#34;&gt;#18&lt;/a&gt; ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;secrets-store-csi-driver&#34;&gt;Secrets Store CSI Driver&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp&#34;&gt;GCP Secret manager&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/4&#34;&gt;#4&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/aws/containers-roadmap/issues/895&#34;&gt;Amazon Secrets manager&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/5&#34;&gt;#5&lt;/a&gt; ]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/Azure/secrets-store-csi-driver-provider-azure&#34;&gt;Azure Vault&lt;/a&gt; [ &lt;a href=&#34;https://github.com/nlamirault/portefaix/issues/6&#34;&gt;#6&lt;/a&gt; ]&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;managing-cloud-services-via-kubernetes-crds&#34;&gt;Managing Cloud Services via Kubernetes CRDs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/aws/aws-controllers-k8s&#34;&gt;AWS Controllers for Kubernetes (ACK)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/Azure/azure-service-operator&#34;&gt;Azure Service Operator (for Kubernetes)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://cloud.google.com/config-connector/docs/overview&#34;&gt;Google Config Connector&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Troubleshooting</title>
+      <link>/docs/other-guides/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/other-guides/troubleshooting/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This page presents some hints for troubleshooting specific problems that you
+may encounter.&lt;/p&gt;
+&lt;h2 id=&#34;next-steps&#34;&gt;Next steps&lt;/h2&gt;
+&lt;p&gt;Visit the &lt;a href=&#34;/docs/other-guides/support/&#34;&gt;Portefaix support page&lt;/a&gt; to find resources
+and community forums where you can ask for help.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

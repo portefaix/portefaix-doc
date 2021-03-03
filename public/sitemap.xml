@@ -1,0 +1,188 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/about/portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/about/contributing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/about/community/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/aws/deploy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/azure/deploy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/certificates/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/dns/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/about/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/aws/deploy/install-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/azure/deploy/install-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/gcp/deploy/install-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/logging/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/started/overview/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/dns/registration-flow/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/aws/deploy/inspec-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/azure/deploy/inspec-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/gcp/deploy/inspec-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/started/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/gcp/deploy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/aws/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/aws/deploy/uninstall-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/azure/deploy/uninstall-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/gcp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/gcp/deploy/uninstall-portefaix/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/flux/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/azure/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/identity/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/chaos/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/storage/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/tracing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/components/monitoring/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/aws/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/gcp/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/other-guides/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/azure/authentication/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/other-guides/roadmap/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/other-guides/troubleshooting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/aws/troubleshooting-aws/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/azure/troubleshooting-azure/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/gcp/troubleshooting-gcp/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.portefaix.xyz/search/</loc>
+  </url>
+  
+</urlset>

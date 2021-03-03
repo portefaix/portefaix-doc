@@ -1,0 +1,156 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portefaix – Getting Started</title>
+    <link>/docs/started/</link>
+    <description>Recent content in Getting Started on Portefaix</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	  <atom:link href="/docs/started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Portefaix Overview</title>
+      <link>/docs/started/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/started/overview/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Portefaix is a platform for data scientists who want to build and experiment with
+ML pipelines. Portefaix is also for ML engineers and operational teams who want
+to deploy ML systems to various environments for development, testing, and
+production-level serving.&lt;/p&gt;
+&lt;h2 id=&#34;conceptual-overview&#34;&gt;Conceptual overview&lt;/h2&gt;
+&lt;p&gt;Portefaix is &lt;em&gt;the ML toolkit for Kubernetes&lt;/em&gt;.
+The following diagram shows Portefaix as a platform for arranging the
+components of your ML system on top of Kubernetes:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/docs/images/Portefaix-overview-platform-diagram.svg&#34;
+alt=&#34;An architectural overview of Portefaix on Kubernetes&#34;
+class=&#34;mt-3 mb-3 border border-info rounded&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Portefaix builds on &lt;a href=&#34;https://kubernetes.io/&#34;&gt;Kubernetes&lt;/a&gt; as a system for
+deploying, scaling, and managing complex systems.&lt;/p&gt;
+&lt;p&gt;Using the Portefaix configuration interfaces (see &lt;a href=&#34;#interfaces&#34;&gt;below&lt;/a&gt;) you can
+specify the ML tools required for your workflow. Then you can deploy the
+workflow to various clouds, local, and on-premises platforms for experimentation and
+for production use.&lt;/p&gt;
+&lt;h2 id=&#34;next-steps&#34;&gt;Next steps&lt;/h2&gt;
+&lt;p&gt;See how to &lt;a href=&#34;/docs/started/getting-started/&#34;&gt;install Portefaix&lt;/a&gt; depending on
+your chosen environment (local, cloud, or on-premises).&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Installing Portefaix</title>
+      <link>/docs/started/getting-started/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/started/getting-started/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This document provides information about setting up Portefaix in various
+environments.&lt;/p&gt;
+&lt;h2 id=&#34;before-you-begin&#34;&gt;Before you begin&lt;/h2&gt;
+&lt;p&gt;It&amp;rsquo;s important that you have some knowledge of the following systems and tools:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://terraform.io&#34;&gt;Terraform&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tutorials/kubernetes-basics/&#34;&gt;Kubernetes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kustomize.io/&#34;&gt;Kustomize&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://helm.sh&#34;&gt;Helm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;overview-of-installation-options&#34;&gt;Overview of installation options&lt;/h2&gt;
+&lt;p&gt;The following section describes the options in more detail and links to the
+relevant instructions.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;installation-guides&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;installing-portefaix&#34;&gt;Installing Portefaix&lt;/h2&gt;
+&lt;p&gt;There are various ways to install Portefaix. Choose one of the following options
+to suit your environment (public cloud, existing Kubernetes cluster, or
+a single-node cluster which you can use on a desktop or server or in the cloud).&lt;/p&gt;
+&lt;p&gt;&lt;a id=&#34;cloud&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;installing-portefaix-on-a-public-cloud&#34;&gt;Installing Portefaix on a public cloud&lt;/h3&gt;
+&lt;p&gt;Choose the Portefaix deployment guide for your chosen cloud:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To use Portefaix on Google Kubernetes Engine (GKE),
+follow the &lt;a href=&#34;/docs/gcp/deploy/&#34;&gt;GKE deployment guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
+follow the &lt;a href=&#34;/docs/aws/deploy/&#34;&gt;EKS deployment guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
+follow the &lt;a href=&#34;/docs/azure/deploy/&#34;&gt;AKS deployment guide&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
+follow the &lt;a href=&#34;/docs/alicloud/deploy&#34;&gt;ACK deployment guide&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+  &lt;!-- * To use Portefaix on IBM Cloud (IKS),
+	  follow the [IKS deployment guide](/docs/ibm/).
+  * To use Portefaix on IBM Cloud (IKS),
+	  follow the [IKS deployment guide](/docs/ibm/).
+  * To use Portefaix on IBM Cloud (IKS),
+	  follow the [IKS deployment guide](/docs/ibm/). --&gt;
+&lt;h2 id=&#34;deployment-quick-reference&#34;&gt;Deployment quick reference&lt;/h2&gt;
+&lt;p&gt;Below is a matrix of the platforms where you can deploy Portefaix and the
+corresponding tools for each platform.&lt;/p&gt;
+&lt;div class=&#34;table-responsive&#34;&gt;
+  &lt;table class=&#34;table table-bordered&#34;&gt;
+    &lt;thead class=&#34;thead-light&#34;&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Cloud Provider&lt;/th&gt;
+        &lt;th&gt;Sops&lt;/th&gt;
+        &lt;th&gt;Tfsec&lt;/th&gt;
+        &lt;th&gt;Inspec&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Google Cloud Platform&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&#34;https://cloud.google.com/security-key-management&#34;&gt; GCP KMS &lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-check&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-check&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Amazon AWS&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&#34;https://aws.amazon.com/kms/&#34;&gt;AWS KMS&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-check&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-check&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Microsoft Azure&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&#34;https://azure.microsoft.com/en-us/services/key-vault/&#34;&gt;Azure KeyVault&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-check&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-check&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;AlibabaCloud&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&#34;https://www.openpgp.org/&#34;&gt;OpenPGP&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-times&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-times&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Scaleway&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&#34;https://www.openpgp.org/&#34;&gt;OpenPGP&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-times&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-times&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Digital Ocean&lt;/td&gt;
+        &lt;td&gt;&lt;a href=&#34;https://www.openpgp.org/&#34;&gt;OpenPGP&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-times&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;i class=&#34;fas fa-times&#34;&gt;&lt;/i&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;
+&lt;p&gt;See the &lt;a href=&#34;/docs/other-guides/troubleshooting/&#34;&gt;Portefaix troubleshooting guide&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
