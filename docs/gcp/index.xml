@@ -1,8 +1,8 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Portefaix on GCP</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/</link><description>Recent content in Portefaix on GCP on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://portefaix.github.io/portefaix-doc/docs/gcp/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Deploying Portefaix</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/deploy/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Portefaix on GCP</title><link>/docs/gcp/</link><description>Recent content in Portefaix on GCP on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/gcp/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Deploying Portefaix</title><link>/docs/gcp/deploy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Work In Progress&lt;/h4>
 &lt;/div>
-&lt;p>&lt;img src="https://portefaix.github.io/portefaix-doc/docs/images/portefaix_gcp.png"
+&lt;p>&lt;img src="/docs/images/portefaix_gcp.png"
 alt="Portefaix infrastructure"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;h2 id="prerequisites">Prerequisites&lt;/h2>
@@ -11,7 +11,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>Install &lt;a href="https://www.terraform.io/downloads.html">terraform&lt;/a>&lt;/li>
 &lt;li>A project created on Google Cloud Platform.&lt;/li>
 &lt;/ul>
-&lt;p>&lt;strong>Note&lt;/strong> Edit &lt;code>iac/gcp/gcp.prod.mk&lt;/code> or add another file named &lt;code>iac/gcp/gcp.&amp;lt;ENVIRONMENT&amp;gt;.mk&lt;/code>&lt;/p></description></item><item><title>Docs: Authentication and Authorization</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/authentication/</guid><description>
+&lt;p>&lt;strong>Note&lt;/strong> Edit &lt;code>iac/gcp/gcp.prod.mk&lt;/code> or add another file named &lt;code>iac/gcp/gcp.&amp;lt;ENVIRONMENT&amp;gt;.mk&lt;/code>&lt;/p></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Google Cloud Platform (GCP).&lt;/p>
 &lt;h2 id="configure-gcloud">Configure Gcloud&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh gcp
@@ -23,4 +23,4 @@ Done
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
 NAME STATUS ROLES AGE VERSION
 gke-xxxxxxxxxx-cluster-g-core-5d5d62be-tf15 Ready &amp;lt;none&amp;gt; 7h37m v1.18.10-gke.601
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting Deployments on GCP GKE</title><link>https://portefaix.github.io/portefaix-doc/docs/gcp/troubleshooting-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/gcp/troubleshooting-gcp/</guid><description/></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting Deployments on GCP GKE</title><link>/docs/gcp/troubleshooting-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/troubleshooting-gcp/</guid><description/></item></channel></rss>

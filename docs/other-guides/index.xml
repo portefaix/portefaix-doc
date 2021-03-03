@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Further Setup and Troubleshooting</title><link>https://portefaix.github.io/portefaix-doc/docs/other-guides/</link><description>Recent content in Further Setup and Troubleshooting on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://portefaix.github.io/portefaix-doc/docs/other-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Roadmap</title><link>https://portefaix.github.io/portefaix-doc/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/other-guides/roadmap/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Further Setup and Troubleshooting</title><link>/docs/other-guides/</link><description>Recent content in Further Setup and Troubleshooting on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/other-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Roadmap</title><link>/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/roadmap/</guid><description>
 &lt;h2 id="v1">v1&lt;/h2>
 &lt;h3 id="infrastructure">Infrastructure&lt;/h3>
 &lt;ul>
@@ -56,9 +56,9 @@
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/aws/aws-controllers-k8s">AWS Controllers for Kubernetes (ACK)&lt;/a>&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/Azure/azure-service-operator">Azure Service Operator (for Kubernetes)&lt;/a>&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://cloud.google.com/config-connector/docs/overview">Google Config Connector&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Troubleshooting</title><link>https://portefaix.github.io/portefaix-doc/docs/other-guides/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://portefaix.github.io/portefaix-doc/docs/other-guides/troubleshooting/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Troubleshooting</title><link>/docs/other-guides/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/troubleshooting/</guid><description>
 &lt;p>This page presents some hints for troubleshooting specific problems that you
 may encounter.&lt;/p>
 &lt;h2 id="next-steps">Next steps&lt;/h2>
-&lt;p>Visit the &lt;a href="https://portefaix.github.io/portefaix-doc/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
+&lt;p>Visit the &lt;a href="/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
 and community forums where you can ask for help.&lt;/p></description></item></channel></rss>
