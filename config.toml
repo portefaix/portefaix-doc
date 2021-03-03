@@ -173,7 +173,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/portefaix/portefaix
   desc = "Twitter to get the latest news"
 [[params.links.user]]
 	name = "GitHub"
-	url = "https://github.com/portefaix/portefaix-doc"
+	url = "https://github.com/portefaix/"
 	icon = "fab fa-github"
   desc = "Development takes place here!"
 # [[params.links.user]]
