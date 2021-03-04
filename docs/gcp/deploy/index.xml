@@ -68,7 +68,7 @@ Release: google-api-client-v0.34.1
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gcp-cis">GCP CIS&lt;/h2>
 &lt;p>You could perform tests accoring the &lt;a href="https://opensource.googleblog.com/2020/08/assess-security-of-cloud-deployments.html">GCP CIS&lt;/a>:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gcp-vpc">GCP-VPC&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vpc">VPC&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vpc.png"
 alt="VPC"
@@ -91,7 +91,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="gcp-gke">GCP-GKE&lt;/h2>
+&lt;h2 id="gke">GKE&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-gke.png"
 alt="GKE"
@@ -150,7 +150,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="gcp-sops">GCP-Sops&lt;/h2>
+&lt;h2 id="sops">Sops&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-sops.png"
 alt="Sops"
@@ -173,7 +173,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="gcp-observability">GCP-Observability&lt;/h2>
+&lt;h2 id="observability">Observability&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-observability.png"
 alt="Observability"
@@ -232,7 +232,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="gcp-velero">GCP-Velero&lt;/h2>
+&lt;h2 id="velero">Velero&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-velero.png"
 alt="Velero"
@@ -259,7 +259,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="gcp-vector">GCP-Vector&lt;/h2>
+&lt;h2 id="vector">Vector&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vector.png"
 alt="Vector"
@@ -286,7 +286,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="gcp-external-dns">GCP-External-DNS&lt;/h2>
+&lt;h2 id="external-dns">External-DNS&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-external-dns.png"
 alt="External-DNS"
