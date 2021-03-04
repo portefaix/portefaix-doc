@@ -1,5 +1,5 @@
 +++
 title = "Further Setup and Troubleshooting"
-description = "Various guides to setting up and troubleshooting your Kubeflow deployment"
+description = "Various guides to setting up and troubleshooting your Portefaix deployment"
 weight = 90
 +++
