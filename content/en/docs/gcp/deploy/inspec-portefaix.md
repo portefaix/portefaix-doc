@@ -39,7 +39,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 ❯ make -f hack/gcp.mk inspec-cis ENV=prod
 ```
 
-## GCP-VPC
+## VPC
 
 ```shell
 ❯ make -f hack/gcp.mk inspec-test SERVICE=iac/gcp/vpc ENV=prod
@@ -54,7 +54,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 | `vpc-1` | Ensure default network is deleted |
 | `vpc-2` | Ensure network is correctly configure |
 
-## GCP-GKE
+## GKE
 
 ```shell
 ❯ make -f gcp.mk inspec-test SERVICE=iac/gcp/gke ENV=prod
@@ -78,7 +78,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 | `gke-10` | Ensure instances have labels |
 | `gke-11` | Ensure instances have tags |
 
-## GCP-Sops
+## Sops
 
 ```shell
 ❯ make -f hack/gcp.mk inspec-test SERVICE=iac/gcp/sops ENV=prod
@@ -93,7 +93,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 | `sops-1` | Ensure service account and IAM binding exists |
 | `sops-2` | Ensure that Kms key exist |
 
-## GCP-Observability
+## Observability
 
 ```shell
 ❯ make -f hack/gcp.mk inspec-test SERVICE=iac/gcp/observability ENV=prod
@@ -117,7 +117,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 | `tempo-2` | Ensure that bucket exists and labels correcly set |
 | `tempo-3` | Ensure that Kms key exist |
 
-## GCP-Velero
+## Velero
 
 ```shell
 ❯ make -f hack/gcp.mk inspec-test SERVICE=iac/gcp/velero ENV=prod
@@ -133,7 +133,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 | `velero-2` | Ensure that bucket exists and labels correcly set |
 | `velero-3` | Ensure that Kms key exist |
 
-## GCP-Vector
+## Vector
 
 ```shell
 ❯ make -f hack/gcp.mk inspec-test SERVICE=iac/gcp/vector ENV=prod
@@ -149,7 +149,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 | `vector-2` | Ensure that bucket exists and labels correcly set |
 | `vector-3` | Ensure that Kms key exist |
 
-## GCP-External-DNS
+## External-DNS
 
 ```shell
 ❯ make -f hack/gcp.mk inspec-test SERVICE=iac/gcp/external-dns ENV=prod

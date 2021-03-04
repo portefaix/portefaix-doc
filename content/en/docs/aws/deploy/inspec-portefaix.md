@@ -41,7 +41,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 ❯ make -f hack/aws.mk inspec-aws-kubernetes ENV=staging
 ```
 
-## AWS-VPC
+## VPC
 
 ```shell
 ❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/vpc ENV=staging
@@ -58,7 +58,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 | `vpc-3` | Check AWS Security Groups does not have undesirable rules |
 | `vpc-4` | Ensure that VPC Subnets exists |
 
-## AWS-EKS
+## EKS
 
 ```shell
 ❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/eks ENV=staging
@@ -77,7 +77,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 | `eks-5` | Ensure AWS EKS Cluster Subnets are specific |
 | `eks-6` | Ensure AWS EKS Cluster Nodegroups do not allow remote access from all IPs
 
-## AWS-Sops
+## Sops
 
 ```shell
 ❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/sops ENV=staging
@@ -90,9 +90,9 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 | Code | Description|
 |---|---|
 | `sops-1` | Ensure that Kms key exist |
-| `sops-1` | Ensure IAM roles and policies exists |
+| `sops-2` | Ensure IAM roles and policies exists |
 
-## AWS-Observability
+## Observability
 
 ```shell
 ❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/observability ENV=staging
@@ -119,7 +119,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 | `tempo-3` | Ensure that Kms key exist |
 | `tempo-4` | Ensure IAM roles and policies exists |
 
-## AWS-Velero
+## Velero
 
 ```shell
 ❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/velero ENV=staging
@@ -136,7 +136,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 | `velero-3` | Ensure that Kms key exist |
 | `velero-4` | Ensure IAM roles and policies exists |
 
-## AWS-Vector
+## Vector
 
 ```shell
 ❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/vector ENV=staging
