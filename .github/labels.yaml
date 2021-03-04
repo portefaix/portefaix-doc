@@ -1,0 +1,32 @@
+# labels to be used with /area command
+area:
+  - 'hugo'
+  - 'docsy'
+
+kind:
+  - 'documentation'
+  - 'discussion'
+  - 'feature'
+  - 'question'
+
+priority:
+  - 'low'
+  - 'medium'
+  - 'high'
+  - 'critical'
+
+status:
+  - available
+  - blocked
+  - in_progress
+  - on_hold
+
+# File globs for PR labeler
+# tests:
+#   - '**/*.test.ts'
+
+'area/hugo':
+  - content/**/*
+
+'area/docsy':
+  - themes/docsy/**/*

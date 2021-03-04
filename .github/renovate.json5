@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "config:base",
+    ":gitSignOff"
+  ],
+  "enabled": true,
+  "timezone": "Europe/Paris",
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Renovate Dashboard",
+  // "gitAuthor": "Nicolas Lamirault <nlamirault@users.noreply.github.com>",
+  // "commitBody": "Signed-off-by: Nicolas Lamirault <nlamirault@users.noreply.github.com>",
+  // Do not notify on closed unmerged PRs
+  "suppressNotifications": ["prIgnoreNotification"],
+  // Do not rebase PRs
+  "rebaseWhen": "conflicted",
+  "assignees": ["@nlamirault"],
+  "reviewersFromCodeOwners": true,
+  "helm-values": {
+    "fileMatch": ["kubernetes/.+\\.yaml$"]
+  },
+  "labels": ["area/renovate"],
+  "packageRules": [
+    // Setup datasources
+    // Enable auto-merge docker
+    // {
+    //   "datasources": ["docker"],
+    //   "automerge": true,
+    //   "requiredStatusChecks": null,
+    //   "updateTypes": ["minor", "patch"],
+    // },
+    // Enable auto-merge helm
+    // {
+    //   "datasources": ["helm"],
+    //   "automerge": true,
+    //   "requiredStatusChecks": null,
+    //   "updateTypes": ["patch"],
+    // }
+  ]
+}
