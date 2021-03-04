@@ -1,4 +1,56 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Further Setup and Troubleshooting</title><link>/docs/other-guides/</link><description>Recent content in Further Setup and Troubleshooting on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/other-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Roadmap</title><link>/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/roadmap/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Further Setup and Troubleshooting</title><link>/docs/other-guides/</link><description>Recent content in Further Setup and Troubleshooting on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/other-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: CI/CD</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
+&lt;h2 id="cicd">CI/CD&lt;/h2>
+&lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> is used.&lt;/p>
+&lt;div class="table-responsive">
+&lt;table class="table table-bordered">
+&lt;thead class="thead-light">
+&lt;tr>
+&lt;th>Cloud Provider&lt;/th>
+&lt;th>Create (Terraform)&lt;/th>
+&lt;th>Destroy (Terraform)&lt;/th>
+&lt;th>Check (Inspec)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Google Cloud Platform&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Amazon AWS&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Microsoft Azure&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AlibabaCloud&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Scaleway&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Digital Ocean&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div></description></item><item><title>Docs: Roadmap</title><link>/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/roadmap/</guid><description>
 &lt;h2 id="v1">v1&lt;/h2>
 &lt;h3 id="infrastructure">Infrastructure&lt;/h3>
 &lt;ul>
