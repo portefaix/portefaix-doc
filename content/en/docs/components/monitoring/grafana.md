@@ -10,6 +10,20 @@ weight = 70
 
 ## Components
 
- <img src="/docs/images/Grafana.png"
+### AWS
+
+<img src="/docs/images/grafana_aws.png"
+ alt="Grafana"
+ class="mt-3 mb-3 border border-info rounded">
+
+### AZURE
+
+<img src="/docs/images/grafana_azure.png"
+ alt="Grafana"
+ class="mt-3 mb-3 border border-info rounded">
+
+### GCP
+
+<img src="/docs/images/grafana_gcp.png"
  alt="Grafana"
  class="mt-3 mb-3 border border-info rounded">
