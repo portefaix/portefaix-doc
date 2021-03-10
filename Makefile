@@ -91,3 +91,10 @@ check: check-konstraint ## Check requirements
 doc: ## Generate documentation
 	@echo -e "$(OK_COLOR)[$(APP)] Documentation$(NO_COLOR)"
 	hugo server -w -v --disableFastRender
+	
+.PHONY: diagrams
+diagrams: guard-CLOUD_PROVIDER guard-OUTPUT ## Generate diagrams
+	@poetry run python3 diagrams/kubernetes.py --output=$(OUTPUT) --cloud=$(CLOUD_PROVIDER) \
+		&& mv *.$(OUTPUT) docs/img \
+		&& poetry run python3 diagrams/portefaix.py --output=$(OUTPUT) --cloud=$(CLOUD_PROVIDER) \
+		&& mv *.$(OUTPUT) docs/img
