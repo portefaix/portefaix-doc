@@ -26,5 +26,5 @@ Flux components are deployed for each clusster on `clusters/<CLOUD>/<ENV>/` :
 ## Sync
 
 ```shell
-❯ make gitops-bootstrap ENV=<ENV> CLOUD=<CLOUD PROVIDER>
+❯ make gitops-bootstrap ENV=<environment> CLOUD=<cloud provider> BRANCH=<git branch to use>
 ```
