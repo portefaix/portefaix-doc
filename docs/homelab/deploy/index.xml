@@ -1,0 +1,20 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Deploying Portefaix</title><link>/docs/homelab/deploy/</link><description>Recent content in Deploying Portefaix on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/homelab/deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Install Portefaix</title><link>/docs/homelab/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/homelab/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="os"/>&lt;/a>&lt;/p>
+&lt;h2 id="operating-system">Operating System&lt;/h2>
+&lt;p>Setup operating system for Raspberry PI :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ ./hack/scripts/bootstrap.sh &amp;lt;hostname&amp;gt; /dev/mmcblk0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable SSH :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ sudo mount /dev/mmcblk0p1 /mnt/sdcard
+❯ sudo touch /mnt/sdcard/ssh
+❯ sudo umount /mnt/sdcard/
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy keys to each node:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ansible">Ansible&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/ &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Check Kubernetes cluster:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">pi@jarvis-1:~ $ sudo k3s kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+jarvis-1 Ready master 7m59s v1.18.17+k3s1
+jarvis-2 Ready &amp;lt;none&amp;gt; 6m40s v1.18.17+k3s1
+jarvis-3 Ready &amp;lt;none&amp;gt; 6m27s v1.18.17+k3s1
+&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
