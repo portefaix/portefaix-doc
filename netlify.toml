@@ -19,7 +19,7 @@
 [build]
   publish = "public"
   # command = "git submodule update -f --init && npm install postcss-cli && hugo"
-  command = "git submodule update -f --init && ls -alFrt && hugo"
+  command = "git submodule update -f --init && ls -alFrt && npm install postcss-cli && hugo"
 
 # "production" environment specific build settings
 [build.environment]
