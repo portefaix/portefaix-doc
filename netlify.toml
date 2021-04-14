@@ -12,13 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Hugo build configuration for Netlify 
+# Hugo build configuration for Netlify
 # (https://gohugo.io/hosting-and-deployment/hosting-on-netlify/#configure-hugo-version-in-netlify)
 
 # Default build settings
 [build]
   publish = "public"
-  command = "git submodule update -f --init && npm install postcss-cli && hugo"
+  # command = "git submodule update -f --init && npm install postcss-cli && hugo"
+  command = "git submodule update -f --init && hugo"
 
 # "production" environment specific build settings
 [build.environment]
