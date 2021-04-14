@@ -7,10 +7,6 @@ weight = 30
 {{% alert title="Work In Progress" color="warning" %}}
 {{% /alert %}}
 
-<img src="/docs/images/portefaix_gcp.png"
- alt="Portefaix infrastructure"
- class="mt-3 mb-3 border border-info rounded">
-
 ## Prerequisites
 
 * Install [gcloud](https://cloud.google.com/sdk/docs/install)
