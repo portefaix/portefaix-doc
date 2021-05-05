@@ -45,6 +45,16 @@ Done
 NAME STATUS ROLES AGE VERSION
 ip-10-0-31-216.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
 ip-10-0-40-203.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/exoscale/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/authentication/</guid><description>
+&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Exoscale&lt;/p>
+&lt;h2 id="configure-exoscale">Configure Exoscale&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh exoscale
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+Setup credentials
+Done
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>exoscale &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Cert-Manager</title><link>/docs/components/certificates/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/cert-manager/</guid><description>
 &lt;h2 id="cert-manager">Cert-Manager&lt;/h2>
 &lt;p>Automatically provision and manage TLS certificates in Kubernetes&lt;/p>
@@ -224,6 +234,22 @@ XXXXXXXXXXX
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="velero">Velero&lt;/h4>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/exoscale/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="exo">&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># AWS&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EXOSCALE_API_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">EXOSCALE_API_SECRET&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_ACCESS_KEY_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EXOSCALE_API_KEY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_SECRET_ACCESS_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">EXOSCALE_API_SECRET&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh exoscale
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
+&lt;p>Create a S3 bucket for Terraform states:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/exoscale.mk exo-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="sks">SKS&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/exoscale/sks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/gcp/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="gcloud"/>&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
@@ -749,7 +775,10 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure API Server Authorized IP Ranges are configured&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/gcp/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/inspec-portefaix/</guid><description>
+&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/exoscale/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/inspec-portefaix/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Not Available&lt;/h4>
+&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/gcp/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-debug
 Test infrastructure
@@ -1129,7 +1158,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/ul>
 &lt;h2 id="sync">Sync&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make gitops-bootstrap &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;environment&amp;gt; &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;cloud provider&amp;gt; &lt;span style="color:#000">BRANCH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;git branch to use&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/exoscale/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
 &lt;h2 id="node-exporter">Node Exporter&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
@@ -1275,6 +1304,14 @@ Done
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
 NAME STATUS ROLES AGE VERSION
 gke-xxxxxxxxxx-cluster-g-core-5d5d62be-tf15 Ready &amp;lt;none&amp;gt; 7h37m v1.18.10-gke.601
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/homelab/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/homelab/authentication/</guid><description>
+&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+jarvis-1 Ready master 7m59s v1.18.17+k3s1
+jarvis-2 Ready &amp;lt;none&amp;gt; 6m40s v1.18.17+k3s1
+jarvis-3 Ready &amp;lt;none&amp;gt; 6m27s v1.18.17+k3s1
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Access Control for Azure Deployment</title><link>/docs/azure/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Microsoft Azure (AZURE)&lt;/p>
 &lt;h2 id="configure-azure">Configure Azure&lt;/h2>
@@ -1292,4 +1329,4 @@ aks-core-19506595-vmss000000 Ready agent 8h v1.18.10
 may encounter.&lt;/p>
 &lt;h2 id="next-steps">Next steps&lt;/h2>
 &lt;p>Visit the &lt;a href="/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
-and community forums where you can ask for help.&lt;/p></description></item><item><title>Docs: Troubleshooting Deployments on AWS EKS</title><link>/docs/aws/troubleshooting-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/troubleshooting-aws/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Azure AKS</title><link>/docs/azure/troubleshooting-azure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/troubleshooting-azure/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on GCP GKE</title><link>/docs/gcp/troubleshooting-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/troubleshooting-gcp/</guid><description/></item></channel></rss>
+and community forums where you can ask for help.&lt;/p></description></item><item><title>Docs: Troubleshooting Deployments on AWS EKS</title><link>/docs/aws/troubleshooting-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/troubleshooting-aws/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Azure AKS</title><link>/docs/azure/troubleshooting-azure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/troubleshooting-azure/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Exoscale SKS</title><link>/docs/exoscale/troubleshooting-exo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/troubleshooting-exo/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on GCP GKE</title><link>/docs/gcp/troubleshooting-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/troubleshooting-gcp/</guid><description/></item></channel></rss>
