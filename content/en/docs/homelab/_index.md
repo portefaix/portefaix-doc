@@ -1,7 +1,7 @@
 +++
 title = "Portefaix on Raspberry PI"
 description = "Running Portefaix on Raspberry PI 3"
-weight = 40
+weight = 80
 +++
 
 <img src="/docs/images/portefaix_homelab.png"
