@@ -7,7 +7,7 @@ weight = 10
 
 ## CI/CD
 
-[Github Actions](https://github.com/features/actions) is used. 
+[Github Actions](https://github.com/features/actions) is used.
 
 <div class="table-responsive">
   <table class="table table-bordered">
