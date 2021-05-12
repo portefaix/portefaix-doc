@@ -87,6 +87,18 @@ corresponding tools for each platform.
         <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
       </tr>
+      <tr>
+        <td>K3S</td>
+        <td><a href="https://www.openpgp.org/">OpenPGP</a></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+      </tr>
+      <tr>
+        <td>Kind</td>
+        <td><a href="https://www.openpgp.org/">OpenPGP</a></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+      </tr>
     </tbody>
   </table>
 </div>

@@ -11,15 +11,16 @@ weight = 10
 Setup operating system for Raspberry PI :
 
 ```shell
-❯ ./hack/scripts/bootstrap.sh <hostname> /dev/mmcblk0
+❯ sudo dd if=/dev/zero of=/dev/mmcblk0
+❯ sudo./hack/scripts/sdcard.sh <hostname> /dev/mmcblk0
 ```
 
 Enable SSH :
 
 ```shell
-❯ sudo mount /dev/mmcblk0p1 /mnt/sdcard
-❯ sudo touch /mnt/sdcard/ssh
-❯ sudo umount /mnt/sdcard/
+❯ make -f hack/k3s.mk sdcard-mount ENV=homelab
+❯ sudo touch /mnt/portefaix/root/ssh
+❯ make -f hack/k3s.mk sdcard-unmount ENV=homelab
 ```
 
 Copy keys to each node:
@@ -37,9 +38,10 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 Check Kubernetes cluster:
 
 ```shell
-pi@jarvis-1:~ $ sudo k3s kubectl get nodes
-NAME       STATUS   ROLES    AGE     VERSION
-jarvis-1   Ready    master   7m59s   v1.18.17+k3s1
-jarvis-2   Ready    <none>   6m40s   v1.18.17+k3s1
-jarvis-3   Ready    <none>   6m27s   v1.18.17+k3s1
+pi@portefaix-1:~ $ sudo k3s kubectl get nodes
+NAME          STATUS     ROLES    AGE     VERSION
+portefaix-1   Ready      master   3h2m    v1.18.17+k3s1
+portefaix-4   Ready      <none>   5m36s   v1.18.17+k3s1
+portefaix-3   Ready      <none>   5m36s   v1.18.17+k3s1
+portefaix-2   Ready      <none>   5m35s   v1.18.17+k3s1
 ```

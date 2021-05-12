@@ -12,8 +12,9 @@ weight = 90
 
 ```shell
 ❯ kubectl get nodes
-NAME       STATUS   ROLES    AGE     VERSION
-jarvis-1   Ready    master   7m59s   v1.18.17+k3s1
-jarvis-2   Ready    <none>   6m40s   v1.18.17+k3s1
-jarvis-3   Ready    <none>   6m27s   v1.18.17+k3s1
+NAME          STATUS     ROLES    AGE     VERSION
+portefaix-1   Ready      master   3h2m    v1.18.17+k3s1
+portefaix-4   Ready      <none>   5m36s   v1.18.17+k3s1
+portefaix-3   Ready      <none>   5m36s   v1.18.17+k3s1
+portefaix-2   Ready      <none>   5m35s   v1.18.17+k3s1
 ```

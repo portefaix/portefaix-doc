@@ -112,12 +112,12 @@ twitter = "nlamirault" # add your twitter profile
 gcs_engine_id = "007239566369470735695:624rglujm-w"
 
 # Text label for the version menu in the top bar of the website.
-version_menu = "v0.5.0"
+version_menu = "v0.11.0"
 
 # The major.minor version tag for the version of the docs represented in this
 # branch of the repository. Used in the "version-banner" partial to display a
 # version number for this doc set.
-version = "v0.5.0"
+version = "v0.11.0"
 
 # Flag used in the "version-banner" partial to decide whether to display a
 # banner on every page indicating that this is an archived version of the docs.
@@ -129,7 +129,7 @@ url_latest_version = "https://portefaix.xyz/docs/"
 
 # A variable used in various docs to determine URLs for config files etc.
 # To find occurrences, search the repo for 'params "githubbranch"'.
-githubbranch = "v0.5.0-branch"
+githubbranch = "v0.11.0-branch"
 
 # Add new release versions here. These entries appear in the drop-down menu
 # at the top of the website.
@@ -139,8 +139,8 @@ githubbranch = "v0.5.0-branch"
   url = "https://www.portefaix.xyz"
 
 [[params.versions]]
-  version = "v0.5.0"
-  githubbranch = "release-v0.5.0"
+  version = "v0.11.0"
+  githubbranch = "release-v0.11.0"
   url = "https://www.portefaix.xyz"
 
 # [[params.versions]]
