@@ -10,7 +10,8 @@
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
 NAME STATUS ROLES AGE VERSION
-jarvis-1 Ready master 7m59s v1.18.17+k3s1
-jarvis-2 Ready &amp;lt;none&amp;gt; 6m40s v1.18.17+k3s1
-jarvis-3 Ready &amp;lt;none&amp;gt; 6m27s v1.18.17+k3s1
+portefaix-1 Ready master 3h2m v1.18.17+k3s1
+portefaix-4 Ready &amp;lt;none&amp;gt; 5m36s v1.18.17+k3s1
+portefaix-3 Ready &amp;lt;none&amp;gt; 5m36s v1.18.17+k3s1
+portefaix-2 Ready &amp;lt;none&amp;gt; 5m35s v1.18.17+k3s1
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting Deployments on Homelab</title><link>/docs/homelab/troubleshooting-homelab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/homelab/troubleshooting-homelab/</guid><description/></item></channel></rss>
