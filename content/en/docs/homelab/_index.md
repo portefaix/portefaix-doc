@@ -1,6 +1,6 @@
 +++
 title = "Portefaix on Raspberry PI"
-description = "Running Portefaix on Raspberry PI 3"
+description = "Running Portefaix on Raspberry PI"
 weight = 80
 +++
 
