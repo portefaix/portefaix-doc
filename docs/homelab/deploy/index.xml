@@ -12,11 +12,16 @@
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ansible">Ansible&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/ &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="k3sup">K3Sup&lt;/h2>
+&lt;p>Create the master :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3sup-install &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>For each node, add it to the cluster:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3sup-join &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">AGENT_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Check Kubernetes cluster:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">pi@portefaix-1:~ $ sudo k3s kubectl get nodes
-NAME STATUS ROLES AGE VERSION
-portefaix-1 Ready master 3h2m v1.18.17+k3s1
-portefaix-4 Ready &amp;lt;none&amp;gt; 5m36s v1.18.17+k3s1
-portefaix-3 Ready &amp;lt;none&amp;gt; 5m36s v1.18.17+k3s1
-portefaix-2 Ready &amp;lt;none&amp;gt; 5m35s v1.18.17+k3s1
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get node -o wide
+NAME STATUS ROLES AGE VERSION INTERNAL-IP EXTERNAL-IP OS-IMAGE KERNEL-VERSION CONTAINER-RUNTIME
+portefaix-3 Ready &amp;lt;none&amp;gt; 3m44s v1.19.1+k3s1 192.168.1.30 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
+portefaix-1 Ready master 8m35s v1.19.1+k3s1 192.168.1.114 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
+portefaix-2 Ready &amp;lt;none&amp;gt; 6m18s v1.19.1+k3s1 192.168.1.123 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
+portefaix-4 Ready &amp;lt;none&amp;gt; 47s v1.19.1+k3s1 192.168.1.32 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
 &lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
