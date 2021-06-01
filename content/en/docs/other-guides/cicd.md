@@ -1,11 +1,11 @@
 +++
-title = "CI/CD"
-description = "The Portefaix CI/CD"
-weight = 10
+title = "Continuous Integration"
+description = "CI/CD for Portefaix"
+weight = 20
 
 +++
 
-## CI/CD
+## Github Actions
 
 [Github Actions](https://github.com/features/actions) is used.
 
