@@ -32,7 +32,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 ## Ansible
 
 ```shell
-❯ make -f hack/k3s.mk ansible-run SERVICE=iac/k3s/ ENV=homelab
+❯ make -f hack/k3s.mk ansible-run SERVICE=iac/k3s/machines ENV=homelab
 ```
 
 ## K3Sup
