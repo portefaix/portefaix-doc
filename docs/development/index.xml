@@ -1,0 +1,11 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Development</title><link>/docs/development/</link><description>Recent content in Development on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/development/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
+&lt;h2 id="portefaix-hub">Portefaix Hub&lt;/h2>
+&lt;p>&lt;a href="https://charts.portefaix.xyz/">Portefaix Hub&lt;/a> is the Helm charts repository of the Portefaix project.&lt;/p>
+&lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Policies</title><link>/docs/development/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/policies/</guid><description>
+&lt;h2 id="open-policy-agent">Open Policy Agent&lt;/h2>
+&lt;h2 id="kyverno">Kyverno&lt;/h2></description></item><item><title>Docs: Inspec</title><link>/docs/development/inspec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/inspec/</guid><description>
+&lt;h2 id="gcp">GCP&lt;/h2>
+&lt;h2 id="aws">AWS&lt;/h2>
+&lt;h2 id="azure">Azure&lt;/h2></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
+&lt;p>The &lt;a href="https://github.com/portefaix/portefaix-mixin">portefaix-mixin&lt;/a> is a collection of reusable and configurable
+&lt;a href="https://prometheus.io/">Prometheus&lt;/a> alerts, and &lt;a href="https://grafana.com/">Grafana&lt;/a> dashboards.&lt;/p></description></item></channel></rss>

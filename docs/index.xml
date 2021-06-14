@@ -68,59 +68,7 @@ alt="Cert-Manager CRD"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;p>&lt;img src="/docs/images/cert-manager.png"
 alt="Cert-Manager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: CI/CD</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
-&lt;h2 id="cicd">CI/CD&lt;/h2>
-&lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> is used.&lt;/p>
-&lt;div class="table-responsive">
-&lt;table class="table table-bordered">
-&lt;thead class="thead-light">
-&lt;tr>
-&lt;th>Cloud Provider&lt;/th>
-&lt;th>Create (Terraform)&lt;/th>
-&lt;th>Destroy (Terraform)&lt;/th>
-&lt;th>Check (Inspec)&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>Google Cloud Platform&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Amazon AWS&lt;/td>
-&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Microsoft Azure&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>AlibabaCloud&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Scaleway&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>Digital Ocean&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;/div></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
 &lt;h2 id="external-dns">External DNS&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
@@ -129,7 +77,22 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><
 &lt;h2 id="components">Components&lt;/h2>
 &lt;p>&lt;img src="/docs/images/external-dns.png"
 alt="External DNS"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Helm and Kustomize</title><link>/docs/other-guides/helm_kustomize/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/helm_kustomize/</guid><description>
+&lt;h2 id="helmrelease">HelmRelease&lt;/h2>
+&lt;p>&lt;em>HelmRelease&lt;/em> control the Helm chart into Flux.&lt;/p>
+&lt;p>You can extract from a HelmRelease file the Helm repository and add it:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-repo &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then display available values from the Helm chart:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-values &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="environments">Environments&lt;/h2>
+&lt;p>You could rendering Kubernetes manifests files like Flux:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-template &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Or install the chart for an environment&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-install &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
+&lt;h2 id="portefaix-hub">Portefaix Hub&lt;/h2>
+&lt;p>&lt;a href="https://charts.portefaix.xyz/">Portefaix Hub&lt;/a> is the Helm charts repository of the Portefaix project.&lt;/p>
+&lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="aws">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>.
@@ -317,19 +280,22 @@ Outputs:
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy keys to each node:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ansible">Ansible&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/ &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="k3sup">K3Sup&lt;/h2>
 &lt;p>Create the master :&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3sup-install &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3s-create &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>For each node, add it to the cluster:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3sup-join &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">AGENT_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3s-join &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">AGENT_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Check Kubernetes cluster:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get node -o wide
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3s-kube-credentials &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+❯ kubectl get node -o wide
 NAME STATUS ROLES AGE VERSION INTERNAL-IP EXTERNAL-IP OS-IMAGE KERNEL-VERSION CONTAINER-RUNTIME
 portefaix-3 Ready &amp;lt;none&amp;gt; 3m44s v1.19.1+k3s1 192.168.1.30 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
 portefaix-1 Ready master 8m35s v1.19.1+k3s1 192.168.1.114 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
 portefaix-2 Ready &amp;lt;none&amp;gt; 6m18s v1.19.1+k3s1 192.168.1.123 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
 portefaix-4 Ready &amp;lt;none&amp;gt; 47s v1.19.1+k3s1 192.168.1.32 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Creates the &lt;code>sops-gpg&lt;/code> secret:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk pgp-secret &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Loki</title><link>/docs/components/logging/loki/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/loki/</guid><description>
 &lt;h2 id="loki">Loki&lt;/h2>
 &lt;ul>
@@ -393,7 +359,59 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><
 &lt;h2 id="components">Components&lt;/h2>
 &lt;p>&lt;img src="/docs/images/promtail.png"
 alt="Promtail"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Flux</title><link>/docs/components/flux/flux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux/</guid><description>
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Continuous Integration</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
+&lt;h2 id="github-actions">Github Actions&lt;/h2>
+&lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> is used.&lt;/p>
+&lt;div class="table-responsive">
+&lt;table class="table table-bordered">
+&lt;thead class="thead-light">
+&lt;tr>
+&lt;th>Cloud Provider&lt;/th>
+&lt;th>Create (Terraform)&lt;/th>
+&lt;th>Destroy (Terraform)&lt;/th>
+&lt;th>Check (Inspec)&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Google Cloud Platform&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Amazon AWS&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Microsoft Azure&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>AlibabaCloud&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Scaleway&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Digital Ocean&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div></description></item><item><title>Docs: Flux</title><link>/docs/components/flux/flux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
 &lt;h2 id="components">Components&lt;/h2>
 &lt;p>&lt;img src="/docs/images/flux-crds.png"
@@ -1055,7 +1073,9 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;h2 id="components">Components&lt;/h2>
 &lt;p>&lt;img src="/docs/images/letsencrypt.png"
 alt="Cert-Manager CRD"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
+class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Policies</title><link>/docs/development/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/policies/</guid><description>
+&lt;h2 id="open-policy-agent">Open Policy Agent&lt;/h2>
+&lt;h2 id="kyverno">Kyverno&lt;/h2></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
 &lt;h2 id="prometheus">Prometheus&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
@@ -1177,7 +1197,12 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/ul>
 &lt;h2 id="sync">Sync&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make gitops-bootstrap &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;environment&amp;gt; &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;cloud provider&amp;gt; &lt;span style="color:#000">BRANCH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;git branch to use&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/exoscale/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Inspec</title><link>/docs/development/inspec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/inspec/</guid><description>
+&lt;h2 id="gcp">GCP&lt;/h2>
+&lt;h2 id="aws">AWS&lt;/h2>
+&lt;h2 id="azure">Azure&lt;/h2></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/exoscale/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
+&lt;p>The &lt;a href="https://github.com/portefaix/portefaix-mixin">portefaix-mixin&lt;/a> is a collection of reusable and configurable
+&lt;a href="https://prometheus.io/">Prometheus&lt;/a> alerts, and &lt;a href="https://grafana.com/">Grafana&lt;/a> dashboards.&lt;/p></description></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
 &lt;h2 id="node-exporter">Node Exporter&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
@@ -1340,4 +1365,4 @@ aks-core-19506595-vmss000000 Ready agent 8h v1.18.10
 may encounter.&lt;/p>
 &lt;h2 id="next-steps">Next steps&lt;/h2>
 &lt;p>Visit the &lt;a href="/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
-and community forums where you can ask for help.&lt;/p></description></item><item><title>Docs: Troubleshooting Deployments on AWS EKS</title><link>/docs/aws/troubleshooting-aws/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/troubleshooting-aws/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Azure AKS</title><link>/docs/azure/troubleshooting-azure/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/troubleshooting-azure/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Exoscale SKS</title><link>/docs/exoscale/troubleshooting-exo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/troubleshooting-exo/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on GCP GKE</title><link>/docs/gcp/troubleshooting-gcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/troubleshooting-gcp/</guid><description/></item><item><title>Docs: Troubleshooting Deployments on Homelab</title><link>/docs/homelab/troubleshooting-homelab/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/homelab/troubleshooting-homelab/</guid><description/></item></channel></rss>
+and community forums where you can ask for help.&lt;/p></description></item></channel></rss>
