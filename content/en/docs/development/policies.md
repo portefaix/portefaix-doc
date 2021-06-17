@@ -1,7 +1,7 @@
 +++
 title = "Policies"
 description = "The policies repository"
-weight = 20
+weight = 40
 
 +++
 

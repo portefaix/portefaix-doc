@@ -1,7 +1,7 @@
 +++
 title = "Hub"
 description = "The Helm charts repository"
-weight = 10
+weight = 30
 
 +++
 

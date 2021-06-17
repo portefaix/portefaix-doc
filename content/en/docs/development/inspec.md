@@ -1,7 +1,7 @@
 +++
 title = "Inspec"
 description = "The Inspec profiles"
-weight = 30
+weight = 60
 
 +++
 

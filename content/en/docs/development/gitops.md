@@ -1,7 +1,7 @@
 +++
 title = "Gitops"
 description = "Deploy Kubernetes applications with Gitops model"
-weight = 30
+weight = 10
 
 +++
 
