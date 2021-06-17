@@ -1,7 +1,7 @@
 +++
 title = "Mixin"
 description = "Portefaix monitoring mixin"
-weight = 40
+weight = 50
 
 +++
 
