@@ -1,11 +1,74 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Development</title><link>/docs/development/</link><description>Recent content in Development on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/development/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Development</title><link>/docs/development/</link><description>Recent content in Development on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/development/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Gitops</title><link>/docs/development/gitops/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/gitops/</guid><description>
+&lt;p>&lt;a href="https://www.weave.works/technologies/gitops/">Gitops&lt;/a> model used is &lt;a href="https://toolkit.fluxcd.io/">Flux v2&lt;/a>&lt;/p>
+&lt;p>&lt;img src="/docs/images/gitops-toolkit.png"
+alt="Flux v2"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;h2 id="organization">Organization&lt;/h2>
+&lt;p>Manifests files :&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>kubernetes/base&lt;/code> directory contains manifests for all components&lt;/li>
+&lt;li>&lt;code>kubernetes/overlays/**&lt;/code> directory contains &lt;a href="https://kustomize.io/">Kustomize&lt;/a> overlays&lt;/li>
+&lt;/ul>
+&lt;p>Flux components are deployed for each clusster on &lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/&lt;/code> :&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/flux-system&lt;/code> : Flux core components&lt;/li>
+&lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/*.yaml&lt;/code> : &lt;a href="https://toolkit.fluxcd.io/components/kustomize/kustomization/">Flux Kustomization&lt;/a> files for components&lt;/li>
+&lt;/ul>
+&lt;h2 id="sync">Sync&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make gitops-bootstrap &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;environment&amp;gt; &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;cloud provider&amp;gt; &lt;span style="color:#000">BRANCH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;git branch to use&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Secrets</title><link>/docs/development/secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/secrets/</guid><description>
+&lt;h2 id="secrets">Secrets&lt;/h2>
+&lt;p>&lt;a href="https://github.com/mozilla/sops">Sops&lt;/a> is used to manage secrets.&lt;/p>
+&lt;h3 id="store">Store&lt;/h3>
+&lt;p>Put your sensitive data into the directory &lt;code>.secrets&lt;/code> or &lt;code>.secrets/&amp;lt;CLOUD_PROVIDER&amp;gt;&lt;/code>&lt;/p>
+&lt;h3 id="kubernetes-secret">Kubernetes secret&lt;/h3>
+&lt;p>Create a Kubernetes secret file from sensitive file.&lt;/p>
+&lt;p>Ex: for Thanos configuration :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#000">❯ cat .secrets/aws/object-store.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">type&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">S3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">&lt;/span>&lt;span style="color:#204a87;font-weight:bold">config&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">bucket&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">xxxxxxxxxxx&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">s3.eu-west-3.amazonaws.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">region&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">eu-west-3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
+&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-secret &lt;span style="color:#000">NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>thanos-object-storage &lt;span style="color:#000">NAMESPACE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>monitoring &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>.secrets/aws/object-store.yaml &amp;gt; thanos-object-storage.yaml
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="encrypt">Encrypt&lt;/h3>
+&lt;p>Encrypt the file using Sops:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-encrypt &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>aws &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>thanos-object-storage.yaml
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can now safely store this file into Git.&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ mv thanos-object-storage.yaml kubernetes/overlays/staging/monitoring/thanos/
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="decrypt">Decrypt&lt;/h3>
+&lt;p>Check you can decrypt the file:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-decrypt &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/overlays/staging/monitoring/thanos/thanos-object-storage.yaml
+apiVersion: v1
+data:
+object-store.yaml: xxxxxxxxxxx
+kind: Secret
+metadata:
+creationTimestamp: null
+name: thanos-object-storage
+namespace: monitoring
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="cicd">CICD&lt;/h2>
+&lt;p>Generate a GPG key with OpenPGP without specifying a passphrase:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ gpg --full-generate-key
+Real name: nlamirault
+Email address: nlamirault@users.noreply.github.com
+Comment:
+You selected this USER-ID:
+&lt;span style="color:#4e9a06">&amp;#34;nlamirault &amp;lt;nlamirault@users.noreply.github.com&amp;gt;&amp;#34;&lt;/span>
+Change &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>N&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>ame, &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>C&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>omment, &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>E&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>mail or &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>O&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>kay/&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>Q&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>uit? O
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Retrieve the GPG key ID:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ gpg --export-secret-keys &lt;span style="color:#4e9a06">\
+&lt;/span>&lt;span style="color:#4e9a06">&lt;/span>--armor FC5BB3323309486AC8DA477CEC6421C7C33D2301
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add this output into a Github Secret &lt;code>SOPS_GPG_KEY&lt;/code>.&lt;/p>
+&lt;p>On the &lt;code>e2e&lt;/code> Github Action workflow, we create a Kubernetes secret &lt;code>sops-gpg&lt;/code>
+which will be used by Flux.&lt;/p></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
 &lt;h2 id="portefaix-hub">Portefaix Hub&lt;/h2>
 &lt;p>&lt;a href="https://charts.portefaix.xyz/">Portefaix Hub&lt;/a> is the Helm charts repository of the Portefaix project.&lt;/p>
 &lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Policies</title><link>/docs/development/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/policies/</guid><description>
 &lt;h2 id="open-policy-agent">Open Policy Agent&lt;/h2>
-&lt;h2 id="kyverno">Kyverno&lt;/h2></description></item><item><title>Docs: Inspec</title><link>/docs/development/inspec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/inspec/</guid><description>
+&lt;h2 id="kyverno">Kyverno&lt;/h2></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
+&lt;p>The &lt;a href="https://github.com/portefaix/portefaix-mixin">portefaix-mixin&lt;/a> is a collection of reusable and configurable
+&lt;a href="https://prometheus.io/">Prometheus&lt;/a> alerts, and &lt;a href="https://grafana.com/">Grafana&lt;/a> dashboards.&lt;/p></description></item><item><title>Docs: Inspec</title><link>/docs/development/inspec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/inspec/</guid><description>
 &lt;h2 id="gcp">GCP&lt;/h2>
 &lt;h2 id="aws">AWS&lt;/h2>
-&lt;h2 id="azure">Azure&lt;/h2></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
-&lt;p>The &lt;a href="https://github.com/portefaix/portefaix-mixin">portefaix-mixin&lt;/a> is a collection of reusable and configurable
-&lt;a href="https://prometheus.io/">Prometheus&lt;/a> alerts, and &lt;a href="https://grafana.com/">Grafana&lt;/a> dashboards.&lt;/p></description></item></channel></rss>
+&lt;h2 id="azure">Azure&lt;/h2></description></item></channel></rss>
