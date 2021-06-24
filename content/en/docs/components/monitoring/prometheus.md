@@ -9,21 +9,3 @@ weight = 20
 * Version: `11.0.4`
 
 ## Components
-
-### AWS
-
-<img src="/docs/images/prometheus_aws.png"
- alt="Node Exporter"
- class="mt-3 mb-3 border border-info rounded">
-
-### AZURE
-
-<img src="/docs/images/prometheus_azure.png"
- alt="Node Exporter"
- class="mt-3 mb-3 border border-info rounded">
-
-### GCP
-
-<img src="/docs/images/prometheus_gcp.png"
- alt="Node Exporter"
- class="mt-3 mb-3 border border-info rounded">

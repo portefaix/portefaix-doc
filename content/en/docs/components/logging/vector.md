@@ -9,7 +9,3 @@ weight = 20
 * Version: `11.0.4`
 
 ## Components
-
- <img src="/docs/images/Vector.png"
- alt="Vector"
- class="mt-3 mb-3 border border-info rounded">

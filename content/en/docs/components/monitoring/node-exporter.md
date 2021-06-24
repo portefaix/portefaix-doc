@@ -9,21 +9,3 @@ weight = 40
 * Version: `11.0.4`
 
 ## Components
-
-### AWS
-
-<img src="/docs/images/node_exporter_aws.png"
- alt="Node Exporter"
- class="mt-3 mb-3 border border-info rounded">
-
-### AZURE
-
-<img src="/docs/images/node_exporter_azure.png"
- alt="Node Exporter"
- class="mt-3 mb-3 border border-info rounded">
-
-### GCP
-
-<img src="/docs/images/node_exporter_gcp.png"
- alt="Node Exporter"
- class="mt-3 mb-3 border border-info rounded">

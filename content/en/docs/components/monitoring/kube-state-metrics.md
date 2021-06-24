@@ -9,7 +9,3 @@ weight = 50
 * Version: `11.0.4`
 
 ## Components
-
-<img src="/docs/images/kube-state-metrics.png"
- alt="Kube-State-Metrics"
- class="mt-3 mb-3 border border-info rounded">

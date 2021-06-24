@@ -37,12 +37,3 @@ kube-prometheus-stack-operator   ClusterIP   10.40.16.153   <none>        443/TC
 ```
 
 ## Components
-
-<!--
-<img src="/docs/images/prometheus-operator-crds.png"
- alt="Cert-Manager CRD"
- class="mt-3 mb-3 border border-info rounded"> -->
-
- <img src="/docs/images/prometheus-operator.png"
- alt="Prometheus-Operator"
- class="mt-3 mb-3 border border-info rounded">
