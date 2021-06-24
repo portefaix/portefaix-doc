@@ -1,4 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Deploying Portefaix</title><link>/docs/homelab/deploy/</link><description>Recent content in Deploying Portefaix on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/homelab/deploy/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Install Portefaix</title><link>/docs/homelab/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/homelab/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;img src="/docs/images/portefaix_homelab_infra.png"
+alt="Portefaix infrastructure"
+class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;p>&lt;a id="os"/>&lt;/a>&lt;/p>
 &lt;h2 id="operating-system">Operating System&lt;/h2>
 &lt;p>Setup operating system for Raspberry PI :&lt;/p>
