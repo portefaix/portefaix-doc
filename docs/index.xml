@@ -62,22 +62,13 @@ Done
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/jetstack/cert-manager">cert-manager&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>1.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/cert-manager-crds.png"
-alt="Cert-Manager CRD"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;p>&lt;img src="/docs/images/cert-manager.png"
-alt="Cert-Manager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
 &lt;h2 id="external-dns">External DNS&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/external-dns.png"
-alt="External DNS"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Gitops</title><link>/docs/development/gitops/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/gitops/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Gitops</title><link>/docs/development/gitops/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/gitops/</guid><description>
 &lt;p>&lt;a href="https://www.weave.works/technologies/gitops/">Gitops&lt;/a> model used is &lt;a href="https://toolkit.fluxcd.io/">Flux v2&lt;/a>&lt;/p>
 &lt;p>&lt;img src="/docs/images/gitops-toolkit.png"
 alt="Flux v2"
@@ -320,10 +311,7 @@ portefaix-4 Ready &amp;lt;none&amp;gt; 47s v1.19.1+k3s1 192.168.1.32 &amp;lt;non
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/loki.png"
-alt="Loki"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
 &lt;p>This document provides information about setting up Portefaix in various
 environments.&lt;/p>
 &lt;h2 id="before-you-begin">Before you begin&lt;/h2>
@@ -361,23 +349,13 @@ kube-prometheus-stack-operator 1/1 &lt;span style="color:#0000cf;font-weight:bol
 ❯ kubectl get svc -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
 NAME TYPE CLUSTER-IP EXTERNAL-IP PORT&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>S&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> AGE
 kube-prometheus-stack-operator ClusterIP 10.40.16.153 &amp;lt;none&amp;gt; 443/TCP 27m
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="components">Components&lt;/h2>
-&lt;!--
-&lt;img src="/docs/images/prometheus-operator-crds.png"
-alt="Cert-Manager CRD"
-class="mt-3 mb-3 border border-info rounded"> -->
-&lt;p>&lt;img src="/docs/images/prometheus-operator.png"
-alt="Prometheus-Operator"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
 &lt;h2 id="promtail">Promtail&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/promtail.png"
-alt="Promtail"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Continuous Integration</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Continuous Integration</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
 &lt;h2 id="github-actions">Github Actions&lt;/h2>
 &lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> is used.&lt;/p>
 &lt;div class="table-responsive">
@@ -431,27 +409,9 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><
 &lt;/table>
 &lt;/div></description></item><item><title>Docs: Flux</title><link>/docs/components/flux/flux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/flux-crds.png"
-alt="Flux CRD"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/flux_aws.png"
-alt="Flux"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/flux_azure.png"
-alt="Flux"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/flux_gcp.png"
-alt="Flux"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/flux-monitoring.png"
-alt="Flux Monitoring"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Getting Started</title><link>/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/getting-started/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Getting Started</title><link>/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/getting-started/</guid><description>
 &lt;h2 id="installation">Installation&lt;/h2>
 &lt;p>&lt;a id="installation-guides">&lt;/a>&lt;/p>
 &lt;h2 id="installing-portefaix">Installing Portefaix&lt;/h2>
@@ -1088,28 +1048,13 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/table></description></item><item><title>Docs: Let's Encrypt</title><link>/docs/components/certificates/letsencrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/letsencrypt/</guid><description>
 &lt;h2 id="lets-encrypt">Let&amp;rsquo;s Encrypt&lt;/h2>
 &lt;p>Create a &lt;a href="https://cert-manager.io/docs/concepts/issuer/">cluster issuer&lt;/a> to use Let&amp;rsquo;s Encrypt.&lt;/p>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/letsencrypt.png"
-alt="Cert-Manager CRD"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
 &lt;h2 id="prometheus">Prometheus&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/prometheus_aws.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/prometheus_azure.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/prometheus_gcp.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Secrets</title><link>/docs/development/secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/secrets/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Secrets</title><link>/docs/development/secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/secrets/</guid><description>
 &lt;h2 id="secrets">Secrets&lt;/h2>
 &lt;p>&lt;a href="https://github.com/mozilla/sops">Sops&lt;/a> is used to manage secrets.&lt;/p>
 &lt;h3 id="store">Store&lt;/h3>
@@ -1160,42 +1105,15 @@ which will be used by Flux.&lt;/p></description></item><item><title>Docs: Vector
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/Vector.png"
-alt="Vector"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Velero</title><link>/docs/components/storage/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/velero/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Velero</title><link>/docs/components/storage/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/velero/</guid><description>
 &lt;h2 id="velero">velero&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/velero_aws.png"
-alt="velero"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/velero_azure.png"
-alt="velero"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/velero_gcp.png"
-alt="velero"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
 &lt;h2 id="alertmanager">Alertmanager&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/alertmanager_aws.png"
-alt="Alertmanager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/alertmanager_azure.png"
-alt="Alertmanager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/alertmanager_gcp.png"
-alt="Alertmanager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
 &lt;h2 id="portefaix-hub">Portefaix Hub&lt;/h2>
 &lt;p>&lt;a href="https://charts.portefaix.xyz/">Portefaix Hub&lt;/a> is the Helm charts repository of the Portefaix project.&lt;/p>
 &lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/exoscale/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
@@ -1204,19 +1122,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/node_exporter_aws.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/node_exporter_azure.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/node_exporter_gcp.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Policies</title><link>/docs/development/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/policies/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Policies</title><link>/docs/development/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/policies/</guid><description>
 &lt;h2 id="open-policy-agent">Open Policy Agent&lt;/h2>
 &lt;h2 id="kyverno">Kyverno&lt;/h2></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/gcp/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/uninstall-portefaix/</guid><description>
 &lt;h2 id="terraform">Terraform&lt;/h2>
@@ -1228,10 +1134,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/kube-state-metrics.png"
-alt="Kube-State-Metrics"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
 &lt;p>The &lt;a href="https://github.com/portefaix/portefaix-mixin">portefaix-mixin&lt;/a> is a collection of reusable and configurable
 &lt;a href="https://prometheus.io/">Prometheus&lt;/a> alerts, and &lt;a href="https://grafana.com/">Grafana&lt;/a> dashboards.&lt;/p></description></item><item><title>Docs: Roadmap</title><link>/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/roadmap/</guid><description>
 &lt;h2 id="v1">v1&lt;/h2>
@@ -1300,37 +1203,14 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Thanos-community/kube-Thanos-stack">kube-Thanos-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/thanos_aws.png"
-alt="Thanos"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/thanos_azure.png"
-alt="Thanos"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/thanos_gcp.png"
-alt="Thanos"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
 &lt;h2 id="grafana">Grafana&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Grafana-community/kube-Grafana-stack">kube-Grafana-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/grafana_aws.png"
-alt="Grafana"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/grafana_azure.png"
-alt="Grafana"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/grafana_gcp.png"
-alt="Grafana"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/authentication/</guid><description>
+&lt;h3 id="aws">AWS&lt;/h3></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Google Cloud Platform (GCP).&lt;/p>
 &lt;h2 id="configure-gcloud">Configure Gcloud&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh gcp

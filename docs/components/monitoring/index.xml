@@ -26,110 +26,41 @@ kube-prometheus-stack-operator 1/1 &lt;span style="color:#0000cf;font-weight:bol
 ❯ kubectl get svc -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
 NAME TYPE CLUSTER-IP EXTERNAL-IP PORT&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>S&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> AGE
 kube-prometheus-stack-operator ClusterIP 10.40.16.153 &amp;lt;none&amp;gt; 443/TCP 27m
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="components">Components&lt;/h2>
-&lt;!--
-&lt;img src="/docs/images/prometheus-operator-crds.png"
-alt="Cert-Manager CRD"
-class="mt-3 mb-3 border border-info rounded"> -->
-&lt;p>&lt;img src="/docs/images/prometheus-operator.png"
-alt="Prometheus-Operator"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
 &lt;h2 id="prometheus">Prometheus&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/prometheus_aws.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/prometheus_azure.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/prometheus_gcp.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
 &lt;h2 id="alertmanager">Alertmanager&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/alertmanager_aws.png"
-alt="Alertmanager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/alertmanager_azure.png"
-alt="Alertmanager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/alertmanager_gcp.png"
-alt="Alertmanager"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
 &lt;h2 id="node-exporter">Node Exporter&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/node_exporter_aws.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/node_exporter_azure.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/node_exporter_gcp.png"
-alt="Node Exporter"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Kube State Metrics</title><link>/docs/components/monitoring/kube-state-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/kube-state-metrics/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Kube State Metrics</title><link>/docs/components/monitoring/kube-state-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/kube-state-metrics/</guid><description>
 &lt;h2 id="kube-state-metrics">Kube State Metrics&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/kube-state-metrics.png"
-alt="Kube-State-Metrics"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Thanos</title><link>/docs/components/monitoring/thanos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/thanos/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Thanos</title><link>/docs/components/monitoring/thanos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/thanos/</guid><description>
 &lt;h2 id="thanos">Thanos&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Thanos-community/kube-Thanos-stack">kube-Thanos-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/thanos_aws.png"
-alt="Thanos"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/thanos_azure.png"
-alt="Thanos"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/thanos_gcp.png"
-alt="Thanos"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
 &lt;h2 id="grafana">Grafana&lt;/h2>
 &lt;ul>
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Grafana-community/kube-Grafana-stack">kube-Grafana-stack&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/grafana_aws.png"
-alt="Grafana"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/grafana_azure.png"
-alt="Grafana"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/grafana_gcp.png"
-alt="Grafana"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item></channel></rss>
+&lt;h3 id="aws">AWS&lt;/h3></description></item></channel></rss>

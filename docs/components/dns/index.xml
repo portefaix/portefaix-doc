@@ -4,7 +4,4 @@
 &lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
 &lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/external-dns.png"
-alt="External DNS"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item></channel></rss>
+&lt;h2 id="components">Components&lt;/h2></description></item></channel></rss>

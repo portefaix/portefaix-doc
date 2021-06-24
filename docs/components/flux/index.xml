@@ -1,23 +1,5 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Flux</title><link>/docs/components/flux/</link><description>Recent content in Flux on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/flux/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Flux</title><link>/docs/components/flux/flux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/flux-crds.png"
-alt="Flux CRD"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="aws">AWS&lt;/h3>
-&lt;p>&lt;img src="/docs/images/flux_aws.png"
-alt="Flux"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="azure">AZURE&lt;/h3>
-&lt;p>&lt;img src="/docs/images/flux_azure.png"
-alt="Flux"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;h3 id="gcp">GCP&lt;/h3>
-&lt;p>&lt;img src="/docs/images/flux_gcp.png"
-alt="Flux"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
+&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;p>&lt;img src="/docs/images/flux-monitoring.png"
-alt="Flux Monitoring"
-class="mt-3 mb-3 border border-info rounded">&lt;/p></description></item></channel></rss>
+&lt;h2 id="components">Components&lt;/h2></description></item></channel></rss>
