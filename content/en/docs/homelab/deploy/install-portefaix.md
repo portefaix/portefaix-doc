@@ -4,6 +4,10 @@ description = "Instructions for deploying Portefaix infrastructure on Raspberry 
 weight = 10
 +++
 
+<img src="/docs/images/portefaix_homelab_infra.png"
+ alt="Portefaix infrastructure"
+ class="mt-3 mb-3 border border-info rounded">
+
 <a id="os"/></a>
 
 ## Operating System

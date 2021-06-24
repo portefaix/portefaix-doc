@@ -4,9 +4,7 @@ description = "Instructions for deploying and deleting Portefaix on Raspberry PI
 weight = 30
 +++
 
-{{% alert title="Work In Progress" color="warning" %}}
-{{% /alert %}}
-
 ## Prerequisites
 
-> TODO
+* RPi 4 or 3 with 4 GB RAM
+* 32GB Sandisk SD card

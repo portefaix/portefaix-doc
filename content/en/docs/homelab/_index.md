@@ -4,6 +4,6 @@ description = "Running Portefaix on Raspberry PI"
 weight = 80
 +++
 
-<img src="/docs/images/portefaix_homelab.png"
- alt="Portefaix infrastructure"
+<img src="/docs/images/portefaix-homelab.png"
+ alt="Portefaix components"
  class="mt-3 mb-3 border border-info rounded">
