@@ -1,5 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Flux</title><link>/docs/components/flux/</link><description>Recent content in Flux on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/flux/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Flux</title><link>/docs/components/flux/flux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
 &lt;h2 id="components">Components&lt;/h2></description></item></channel></rss>

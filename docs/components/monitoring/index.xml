@@ -1,66 +1,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Monitoring</title><link>/docs/components/monitoring/</link><description>Recent content in Monitoring on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Prometheus Operator</title><link>/docs/components/monitoring/prometheus-operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus-operator/</guid><description>
-&lt;h2 id="prometheus-operator">Prometheus Operator&lt;/h2>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="checks">Checks&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>CRD:&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get crd&lt;span style="color:#000;font-weight:bold">|&lt;/span>grep coreos
-alertmanagerconfigs.monitoring.coreos.com 2020-11-08T17:11:39Z
-alertmanagers.monitoring.coreos.com 2020-11-08T17:11:40Z
-podmonitors.monitoring.coreos.com 2020-11-08T17:11:40Z
-probes.monitoring.coreos.com 2020-11-08T17:11:40Z
-prometheuses.monitoring.coreos.com 2020-11-08T17:11:41Z
-prometheusrules.monitoring.coreos.com 2020-11-08T17:11:41Z
-servicemonitors.monitoring.coreos.com 2020-11-08T17:11:42Z
-thanosrulers.monitoring.coreos.com 2020-11-08T17:11:42Z
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>Deployment of the Prometheus Operator&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get deployments.apps -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
-NAME READY UP-TO-DATE AVAILABLE AGE
-kube-prometheus-stack-operator 1/1 &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 26m
-❯ kubectl get svc -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
-NAME TYPE CLUSTER-IP EXTERNAL-IP PORT&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>S&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> AGE
-kube-prometheus-stack-operator ClusterIP 10.40.16.153 &amp;lt;none&amp;gt; 443/TCP 27m
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
-&lt;h2 id="prometheus">Prometheus&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
-&lt;h2 id="alertmanager">Alertmanager&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/grafana/grafana" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>grafana&lt;/b>: The leading tool for querying and visualizing time series and metrics.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/grafana/grafana">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://grafana.github.io/helm-charts">https://grafana.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>grafana-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>grafana&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>6.12.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
-&lt;h2 id="node-exporter">Node Exporter&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Kube State Metrics</title><link>/docs/components/monitoring/kube-state-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/kube-state-metrics/</guid><description>
-&lt;h2 id="kube-state-metrics">Kube State Metrics&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Kube State Metrics</title><link>/docs/components/monitoring/kube-state-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/kube-state-metrics/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Thanos</title><link>/docs/components/monitoring/thanos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/thanos/</guid><description>
-&lt;h2 id="thanos">Thanos&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Thanos</title><link>/docs/components/monitoring/thanos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/thanos/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/banzaicloud-stable/thanos" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>thanos&lt;/b>: Thanos is a set of components that can be composed into a highly available metric system with unlimited storage capacity, which can be added seamlessly on top of existing Prometheus deployments.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/banzaicloud-stable/thanos">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Thanos-community/kube-Thanos-stack">kube-Thanos-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://kubernetes-charts.banzaicloud.com">https://kubernetes-charts.banzaicloud.com&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>banzaicloud-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>thanos&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.4.3&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
-&lt;h2 id="grafana">Grafana&lt;/h2>
-&lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Grafana-community/kube-Grafana-stack">kube-Grafana-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3></description></item></channel></rss>
+&lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>

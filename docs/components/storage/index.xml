@@ -1,3 +1,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Storage</title><link>/docs/components/storage/</link><description>Recent content in Storage on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/storage/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Velero</title><link>/docs/components/storage/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/velero/</guid><description>
-&lt;h2 id="velero">velero&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2></description></item></channel></rss>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/vmware-tanzu/velero" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>velero&lt;/b>: A Helm chart for velero&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/vmware-tanzu/velero">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://vmware-tanzu.github.io/helm-charts">https://vmware-tanzu.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>vmware-tanzu&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>velero&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.22.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Minio</title><link>/docs/components/storage/minio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/minio/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://operator.min.io/">https://operator.min.io/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>minio&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>minio-operator&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.1.4&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: NFS Client Provisionner</title><link>/docs/components/storage/nfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/nfs/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/nfs-subdir-external-provisioner/nfs-subdir-external-provisioner" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>nfs-subdir-external-provisioner&lt;/b>: nfs-subdir-external-provisioner is an automatic provisioner that used your *already configured* NFS server, automatically creating Persistent Volumes.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/nfs-subdir-external-provisioner/nfs-subdir-external-provisioner">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/">https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>kubernetes-sigs-nfs-subdir-external-provisioner-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>nfs-subdir-external-provisioner&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.0.10&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>

@@ -1,0 +1,13 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Chaos Mesh</title><link>/docs/components/chaos-mesh/</link><description>Recent content in Chaos Mesh on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/chaos-mesh/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Chaos Mesh</title><link>/docs/components/chaos-mesh/chaos-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/chaos-mesh/chaos-mesh/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/chaos-mesh/chaos-mesh" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>chaos-mesh&lt;/b>: Chaos Mesh® is a cloud-native Chaos Engineering platform that orchestrates chaos on Kubernetes environments.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/chaos-mesh/chaos-mesh">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://charts.chaos-mesh.org">https://charts.chaos-mesh.org&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>chaos-mesh&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>chaos-mesh&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>v0.5.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>chaos-mesh&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>

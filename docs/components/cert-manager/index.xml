@@ -1,0 +1,15 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Certificates</title><link>/docs/components/cert-manager/</link><description>Recent content in Certificates on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/cert-manager/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Cert-Manager</title><link>/docs/components/cert-manager/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/cert-manager/cert-manager/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/cert-manager/cert-manager" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>cert-manager&lt;/b>: A Helm chart for cert-manager&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/cert-manager/cert-manager">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://charts.jetstack.io/">https://charts.jetstack.io/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>jetstack&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>cert-manager&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>v1.4.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>cert-manager&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Let's Encrypt</title><link>/docs/components/cert-manager/letsencrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/cert-manager/letsencrypt/</guid><description>
+&lt;h2 id="lets-encrypt">Let&amp;rsquo;s Encrypt&lt;/h2>
+&lt;p>Create a &lt;a href="https://cert-manager.io/docs/concepts/issuer/">cluster issuer&lt;/a> to use Let&amp;rsquo;s Encrypt.&lt;/p></description></item></channel></rss>

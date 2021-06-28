@@ -55,20 +55,55 @@ Done
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>exoscale &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Cert-Manager</title><link>/docs/components/certificates/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/cert-manager/</guid><description>
-&lt;h2 id="cert-manager">Cert-Manager&lt;/h2>
-&lt;p>Automatically provision and manage TLS certificates in Kubernetes&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Cert-Manager</title><link>/docs/components/cert-manager/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/cert-manager/cert-manager/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/cert-manager/cert-manager" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>cert-manager&lt;/b>: A Helm chart for cert-manager&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/cert-manager/cert-manager">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/jetstack/cert-manager">cert-manager&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>1.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.jetstack.io/">https://charts.jetstack.io/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>jetstack&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>cert-manager&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>v1.4.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>cert-manager&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
-&lt;h2 id="external-dns">External DNS&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Chaos Mesh</title><link>/docs/components/chaos-mesh/chaos-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/chaos-mesh/chaos-mesh/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/chaos-mesh/chaos-mesh" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>chaos-mesh&lt;/b>: Chaos Mesh® is a cloud-native Chaos Engineering platform that orchestrates chaos on Kubernetes environments.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/chaos-mesh/chaos-mesh">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.chaos-mesh.org">https://charts.chaos-mesh.org&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>chaos-mesh&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>chaos-mesh&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>v0.5.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>chaos-mesh&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Gitops</title><link>/docs/development/gitops/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/gitops/</guid><description>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/bitnami/external-dns" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>external-dns&lt;/b>: ExternalDNS is a Kubernetes addon that configures public DNS servers with information about exposed Kubernetes services to make them discoverable.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/bitnami/external-dns">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://charts.bitnami.com/bitnami">https://charts.bitnami.com/bitnami&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>bitnami&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>external-dns&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>5.1.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Falco</title><link>/docs/components/security/falco/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/security/falco/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/falcosecurity/falco" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>falco&lt;/b>: Falco&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/falcosecurity/falco">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://vmware-tanzu.github.io/helm-charts">https://vmware-tanzu.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>vmware-tanzu&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>velero&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.22.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Gitops</title><link>/docs/development/gitops/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/gitops/</guid><description>
 &lt;p>&lt;a href="https://www.weave.works/technologies/gitops/">Gitops&lt;/a> model used is &lt;a href="https://toolkit.fluxcd.io/">Flux v2&lt;/a>&lt;/p>
 &lt;p>&lt;img src="/docs/images/gitops-toolkit.png"
 alt="Flux v2"
@@ -98,7 +133,19 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-template &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Or install the chart for an environment&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-install &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Ingress Nginx</title><link>/docs/components/ingress-controllers/ingress-nginx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/ingress-controllers/ingress-nginx/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>ingress-nginx&lt;/b>: Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://kubernetes.github.io/ingress-nginx">https://kubernetes.github.io/ingress-nginx&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>kubernetes-ingress-nginx&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>ingress-nginx&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>3.33.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>ingress-controllers&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="aws">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>.
@@ -305,13 +352,67 @@ portefaix-2 Ready &amp;lt;none&amp;gt; 6m18s v1.19.1+k3s1 192.168.1.123 &amp;lt;
 portefaix-4 Ready &amp;lt;none&amp;gt; 47s v1.19.1+k3s1 192.168.1.32 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Creates the &lt;code>sops-gpg&lt;/code> secret:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk pgp-secret &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Loki</title><link>/docs/components/logging/loki/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/loki/</guid><description>
-&lt;h2 id="loki">Loki&lt;/h2>
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Kyverno</title><link>/docs/components/kyvrno/kyverno/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/kyverno/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/kyverno/kyverno" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kyverno&lt;/b>: Kubernetes Native Policy Management&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/kyverno/kyverno">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.bitnami.com/bitnami">https://charts.bitnami.com/bitnami&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>bitnami&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>external-dns&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>5.1.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Linkerd</title><link>/docs/components/linkerd/linkerd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/linkerd/linkerd/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/linkerd2-edge/linkerd2" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>linkerd2&lt;/b>: Linkerd gives you observability, reliability, and security for your microservices — with no code change required. &lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/linkerd2-edge/linkerd2">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://litmuschaos.github.io/litmus-helm/">https://litmuschaos.github.io/litmus-helm/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>litmuschaos&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>litmus-2-0-0-beta&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.0.22-Beta8&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>litmus&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Litmus Chaos</title><link>/docs/components/litmus-chaos/litmus-chaos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/litmus-chaos/litmus-chaos/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/litmuschaos/litmus-2-0-0-beta" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>litmus-2-0-0-beta&lt;/b>: A Helm chart to install litmus portal&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/litmuschaos/litmus-2-0-0-beta">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://litmuschaos.github.io/litmus-helm/">https://litmuschaos.github.io/litmus-helm/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>litmuschaos&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>litmus-2-0-0-beta&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.0.22-Beta8&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>litmus&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Loki</title><link>/docs/components/logging/loki/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/loki/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/grafana/loki" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>loki&lt;/b>: Loki: like Prometheus, but for logs.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/grafana/loki">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://grafana.github.io/helm-charts">https://grafana.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>grafana-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>loki&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.5.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>logging&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Oauth2-Proxy</title><link>/docs/components/identity/oauth2-proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/identity/oauth2-proxy/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/oauth2-proxy/oauth2-proxy" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>oauth2-proxy&lt;/b>: A reverse proxy that provides authentication with Google, Github or other providers&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/oauth2-proxy/oauth2-proxy">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://oauth2-proxy.github.io/manifests">https://oauth2-proxy.github.io/manifests&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>oauth2-proxy-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>oauth2-proxy&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>3.3.2&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>identity&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Overview</title><link>/docs/started/overview/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/overview/</guid><description>
 &lt;p>This document provides information about setting up Portefaix in various
 environments.&lt;/p>
 &lt;h2 id="before-you-begin">Before you begin&lt;/h2>
@@ -322,40 +423,42 @@ environments.&lt;/p>
 &lt;li>&lt;a href="https://kustomize.io/">Kustomize&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://helm.sh">Helm&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Docs: Prometheus Operator</title><link>/docs/components/monitoring/prometheus-operator/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus-operator/</guid><description>
-&lt;h2 id="prometheus-operator">Prometheus Operator&lt;/h2>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="checks">Checks&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Velero</title><link>/docs/components/storage/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/velero/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/vmware-tanzu/velero" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>velero&lt;/b>: A Helm chart for velero&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/vmware-tanzu/velero">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>CRD:&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://vmware-tanzu.github.io/helm-charts">https://vmware-tanzu.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>vmware-tanzu&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>velero&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.22.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get crd&lt;span style="color:#000;font-weight:bold">|&lt;/span>grep coreos
-alertmanagerconfigs.monitoring.coreos.com 2020-11-08T17:11:39Z
-alertmanagers.monitoring.coreos.com 2020-11-08T17:11:40Z
-podmonitors.monitoring.coreos.com 2020-11-08T17:11:40Z
-probes.monitoring.coreos.com 2020-11-08T17:11:40Z
-prometheuses.monitoring.coreos.com 2020-11-08T17:11:41Z
-prometheusrules.monitoring.coreos.com 2020-11-08T17:11:41Z
-servicemonitors.monitoring.coreos.com 2020-11-08T17:11:42Z
-thanosrulers.monitoring.coreos.com 2020-11-08T17:11:42Z
-&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
-&lt;li>Deployment of the Prometheus Operator&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get deployments.apps -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
-NAME READY UP-TO-DATE AVAILABLE AGE
-kube-prometheus-stack-operator 1/1 &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 26m
-❯ kubectl get svc -n monitoring -l &lt;span style="color:#000">app&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kube-prometheus-stack-operator
-NAME TYPE CLUSTER-IP EXTERNAL-IP PORT&lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>S&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> AGE
-kube-prometheus-stack-operator ClusterIP 10.40.16.153 &amp;lt;none&amp;gt; 443/TCP 27m
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
-&lt;h2 id="promtail">Promtail&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Blocky</title><link>/docs/components/dns/blocky/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/blocky/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/k8s-at-home/blocky" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>blocky&lt;/b>: DNS proxy as ad-blocker for local network&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/k8s-at-home/blocky">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://k8s-at-home.com/charts/">https://k8s-at-home.com/charts/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>k8s-at-home&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>blocky&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>6.4.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Continuous Integration</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Continuous Integration</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
 &lt;h2 id="github-actions">Github Actions&lt;/h2>
 &lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> is used.&lt;/p>
 &lt;div class="table-responsive">
@@ -407,9 +510,23 @@ kube-prometheus-stack-operator ClusterIP 10.40.16.153 &amp;lt;none&amp;gt; 443/T
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;/div></description></item><item><title>Docs: Flux</title><link>/docs/components/flux/flux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux/</guid><description>
+&lt;/div></description></item><item><title>Docs: Falco Exporter</title><link>/docs/components/security/falco-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/security/falco-exporter/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/falcosecurity/falco-exporter" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>falco-exporter&lt;/b>: Prometheus Metrics Exporter for Falco output events&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/falcosecurity/falco-exporter">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://vmware-tanzu.github.io/helm-charts">https://vmware-tanzu.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>vmware-tanzu&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>velero&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.22.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Flux</title><link>/docs/components/flux/flux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Flux Monitoring</title><link>/docs/components/flux/flux-monitoring/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/flux/flux-monitoring/</guid><description>
 &lt;h2 id="flux">Flux&lt;/h2>
 &lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Getting Started</title><link>/docs/started/getting-started/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/started/getting-started/</guid><description>
 &lt;h2 id="installation">Installation&lt;/h2>
@@ -1045,16 +1162,85 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure service account and IAM binding exists&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Let's Encrypt</title><link>/docs/components/certificates/letsencrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/certificates/letsencrypt/</guid><description>
-&lt;h2 id="lets-encrypt">Let&amp;rsquo;s Encrypt&lt;/h2>
-&lt;p>Create a &lt;a href="https://cert-manager.io/docs/concepts/issuer/">cluster issuer&lt;/a> to use Let&amp;rsquo;s Encrypt.&lt;/p>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
-&lt;h2 id="prometheus">Prometheus&lt;/h2>
+&lt;/table></description></item><item><title>Docs: Kubernetes Chaos</title><link>/docs/components/litmus-chaos/kubernetes-chaos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/litmus-chaos/kubernetes-chaos/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/litmuschaos/kubernetes-chaos" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kubernetes-chaos&lt;/b>: A Helm chart to install litmus chaos experiments for kubernetes category (chaos-chart)&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/litmuschaos/kubernetes-chaos">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://litmuschaos.github.io/litmus-helm/">https://litmuschaos.github.io/litmus-helm/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>litmuschaos&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kubernetes-chaos&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.11.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>litmus&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Secrets</title><link>/docs/development/secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/secrets/</guid><description>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Let's Encrypt</title><link>/docs/components/cert-manager/letsencrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/cert-manager/letsencrypt/</guid><description>
+&lt;h2 id="lets-encrypt">Let&amp;rsquo;s Encrypt&lt;/h2>
+&lt;p>Create a &lt;a href="https://cert-manager.io/docs/concepts/issuer/">cluster issuer&lt;/a> to use Let&amp;rsquo;s Encrypt.&lt;/p></description></item><item><title>Docs: Linkerd Viz</title><link>/docs/components/linkerd/linkerd-viz/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/linkerd/linkerd-viz/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/linkerd2-edge/linkerd-viz" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>linkerd-viz&lt;/b>: The Linkerd-Viz extension contains observability and visualization components for Linkerd. &lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/linkerd2-edge/linkerd-viz">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://litmuschaos.github.io/litmus-helm/">https://litmuschaos.github.io/litmus-helm/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>litmuschaos&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kubernetes-chaos&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.11.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>litmus&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Minio</title><link>/docs/components/storage/minio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/minio/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://operator.min.io/">https://operator.min.io/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>minio&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>minio-operator&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.1.4&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: NFS Client Provisionner</title><link>/docs/components/storage/nfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/nfs/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/nfs-subdir-external-provisioner/nfs-subdir-external-provisioner" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>nfs-subdir-external-provisioner&lt;/b>: nfs-subdir-external-provisioner is an automatic provisioner that used your *already configured* NFS server, automatically creating Persistent Volumes.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/nfs-subdir-external-provisioner/nfs-subdir-external-provisioner">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/">https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>kubernetes-sigs-nfs-subdir-external-provisioner-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>nfs-subdir-external-provisioner&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.0.10&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Policy Reporter</title><link>/docs/components/kyvrno/policy-reporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/policy-reporter/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/policy-reporter/policy-reporter" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>policy-reporter&lt;/b>: K8s PolicyReporter watches for wgpolicyk8s.io/v1alpha1.PolicyReport resources. It creates Prometheus Metrics and can send rule validation events to different targets like Loki, Elasticsearch, Slack or Discord &lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/policy-reporter/policy-reporter">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://charts.bitnami.com/bitnami">https://charts.bitnami.com/bitnami&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>bitnami&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>external-dns&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>5.1.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;ul>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/grafana/promtail" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>promtail&lt;/b>: Promtail is an agent which ships the contents of local logs to a Loki instance&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/grafana/promtail">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Secrets</title><link>/docs/development/secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/secrets/</guid><description>
 &lt;h2 id="secrets">Secrets&lt;/h2>
 &lt;p>&lt;a href="https://github.com/mozilla/sops">Sops&lt;/a> is used to manage secrets.&lt;/p>
 &lt;h3 id="store">Store&lt;/h3>
@@ -1099,153 +1285,31 @@ Change &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>N&lt;span styl
 &lt;/span>&lt;span style="color:#4e9a06">&lt;/span>--armor FC5BB3323309486AC8DA477CEC6421C7C33D2301
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Add this output into a Github Secret &lt;code>SOPS_GPG_KEY&lt;/code>.&lt;/p>
 &lt;p>On the &lt;code>e2e&lt;/code> Github Action workflow, we create a Kubernetes secret &lt;code>sops-gpg&lt;/code>
-which will be used by Flux.&lt;/p></description></item><item><title>Docs: Vector</title><link>/docs/components/logging/vector/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/vector/</guid><description>
-&lt;h2 id="vector">Vector&lt;/h2>
+which will be used by Flux.&lt;/p></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/pxxxx/xxxxx">xxxxxx&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Velero</title><link>/docs/components/storage/velero/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/velero/</guid><description>
-&lt;h2 id="velero">velero&lt;/h2>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
-&lt;h2 id="alertmanager">Alertmanager&lt;/h2>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
+&lt;h2 id="hub">Hub&lt;/h2>
+&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/grafana/grafana" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>grafana&lt;/b>: The leading tool for querying and visualizing time series and metrics.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/grafana/grafana">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
+&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://grafana.github.io/helm-charts">https://grafana.github.io/helm-charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>grafana-charts&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>grafana&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>6.12.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
 &lt;h2 id="portefaix-hub">Portefaix Hub&lt;/h2>
 &lt;p>&lt;a href="https://charts.portefaix.xyz/">Portefaix Hub&lt;/a> is the Helm charts repository of the Portefaix project.&lt;/p>
-&lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/exoscale/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
-&lt;h2 id="node-exporter">Node Exporter&lt;/h2>
-&lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Policies</title><link>/docs/development/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/policies/</guid><description>
-&lt;h2 id="open-policy-agent">Open Policy Agent&lt;/h2>
-&lt;h2 id="kyverno">Kyverno&lt;/h2></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/gcp/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/uninstall-portefaix/</guid><description>
-&lt;h2 id="terraform">Terraform&lt;/h2>
-&lt;h3 id="gke">GKE&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-destroy &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Kube State Metrics</title><link>/docs/components/monitoring/kube-state-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/kube-state-metrics/</guid><description>
-&lt;h2 id="kube-state-metrics">Kube State Metrics&lt;/h2>
-&lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">kube-prometheus-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
-&lt;p>The &lt;a href="https://github.com/portefaix/portefaix-mixin">portefaix-mixin&lt;/a> is a collection of reusable and configurable
-&lt;a href="https://prometheus.io/">Prometheus&lt;/a> alerts, and &lt;a href="https://grafana.com/">Grafana&lt;/a> dashboards.&lt;/p></description></item><item><title>Docs: Roadmap</title><link>/docs/other-guides/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/roadmap/</guid><description>
-&lt;h2 id="v1">v1&lt;/h2>
-&lt;h3 id="infrastructure">Infrastructure&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Development environment&lt;/span>&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Google Cloud Platform&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/1">#1&lt;/a> ]&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Amazon AWS&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/2">#2&lt;/a> ]&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Microsoft Azure&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/3">#3&lt;/a> ]&lt;/li>
-&lt;/ul>
-&lt;h3 id="core">Core&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Flux v2 bootstrap&lt;/span>&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Sops (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
-&lt;/ul>
-&lt;h3 id="observability">Observability&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Monitoring: Prometheus, Thanos, Alertmanager (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Logging: Loki, FluentBit, Vector (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Tracing: Tempo (GKE, EKS, AKS)&lt;/li>
-&lt;/ul>
-&lt;h3 id="networking">Networking&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> External-DNS, Cert-Manager (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Oauth2-Proxy (GKE, EKS, AKS)&lt;/li>
-&lt;/ul>
-&lt;h3 id="service-mesh">Service Mesh&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Open Service Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
-&lt;/ul>
-&lt;h3 id="chaos">Chaos&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Chaos Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Litmus Chaos (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
-&lt;/ul>
-&lt;h2 id="v2">v2&lt;/h2>
-&lt;h3 id="service-mesh-cloud-providers">Service Mesh Cloud Providers&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://cloud.google.com/traffic-director/">Traffic Director&lt;/a> [ &lt;a href="https://github.com/portefaix/portefaix/issues/8">#8&lt;/a> ]&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://aws.amazon.com/fr/app-mesh/">AWS App Mesh&lt;/a> [ &lt;a href="https://github.com/portefaix/portefaix/issues/9">#9&lt;/a> ]&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://docs.microsoft.com/en-us/azure/service-fabric-mesh/">Service Fabric Mesh&lt;/a> [ &lt;a href="https://github.com/portefaix/portefaix/issues/10">#10&lt;/a> ]&lt;/li>
-&lt;/ul>
-&lt;h2 id="backlog">Backlog&lt;/h2>
-&lt;h3 id="cloud-providers">Cloud providers&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Terraform code for Scaleway&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/17">#17&lt;/a> ]&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Terraform code for Digital Ocean&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/18">#18&lt;/a> ]&lt;/li>
-&lt;/ul>
-&lt;h3 id="secrets-store-csi-driver">Secrets Store CSI Driver&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp">GCP Secret manager&lt;/a> [ &lt;a href="https://github.com/portefaix/portefaix/issues/4">#4&lt;/a> ]&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/aws/containers-roadmap/issues/895">Amazon Secrets manager&lt;/a> [ &lt;a href="https://github.com/portefaix/portefaix/issues/5">#5&lt;/a> ]&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/Azure/secrets-store-csi-driver-provider-azure">Azure Vault&lt;/a> [ &lt;a href="https://github.com/portefaix/portefaix/issues/6">#6&lt;/a> ]&lt;/li>
-&lt;/ul>
-&lt;h3 id="managing-cloud-services-via-kubernetes-crds">Managing Cloud Services via Kubernetes CRDs&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/aws/aws-controllers-k8s">AWS Controllers for Kubernetes (ACK)&lt;/a>&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/Azure/azure-service-operator">Azure Service Operator (for Kubernetes)&lt;/a>&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://cloud.google.com/config-connector/docs/overview">Google Config Connector&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Inspec</title><link>/docs/development/inspec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/inspec/</guid><description>
-&lt;h2 id="gcp">GCP&lt;/h2>
-&lt;h2 id="aws">AWS&lt;/h2>
-&lt;h2 id="azure">Azure&lt;/h2></description></item><item><title>Docs: Thanos</title><link>/docs/components/monitoring/thanos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/thanos/</guid><description>
-&lt;h2 id="thanos">Thanos&lt;/h2>
-&lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Thanos-community/kube-Thanos-stack">kube-Thanos-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="components">Components&lt;/h2></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
-&lt;h2 id="grafana">Grafana&lt;/h2>
-&lt;ul>
-&lt;li>Chart : &lt;a href="https://artifacthub.io/packages/helm/Grafana-community/kube-Grafana-stack">kube-Grafana-stack&lt;/a>&lt;/li>
-&lt;li>Version: &lt;code>11.0.4&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;h2 id="components">Components&lt;/h2>
-&lt;h3 id="aws">AWS&lt;/h3></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/gcp/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/authentication/</guid><description>
-&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Google Cloud Platform (GCP).&lt;/p>
-&lt;h2 id="configure-gcloud">Configure Gcloud&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh gcp
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-Setup credentials
-Done
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gcp &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
-NAME STATUS ROLES AGE VERSION
-gke-xxxxxxxxxx-cluster-g-core-5d5d62be-tf15 Ready &amp;lt;none&amp;gt; 7h37m v1.18.10-gke.601
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/homelab/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/homelab/authentication/</guid><description>
-&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
-NAME STATUS ROLES AGE VERSION
-portefaix-1 Ready master 3h2m v1.18.17+k3s1
-portefaix-4 Ready &amp;lt;none&amp;gt; 5m36s v1.18.17+k3s1
-portefaix-3 Ready &amp;lt;none&amp;gt; 5m36s v1.18.17+k3s1
-portefaix-2 Ready &amp;lt;none&amp;gt; 5m35s v1.18.17+k3s1
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Access Control for Azure Deployment</title><link>/docs/azure/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/authentication/</guid><description>
-&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Microsoft Azure (AZURE)&lt;/p>
-&lt;h2 id="configure-azure">Configure Azure&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh azure
-&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
-Setup credentials
-Done
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-kube-credentials &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
-NAME STATUS ROLES AGE VERSION
-aks-core-19506595-vmss000000 Ready agent 8h v1.18.10
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting</title><link>/docs/other-guides/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/troubleshooting/</guid><description>
-&lt;p>This page presents some hints for troubleshooting specific problems that you
-may encounter.&lt;/p>
-&lt;h2 id="next-steps">Next steps&lt;/h2>
-&lt;p>Visit the &lt;a href="/docs/other-guides/support/">Portefaix support page&lt;/a> to find resources
-and community forums where you can ask for help.&lt;/p></description></item></channel></rss>
+&lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description/></item></channel></rss>
