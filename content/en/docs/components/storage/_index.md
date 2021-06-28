@@ -1,5 +1,5 @@
 +++
 title = "Storage"
 description = "Backup, Disaster recovery, ..."
-weight = 70
+weight = 60
 +++
