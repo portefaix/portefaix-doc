@@ -18,7 +18,7 @@
   "helm-values": {
     "fileMatch": ["kubernetes/.+\\.yaml$"]
   },
-  "labels": ["area/renovate"],
+  "labels": ["kind/renovate"],
   "packageRules": [
     // Setup datasources
     // Enable auto-merge docker
