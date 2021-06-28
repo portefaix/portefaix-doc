@@ -1,11 +1,20 @@
 +++
 title = "Thanos"
-weight = 60
+weight = 100
 +++
 
-## Thanos
+## Hub
 
-* Chart : [kube-Thanos-stack](https://artifacthub.io/packages/helm/Thanos-community/kube-Thanos-stack)
-* Version: `11.0.4`
+<div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/banzaicloud-stable/thanos" data-theme="light" data-header="true" data-responsive="false"><blockquote><p lang="en" dir="ltr"><b>thanos</b>: Thanos is a set of components that can be composed into a highly available metric system with unlimited storage capacity, which can be added seamlessly on top of existing Prometheus deployments.</p>&mdash; Open in <a href="https://artifacthub.io/packages/helm/banzaicloud-stable/thanos">Artifact Hub</a></blockquote></div><script async src="https://artifacthub.io/artifacthub-widget.js"></script>
 
-## Components
+## Gitops
+
+<!-- BEGIN_PORTEFAIX_DOC -->
+
+* Repository URL: https://kubernetes-charts.banzaicloud.com
+* Repository: `banzaicloud-charts`
+* Chart: `thanos`
+* Version: `0.4.3`
+* Namespace: `monitoring`
+
+<!-- END_PORTEFAIX_DOC -->

@@ -1,5 +1,5 @@
 +++
 title = "Logging"
 description = "Logging stack"
-weight = 20
+weight = 40
 +++

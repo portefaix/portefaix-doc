@@ -5,4 +5,8 @@ weight = 20
 
 ## Flux
 
-## Components
+## Gitops
+
+<!-- BEGIN_PORTEFAIX_DOC -->
+
+<!-- END_PORTEFAIX_DOC -->
