@@ -47,7 +47,7 @@ function manage_policies() {
     start_tag=$3
     end_tag=$4
 
-    policies=$(grep "## PORTEFAIX" ${policies_file} | sort | sed -e "s/## /* /" )
+    policies=$(grep "## PORTEFAIX" ${policies_file} | sort | sed -e "s/## /* /" | sed -e "s/* /* \`/" | sed -e "s/: /\`: /" | sed -e "s/ - /\` - /")
     local START="false"
     local END="false"
     local tmpfile=$(mktemp)
