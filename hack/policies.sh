@@ -77,80 +77,10 @@ function manage_policies() {
     # echo ${doc}
 }
 
-function manage_opa_policies() {
-    directory=$1
-    doc=$2
-
-    policies=$(grep "## PORTEFAIX" ${directory}/opa-policies.md | sort | sed -e "s/## /* /" )
-    local START="false"
-    local END="false"
-    local tmpfile=$(mktemp)
-
-    while read LINE; do
-        #echo "======> ${LINE}"
-        if [ "${START}" == "true" ]; then
-            echo "" >> ${tmpfile}
-            echo "${policies}" >> ${tmpfile}
-            echo "" >> ${tmpfile}
-            echo "${OPA_ENDFLAG}" >> ${tmpfile}
-            START="false"
-            END="true"
-        elif [ "${LINE}" == "${OPA_STARTFLAG}" ]; then
-            START="true"
-            echo "${OPA_STARTFLAG}" >> ${tmpfile}
-            continue
-        elif [ "${LINE}" == "${OPA_ENDFLAG}" ]; then
-            END="false"
-        elif [ "${END}" == "false" ]; then
-            echo "${LINE}" >> ${tmpfile}
-        fi
-    done < "${doc}"
-
-    cat ${tmpfile}
-    mv ${tmpfile} ${doc}
-    # echo ${doc}
-}
-
-function manage_kyverno_policies() {
-    directory=$1
-    doc=$2
-
-    policies=$(grep "## PORTEFAIX" ${directory}/kyverno-policies.md | sort | sed -e "s/## /* /" )
-    local START="false"
-    local END="false"
-    local tmpfile=$(mktemp)
-
-    while read LINE; do
-        # echo "======> ${LINE}"
-        if [ "${START}" == "true" ]; then
-            echo "" >> ${tmpfile}
-            echo "${policies}" >> ${tmpfile}
-            echo "" >> ${tmpfile}
-            echo "${KYVERNO_ENDFLAG}" >> ${tmpfile}
-            START="false"
-            END="true"
-        elif [ "${LINE}" == "${KYVERNO_STARTFLAG}" ]; then
-            START="true"
-            echo "${KYVERNO_STARTFLAG}" >> ${tmpfile}
-            continue
-        elif [ "${LINE}" == "${KYVERNO_ENDFLAG}" ]; then
-            END="false"
-        elif [ "${END}" == "false" ]; then
-            echo "${LINE}" >> ${tmpfile}
-        fi
-    done < "${doc}"
-
-    cat ${tmpfile}
-    mv ${tmpfile} ${doc}
-    # echo ${doc}
-}
-
 tmpdir=$(mktemp -d)
 pushd ${tmpdir}
 init_repository
 popd
 manage_policies "${tmpdir}/${PROJECT}/opa-policies.md" "${POLICY_DOC}" "${OPA_STARTFLAG}" "${OPA_ENDFLAG}"
 manage_policies "${tmpdir}/${PROJECT}/kyverno-policies.md" "${POLICY_DOC}" "${KYVERNO_STARTFLAG}" "${KYVERNO_ENDFLAG}"
-# manage_opa_policies "${tmpdir}/${PROJECT}" "${POLICY_DOC}"
-# manage_kyverno_policies "${tmpdir}/${PROJECT}" "${POLICY_DOC}"
 rm -fr ${tmpdir}
