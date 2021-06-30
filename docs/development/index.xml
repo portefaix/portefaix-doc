@@ -66,7 +66,45 @@ which will be used by Flux.&lt;/p></description></item><item><title>Docs: Hub</t
 &lt;p>&lt;a href="https://charts.portefaix.xyz/">Portefaix Hub&lt;/a> is the Helm charts repository of the Portefaix project.&lt;/p>
 &lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Policies</title><link>/docs/development/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/policies/</guid><description>
 &lt;h2 id="open-policy-agent">Open Policy Agent&lt;/h2>
-&lt;h2 id="kyverno">Kyverno&lt;/h2></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
+&lt;!-- BEGIN_PORTEFAIX_OPA_DOC -->
+&lt;ul>
+&lt;li>&lt;code>PORTEFAIX-C0001&lt;/code>: Container must not use latest image tag&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0002&lt;/code>: Container must set liveness probe&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0003&lt;/code>: Container must set readiness probe&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0004&lt;/code>: Container must mount secrets as volumes, not enviroment variables&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0005&lt;/code>: Container must drop all capabilities&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0006&lt;/code>: Container must not allow for privilege escalation&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0007&lt;/code>: Container liveness probe and readiness probe should be different&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0008&lt;/code>: Container must define resource contraintes&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-M0001&lt;/code>: Metadata should contain all recommanded Kubernetes labels&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-M0002&lt;/code>: Metadata should have a8r.io annotations&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-M0003&lt;/code>: Metadata should have portefaix.xyz annotations&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0001&lt;/code>: Pod must run without access to the host aliases&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0002&lt;/code>: Pod must run without access to the host IPC&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0003&lt;/code>: Pod must run without access to the host networking&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0004&lt;/code>: Pod must run as non-root&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0005&lt;/code>: Pod must run without access to the host PID namespace&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_OPA_DOC -->
+&lt;h2 id="kyverno">Kyverno&lt;/h2>
+&lt;!-- BEGIN_PORTEFAIX_KYVERNO_DOC -->
+&lt;ul>
+&lt;li>&lt;code>PORTEFAIX-C0001&lt;/code> - Container must not use latest image tag&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0002&lt;/code> - Container must set liveness probe&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0003&lt;/code> - Container must set readiness probe&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0004&lt;/code> - Container must mount secrets as volumes, not enviroment variables&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0005&lt;/code> - Container must drop all capabilities&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0006&lt;/code> - Container must not allow for privilege escalation&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-C0008&lt;/code> - Container resource constraints must be specified&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-M0001&lt;/code> - Metadata must set recommanded Kubernetes labels&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-M0002&lt;/code> - Metadata should have a8r.io annotations&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-M0003&lt;/code> - Metadata should have portefaix.xyz annotations&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0002&lt;/code> - Pod must run without access to the host IPC&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0003&lt;/code> - Pod must run without access to the host networking&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0004&lt;/code> - Pod must run as non-root&lt;/li>
+&lt;li>&lt;code>PORTEFAIX-P0005&lt;/code> - Pod must run without access to the host PID&lt;/li>
+&lt;/ul>
+&lt;!-- END_PORTEFAIX_KYVERNO_DOC --></description></item><item><title>Docs: Mixin</title><link>/docs/development/mixin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/mixin/</guid><description>
 &lt;p>The &lt;a href="https://github.com/portefaix/portefaix-mixin">portefaix-mixin&lt;/a> is a collection of reusable and configurable
 &lt;a href="https://prometheus.io/">Prometheus&lt;/a> alerts, and &lt;a href="https://grafana.com/">Grafana&lt;/a> dashboards.&lt;/p></description></item><item><title>Docs: Inspec</title><link>/docs/development/inspec/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/inspec/</guid><description>
 &lt;h2 id="gcp">GCP&lt;/h2>
