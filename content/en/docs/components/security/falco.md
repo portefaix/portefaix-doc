@@ -11,10 +11,10 @@ weight = 10
 
 <!-- BEGIN_PORTEFAIX_DOC -->
 
-* Repository URL: https://vmware-tanzu.github.io/helm-charts
-* Repository: `vmware-tanzu`
-* Chart: `velero`
-* Version: `2.22.0`
-* Namespace: `storage`
+* Repository URL: https://falcosecurity.github.io/charts
+* Repository: `falcosecurity`
+* Chart: `falco-exporter`
+* Version: `0.5.1`
+* Namespace: `security`
 
 <!-- END_PORTEFAIX_DOC -->

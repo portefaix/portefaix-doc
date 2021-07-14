@@ -11,10 +11,10 @@ weight = 20
 
 <!-- BEGIN_PORTEFAIX_DOC -->
 
-* Repository URL: https://litmuschaos.github.io/litmus-helm/
-* Repository: `litmuschaos`
-* Chart: `kubernetes-chaos`
-* Version: `2.11.0`
-* Namespace: `litmus`
+* Repository URL: https://helm.linkerd.io/edge
+* Repository: `linkerd-edge`
+* Chart: `linkerd-viz`
+* Version: `21.6.2`
+* Namespace: `linkerd-viz`
 
 <!-- END_PORTEFAIX_DOC -->

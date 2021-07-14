@@ -65,8 +65,16 @@ portefaix-2   Ready    <none>   6m18s   v1.19.1+k3s1   192.168.1.123   <none>   
 portefaix-4   Ready    <none>   47s     v1.19.1+k3s1   192.168.1.32    <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.0-k3s1
 ```
 
-Creates the `sops-gpg` secret:
+### Encryption
+
+Creates the *PGP* key:
 
 ```shell
-❯ make -f hack/k3s.mk pgp-secret CLOUD=k3s ENV=homelab
+❯ make sops-pgp-key CLOUD=gcp ENV=prod
+```
+
+Create the `sops-secret` secret:
+
+```shell
+❯ make sops-pgp-secret CLOUD=gcp ENV=prod
 ```

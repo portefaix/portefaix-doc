@@ -11,10 +11,10 @@ weight = 100
 
 <!-- BEGIN_PORTEFAIX_DOC -->
 
-* Repository URL: https://kubernetes-charts.banzaicloud.com
-* Repository: `banzaicloud-charts`
-* Chart: `thanos`
-* Version: `0.4.3`
+* Repository URL: https://charts.portefaix.xyz
+* Repository: `portefaix`
+* Chart: `thanos-mixin`
+* Version: `0.13.0`
 * Namespace: `monitoring`
 
 <!-- END_PORTEFAIX_DOC -->

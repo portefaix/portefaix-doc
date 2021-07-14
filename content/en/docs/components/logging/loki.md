@@ -11,10 +11,10 @@ weight = 10
 
 <!-- BEGIN_PORTEFAIX_DOC -->
 
-* Repository URL: https://grafana.github.io/helm-charts
-* Repository: `grafana-charts`
-* Chart: `loki`
-* Version: `2.5.0`
-* Namespace: `logging`
+* Repository URL: https://charts.portefaix.xyz
+* Repository: `portefaix`
+* Chart: `loki-mixin`
+* Version: `0.8.0`
+* Namespace: `monitoring`
 
 <!-- END_PORTEFAIX_DOC -->

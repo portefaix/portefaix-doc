@@ -11,7 +11,7 @@ weight = 20
 
 ### Store
 
-Put your sensitive data into the directory `.secrets` or `.secrets/<CLOUD_PROVIDER>`
+Put your sensitive data into the directory `.secrets` or `.secrets/<CLOUD_PROVIDER>/<ENV>/<APPLICATION>`
 
 ### Kubernetes secret
 
@@ -62,7 +62,14 @@ metadata:
     namespace: monitoring
 ```
 
-## CICD
+## CI/CD
+
+### AGE
+
+{{% alert title="Work In Progress" color="warning" %}}
+{{% /alert %}}
+
+### PGP
 
 Generate a GPG key with OpenPGP without specifying a passphrase:
 

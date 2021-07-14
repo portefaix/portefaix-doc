@@ -11,10 +11,10 @@ weight = 50
 
 <!-- BEGIN_PORTEFAIX_DOC -->
 
-* Repository URL: https://prometheus-community.github.io/helm-charts
-* Repository: `prometheus-community-charts`
-* Chart: `kube-prometheus-stack`
-* Version: `16.0.0`
+* Repository URL: https://charts.portefaix.xyz
+* Repository: `portefaix-hub`
+* Chart: `alertmanager-mixin`
+* Version: `0.2.0`
 * Namespace: `monitoring`
 
 <!-- END_PORTEFAIX_DOC -->

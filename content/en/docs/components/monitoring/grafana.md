@@ -11,10 +11,10 @@ weight = 30
 
 <!-- BEGIN_PORTEFAIX_DOC -->
 
-* Repository URL: https://grafana.github.io/helm-charts
-* Repository: `grafana-charts`
-* Chart: `grafana`
-* Version: `6.12.1`
+* Repository URL: https://charts.portefaix.xyz
+* Repository: `portefaix-hub`
+* Chart: `grafana-mixin`
+* Version: `0.7.0`
 * Namespace: `monitoring`
 
 <!-- END_PORTEFAIX_DOC -->

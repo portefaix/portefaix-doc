@@ -28,11 +28,6 @@ Create a bucket for the Terraform tfstates:
 
 Configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh`:
 
-```shell
-# GCP
-export TF_VAR_master_authorized_networks='[{"cidr_block": "x.x.x.x/32", "display_name": "Home"}]'
-```
-
 And load environment :
 
 ```shell
@@ -70,6 +65,22 @@ And load environment :
 ```shell
 ❯ make terraform-apply SERVICE=iac/gcp/gke ENV=prod
 ```
+
+### Encryption
+
+Creates the [Age](https://age-encryption.org/) key:
+
+```shell
+❯ make sops-age-key CLOUD=gcp ENV=prod
+```
+
+Create the `sops-secret` secret:
+
+```shell
+❯ make sops-age-secret CLOUD=gcp ENV=prod
+```
+
+
 
 ### Kubernetes components
 
