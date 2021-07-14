@@ -4,11 +4,11 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://vmware-tanzu.github.io/helm-charts">https://vmware-tanzu.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>vmware-tanzu&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>velero&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>2.22.0&lt;/code>&lt;/li>
-&lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://falcosecurity.github.io/charts">https://falcosecurity.github.io/charts&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>falcosecurity&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>falco-exporter&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.5.1&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>security&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Falco Exporter</title><link>/docs/components/security/falco-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/security/falco-exporter/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>

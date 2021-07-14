@@ -4,11 +4,11 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://grafana.github.io/helm-charts">https://grafana.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>grafana-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>loki&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>2.5.0&lt;/code>&lt;/li>
-&lt;li>Namespace: &lt;code>logging&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>loki-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.8.0&lt;/code>&lt;/li>
+&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>

@@ -1,7 +1,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Further Setup and Troubleshooting</title><link>/docs/other-guides/</link><description>Recent content in Further Setup and Troubleshooting on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/other-guides/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Helm and Kustomize</title><link>/docs/other-guides/helm_kustomize/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/helm_kustomize/</guid><description>
 &lt;h2 id="helmrelease">HelmRelease&lt;/h2>
 &lt;p>&lt;em>HelmRelease&lt;/em> control the Helm chart into Flux.&lt;/p>
-&lt;p>You can extract from a HelmRelease file the Helm repository and add it:&lt;/p>
+&lt;p>Display informations about the Helm chart from a HelmRelease:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make helm-flux-chart &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/monitoring/kube-prometheus-stack/kube-prometheus-stack.yaml
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>portefaix&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> Helm repository and chart kubernetes/base/monitoring/kube-prometheus-stack/kube-prometheus-stack.yaml
+https://prometheus-community.github.io/helm-charts
+prometheus-community-charts
+kube-prometheus-stack
+16.13.0
+monitoring
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can extract from a HelmRelease file the Helm repository and add it:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-repo &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Then display available values from the Helm chart:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">DEBUG&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87">true&lt;/span> make helm-flux-values &lt;span style="color:#000">CHART&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/base/logging/vector/vector.yaml

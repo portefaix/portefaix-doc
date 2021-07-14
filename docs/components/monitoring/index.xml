@@ -4,10 +4,10 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>alertmanager-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.2.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Prometheus</title><link>/docs/components/monitoring/prometheus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/prometheus/</guid><description>
@@ -16,10 +16,10 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>alertmanager-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.2.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
@@ -28,10 +28,10 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>alertmanager-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.2.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
@@ -40,10 +40,10 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://grafana.github.io/helm-charts">https://grafana.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>grafana-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>grafana&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>6.12.1&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>grafana-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.7.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Node Exporter</title><link>/docs/components/monitoring/node-exporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/node-exporter/</guid><description>
@@ -52,10 +52,10 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>alertmanager-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.2.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Kube State Metrics</title><link>/docs/components/monitoring/kube-state-metrics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/kube-state-metrics/</guid><description>
@@ -64,10 +64,10 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://prometheus-community.github.io/helm-charts">https://prometheus-community.github.io/helm-charts&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>prometheus-community-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>kube-prometheus-stack&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>16.0.0&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>alertmanager-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.2.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Thanos</title><link>/docs/components/monitoring/thanos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/thanos/</guid><description>
@@ -76,10 +76,10 @@
 &lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
-&lt;li>Repository URL: &lt;a href="https://kubernetes-charts.banzaicloud.com">https://kubernetes-charts.banzaicloud.com&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>banzaicloud-charts&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>thanos&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>0.4.3&lt;/code>&lt;/li>
+&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
+&lt;li>Repository: &lt;code>portefaix&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>thanos-mixin&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.13.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>
