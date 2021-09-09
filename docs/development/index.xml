@@ -9,7 +9,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>&lt;code>kubernetes/base&lt;/code> directory contains manifests for all components&lt;/li>
 &lt;li>&lt;code>kubernetes/overlays/**&lt;/code> directory contains &lt;a href="https://kustomize.io/">Kustomize&lt;/a> overlays&lt;/li>
 &lt;/ul>
-&lt;p>Flux components are deployed for each clusster on &lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/&lt;/code> :&lt;/p>
+&lt;p>Flux components are deployed for each cluster on &lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/&lt;/code> :&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/flux-system&lt;/code> : Flux core components&lt;/li>
 &lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/*.yaml&lt;/code> : &lt;a href="https://toolkit.fluxcd.io/components/kustomize/kustomization/">Flux Kustomization&lt;/a> files for components&lt;/li>

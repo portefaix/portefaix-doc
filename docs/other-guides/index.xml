@@ -78,6 +78,8 @@ monitoring
 &lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Google Cloud Platform&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/1">#1&lt;/a> ]&lt;/li>
 &lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Amazon AWS&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/2">#2&lt;/a> ]&lt;/li>
 &lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Microsoft Azure&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/3">#3&lt;/a> ]&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Scaleway&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/17">#17&lt;/a> ]&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Digital Ocean&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/18">#18&lt;/a> ]&lt;/li>
 &lt;/ul>
 &lt;h3 id="core">Core&lt;/h3>
 &lt;ul>
@@ -113,10 +115,6 @@ monitoring
 &lt;/ul>
 &lt;h2 id="backlog">Backlog&lt;/h2>
 &lt;h3 id="cloud-providers">Cloud providers&lt;/h3>
-&lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Terraform code for Scaleway&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/17">#17&lt;/a> ]&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Terraform code for Digital Ocean&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/18">#18&lt;/a> ]&lt;/li>
-&lt;/ul>
 &lt;h3 id="secrets-store-csi-driver">Secrets Store CSI Driver&lt;/h3>
 &lt;ul>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp">GCP Secret manager&lt;/a> [ &lt;a href="https://github.com/portefaix/portefaix/issues/4">#4&lt;/a> ]&lt;/li>

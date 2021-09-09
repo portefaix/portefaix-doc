@@ -114,7 +114,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>&lt;code>kubernetes/base&lt;/code> directory contains manifests for all components&lt;/li>
 &lt;li>&lt;code>kubernetes/overlays/**&lt;/code> directory contains &lt;a href="https://kustomize.io/">Kustomize&lt;/a> overlays&lt;/li>
 &lt;/ul>
-&lt;p>Flux components are deployed for each clusster on &lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/&lt;/code> :&lt;/p>
+&lt;p>Flux components are deployed for each cluster on &lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/&lt;/code> :&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/flux-system&lt;/code> : Flux core components&lt;/li>
 &lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/*.yaml&lt;/code> : &lt;a href="https://toolkit.fluxcd.io/components/kustomize/kustomization/">Flux Kustomization&lt;/a> files for components&lt;/li>
@@ -363,9 +363,9 @@ portefaix-2 Ready &amp;lt;none&amp;gt; 6m18s v1.19.1+k3s1 192.168.1.123 &amp;lt;
 portefaix-4 Ready &amp;lt;none&amp;gt; 47s v1.19.1+k3s1 192.168.1.32 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="encryption">Encryption&lt;/h3>
 &lt;p>Creates the &lt;em>PGP&lt;/em> key:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-pgp-key &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gcp &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-pgp-key &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the &lt;code>sops-secret&lt;/code> secret:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-pgp-secret &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>gcp &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-pgp-secret &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Kyverno</title><link>/docs/components/kyvrno/kyverno/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/kyverno/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>
 &lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/kyverno/kyverno" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kyverno&lt;/b>: Kubernetes Native Policy Management&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/kyverno/kyverno">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
