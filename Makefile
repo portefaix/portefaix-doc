@@ -1,5 +1,5 @@
 # Copyright (C) 2021 Nicolas Lamirault <nicolas.lamirault@gmail.com>
-
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -21,6 +21,11 @@ CONFIG_HOME = $(or ${XDG_CONFIG_HOME},${XDG_CONFIG_HOME},${HOME}/.config)
 DEBUG ?=
 
 SHELL = /bin/bash -o pipefail
+
+IMAGE_REGISTRY  = portefaix
+CONTAINER_IMAGE = $(IMAGE_REGISTRY)/portefaix-doc
+CONTAINER_RUN   = docker run --rm --interactive --tty --volume $(CURDIR):/src
+DOCS_ARCHIVE    = public.zip
 
 MKFILE_PATH := $(abspath $(lastword $(MAKEFILE_LIST)))
 MKFILE_DIR := $(dir $(MKFILE_PATH))
@@ -82,15 +87,10 @@ print-%:
 .PHONY: clean
 clean: ## Cleanup
 	@echo -e "$(OK_COLOR)[$(BANNER)] Cleanup$(NO_COLOR)"
-	@find . -name "*.retry"|xargs rm -f
+	@rm -rf public resources node_modules public.zip
 
 .PHONY: check
 check: check-konstraint ## Check requirements
-
-.PHONY: doc
-doc: ## Generate documentation
-	@echo -e "$(OK_COLOR)[$(APP)] Documentation$(NO_COLOR)"
-	hugo server -w -v --disableFastRender
 
 .PHONY: diagrams
 diagrams: guard-CLOUD_PROVIDER guard-OUTPUT ## Generate diagrams
@@ -102,3 +102,41 @@ diagrams: guard-CLOUD_PROVIDER guard-OUTPUT ## Generate diagrams
 .PHONY: validate
 validate: ## Execute git-hooks
 	@pre-commit run -a
+
+# ====================================
+# H U G O
+# ====================================
+
+##@ Hugo
+
+.PHONY: submodule
+submodule: ## initialize the docsy theme submodule
+	git submodule update --init --recursive
+
+.PHONY: submodule-reset
+submodule-reset: ## reset submodules to tracked commit
+	git submodule foreach --recursive git reset --hard
+
+.PHONY: serve
+serve: submodule ## Boot the development server.
+	@echo -e "$(OK_COLOR)[$(APP)] Documentation$(NO_COLOR)"
+	hugo server --buildFuture --baseUrl http://127.0.0.1
+
+.PHONY: build
+build: submodule ## Generate the static site into the /public folder
+	npm install
+	hugo --environment production --cleanDestinationDir
+
+# ====================================
+# C O N T A I N E R
+# ====================================
+
+##@ Container
+
+.PHONY: container-build
+container-build: submodule ## Build a container image for the preview of the website
+	docker build -t $(CONTAINER_IMAGE) .
+
+.PHONY: container-serve
+container-serve: ## Boot the development server using container. Run `make container-image` before this.
+	docker run -p 8080:80 $(CONTAINER_IMAGE)

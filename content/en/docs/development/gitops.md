@@ -18,7 +18,7 @@ Manifests files :
 * `kubernetes/base` directory contains manifests for all components
 * `kubernetes/overlays/**` directory contains [Kustomize](https://kustomize.io/) overlays
 
-Flux components are deployed for each clusster on `clusters/<CLOUD>/<ENV>/` :
+Flux components are deployed for each cluster on `clusters/<CLOUD>/<ENV>/` :
 
 * `clusters/<CLOUD>/<ENV>/flux-system` : Flux core components
 * `clusters/<CLOUD>/<ENV>/*.yaml` : [Flux Kustomization](https://toolkit.fluxcd.io/components/kustomize/kustomization/) files for components

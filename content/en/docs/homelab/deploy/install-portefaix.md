@@ -70,11 +70,11 @@ portefaix-4   Ready    <none>   47s     v1.19.1+k3s1   192.168.1.32    <none>   
 Creates the *PGP* key:
 
 ```shell
-❯ make sops-pgp-key CLOUD=gcp ENV=prod
+❯ make sops-pgp-key CLOUD=k3s ENV=homelab
 ```
 
 Create the `sops-secret` secret:
 
 ```shell
-❯ make sops-pgp-secret CLOUD=gcp ENV=prod
+❯ make sops-pgp-secret CLOUD=k3s ENV=homelab
 ```

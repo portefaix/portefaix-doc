@@ -13,6 +13,8 @@ weight = 50
 - [x] Terraform code for Google Cloud Platform</span> [ [#1](https://github.com/portefaix/portefaix/issues/1) ]
 - [x] Terraform code for Amazon AWS</span> [ [#2](https://github.com/portefaix/portefaix/issues/2) ]
 - [x] Terraform code for Microsoft Azure</span> [ [#3](https://github.com/portefaix/portefaix/issues/3) ]
+- [x] Terraform code for Scaleway</span> [ [#17](https://github.com/portefaix/portefaix/issues/17) ]
+- [x] Terraform code for Digital Ocean</span> [ [#18](https://github.com/portefaix/portefaix/issues/18) ]
 
 ### Core
 
@@ -51,8 +53,6 @@ weight = 50
 
 ### Cloud providers
 
-- [ ] `WIP` Terraform code for Scaleway</span> [ [#17](https://github.com/portefaix/portefaix/issues/17) ]
-- [ ] `WIP` Terraform code for Digital Ocean</span> [ [#18](https://github.com/portefaix/portefaix/issues/18) ]
 
 ### Secrets Store CSI Driver
 
