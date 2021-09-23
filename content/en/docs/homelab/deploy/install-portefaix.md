@@ -15,7 +15,7 @@ weight = 10
 Setup operating system for Raspberry PI :
 
 ```shell
-❯ sudo dd if=/dev/zero of=/dev/mmcblk0
+❯ sudo dd if=/dev/zero of=/dev/mmcblk0 conv=noerror status=progress
 ❯ sudo./hack/scripts/sdcard.sh <hostname> /dev/mmcblk0
 ```
 
