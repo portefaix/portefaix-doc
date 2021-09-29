@@ -12,7 +12,11 @@ weight = 10
 
 ## Operating System
 
-Setup operating system for Raspberry PI :
+Setup operating system for Raspberry PI.
+
+See: https://www.raspberrypi.org/software/
+
+Or:
 
 ```shell
 ❯ sudo dd if=/dev/zero of=/dev/mmcblk0 conv=noerror status=progress
