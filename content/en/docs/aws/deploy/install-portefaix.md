@@ -31,13 +31,13 @@ And load environment :
 Create a S3 bucket for Terraform states:
 
 ```shell
-❯ make -f hack/aws.mk aws-s3-bucket ENV=staging
+❯ make -f hack/build/aws.mk aws-s3-bucket ENV=staging
 ```
 
 Create a DynamoDB table :
 
 ```shell
-❯ make -f hack/aws.mk aws-dynamodb-create-table ENV=staging
+❯ make -f hack/build/aws.mk aws-dynamodb-create-table ENV=staging
 ```
 
 ## Terraform

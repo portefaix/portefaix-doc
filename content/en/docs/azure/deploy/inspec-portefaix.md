@@ -11,7 +11,7 @@ weight = 20
 Check:
 
 ```shell
-❯ make -f hack/azure.mk inspec-debug
+❯ make -f hack/build/azure.mk inspec-debug
 Test infrastructure
 
  ────────────────────────────── Platform Details ──────────────────────────────
@@ -24,7 +24,7 @@ Release:   azure_mgmt_resources-v0.17.8
 Execute tests:
 
 ```shell
-❯ make -f hack/azure.mk inspec-test SERVICE=iac/azure/<SERVICE> ENV=dev
+❯ make -f hack/build/azure.mk inspec-test SERVICE=iac/azure/<SERVICE> ENV=dev
 ```
 
 You could upload JSON results file to [Heimdall Lite](https://heimdall-lite.mitre.org/) to display ressults
@@ -34,7 +34,7 @@ You could upload JSON results file to [Heimdall Lite](https://heimdall-lite.mitr
 You could perform tests accoring the [CIS Microsoft Azure Foundations Security Benchmark](https://azure.microsoft.com/fr-fr/resources/cis-microsoft-azure-foundations-security-benchmark/):
 
 ```shell
-❯ make -f hack/azure.mk inspec-cis ENV=dev
+❯ make -f hack/build/azure.mk inspec-cis ENV=dev
 ```
 
 ### AKS

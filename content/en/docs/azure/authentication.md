@@ -19,7 +19,7 @@ Done
 ## Configure kubectl
 
 ```shell
-❯ make -f hack/azure.mk azure-kube-credentials ENV=dev
+❯ make -f hack/build/azure.mk azure-kube-credentials ENV=dev
 ```
 
 ```shell

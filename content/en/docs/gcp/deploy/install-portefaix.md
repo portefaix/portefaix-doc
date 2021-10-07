@@ -17,13 +17,13 @@ Authenticate on the Google Cloud Platform:
 Enable APIs:
 
 ```shell
-❯ make -f hack/gcp.mk gcp-enable-apis ENV=prod
+❯ make -f hack/build/gcp.mk gcp-enable-apis ENV=prod
 ```
 
 Create a bucket for the Terraform tfstates:
 
 ```shell
-❯ make -f hack/gcp.mk gcp-bucket ENV=prod
+❯ make -f hack/build/gcp.mk gcp-bucket ENV=prod
 ```
 
 Configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh`:

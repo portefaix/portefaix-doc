@@ -27,7 +27,7 @@ And load environment :
 Create a S3 bucket for Terraform states:
 
 ```shell
-❯ make -f hack/exoscale.mk exo-bucket ENV=dev
+❯ make -f hack/build/exoscale.mk exo-bucket ENV=dev
 ```
 
 ## Terraform

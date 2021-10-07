@@ -19,7 +19,7 @@ Export Azure credentials:
 Create a [Storage Account](https://portal.azure.com/#create/Microsoft.StorageAccount) :
 
 ```shell
-❯ make -f hack/azure.mk azure-storage-account ENV=dev
+❯ make -f hack/build/azure.mk azure-storage-account ENV=dev
 XXXXXXXXXXX
 ```
 
@@ -28,13 +28,13 @@ You could see the Key on the output.
 Create storage container for Terraform states:
 
 ```shell
-❯ make -f hack/azure.mk azure-storage-container ENV=dev KEY="xxxxxxxxxxxxxxxxx"
+❯ make -f hack/build/azure.mk azure-storage-container ENV=dev KEY="xxxxxxxxxxxxxxxxx"
 ```
 
 Create the Service Principal for Terraform:
 
 ```shell
-❯ make -f hack/azure.mk azure-sp ENV=dev
+❯ make -f hack/build/azure.mk azure-sp ENV=dev
 {
   "appId": "xxxxxxxxxxxxxxxxx",
   "displayName": "portefaix-dev",
@@ -60,7 +60,7 @@ And load environment :
 Set permissions:
 
 ```shell
-❯ make -f hack/azure.mk azure-permissions ENV=dev
+❯ make -f hack/build/azure.mk azure-permissions ENV=dev
 ```
 
 ## Terraform

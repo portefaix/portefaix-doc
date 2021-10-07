@@ -18,7 +18,7 @@ Done
 ## Configure kubectl
 
 ```shell
-❯ make kubernetes-credentials CLOUD=gcp ENV=prod
+❯ make -f hack/build/azure.mk gck-kube-credentials CLOUD=gcp ENV=prod
 ```
 
 ```shell

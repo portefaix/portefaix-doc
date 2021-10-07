@@ -9,7 +9,7 @@ weight = 20
 Check:
 
 ```shell
-❯ make -f hack/aws.mk inspec-debug
+❯ make -f hack/build/aws.mk inspec-debug
 Test infrastructure
 
  ────────────────────────────── Platform Details ──────────────────────────────
@@ -22,7 +22,7 @@ Release:   train-aws: v0.1.15, aws-sdk-core: v3.94.0
 Execute tests:
 
 ```shell
-❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/<SERVICE> ENV=staging
+❯ make -f hack/build/aws.mk inspec-test SERVICE=iac/aws/<SERVICE> ENV=staging
 ```
 
 You could upload JSON results file to [Heimdall Lite](https://heimdall-lite.mitre.org/) to display ressults
@@ -32,19 +32,19 @@ You could upload JSON results file to [Heimdall Lite](https://heimdall-lite.mitr
 You could perform tests according to the [CIS AWS Foundations Benchmark](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis.html):
 
 ```shell
-❯ make -f hack/aws.mk inspec-aws-cis ENV=staging
+❯ make -f hack/build/aws.mk inspec-aws-cis ENV=staging
 ```
 
 ## CIS Kubernetes Benchmark
 
 ```shell
-❯ make -f hack/aws.mk inspec-aws-kubernetes ENV=staging
+❯ make -f hack/build/aws.mk inspec-aws-kubernetes ENV=staging
 ```
 
 ## VPC
 
 ```shell
-❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/vpc ENV=staging
+❯ make -f hack/build/aws.mk inspec-test SERVICE=iac/aws/vpc ENV=staging
 ```
 
 <img src="/docs/images/inspec-aws-vpc.png"
@@ -61,7 +61,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 ## EKS
 
 ```shell
-❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/eks ENV=staging
+❯ make -f hack/build/aws.mk inspec-test SERVICE=iac/aws/eks ENV=staging
 ```
 
 <img src="/docs/images/inspec-aws-eks.png"
@@ -80,7 +80,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 ## Sops
 
 ```shell
-❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/sops ENV=staging
+❯ make -f hack/build/aws.mk inspec-test SERVICE=iac/aws/sops ENV=staging
 ```
 
 <img src="/docs/images/inspec-aws-sops.png"
@@ -95,7 +95,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 ## Observability
 
 ```shell
-❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/observability ENV=staging
+❯ make -f hack/build/aws.mk inspec-test SERVICE=iac/aws/observability ENV=staging
 ```
 
 <img src="/docs/images/inspec-aws-observability.png"
@@ -122,7 +122,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 ## Velero
 
 ```shell
-❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/velero ENV=staging
+❯ make -f hack/build/aws.mk inspec-test SERVICE=iac/aws/velero ENV=staging
 ```
 
 <img src="/docs/images/inspec-aws-velero.png"
@@ -139,7 +139,7 @@ You could perform tests according to the [CIS AWS Foundations Benchmark](https:/
 ## Vector
 
 ```shell
-❯ make -f hack/aws.mk inspec-test SERVICE=iac/aws/vector ENV=staging
+❯ make -f hack/build/aws.mk inspec-test SERVICE=iac/aws/vector ENV=staging
 ```
 
 <img src="/docs/images/inspec-aws-vector.png"
