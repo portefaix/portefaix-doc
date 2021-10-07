@@ -168,9 +168,9 @@ and configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/port
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
 &lt;p>Create a S3 bucket for Terraform states:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk aws-s3-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk aws-s3-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a DynamoDB table :&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk aws-dynamodb-create-table &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk aws-dynamodb-create-table &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
 &lt;h3 id="vpc--internet-gateway">VPC / Internet Gateway&lt;/h3>
 &lt;p>Create an Elastic IP for Internet Gateway:&lt;/p>
@@ -216,13 +216,13 @@ Outputs:
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AZURE_SUBSCRIPTION_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxx&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
 &lt;p>Create a &lt;a href="https://portal.azure.com/#create/Microsoft.StorageAccount">Storage Account&lt;/a> :&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-storage-account &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/azure.mk azure-storage-account &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 XXXXXXXXXXX
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You could see the Key on the output.&lt;/p>
 &lt;p>Create storage container for Terraform states:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-storage-container &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev &lt;span style="color:#000">KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/azure.mk azure-storage-container &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev &lt;span style="color:#000">KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxxx&amp;#34;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the Service Principal for Terraform:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-sp &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/azure.mk azure-sp &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;span style="color:#4e9a06">&amp;#34;appId&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxxx&amp;#34;&lt;/span>,
 &lt;span style="color:#4e9a06">&amp;#34;displayName&amp;#34;&lt;/span>: &lt;span style="color:#4e9a06">&amp;#34;portefaix-dev&amp;#34;&lt;/span>,
@@ -240,7 +240,7 @@ XXXXXXXXXXX
 &lt;p>And load environment :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh azure
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Set permissions:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk azure-permissions &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/azure.mk azure-permissions &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
 &lt;h3 id="virtual-network">Virtual Network&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/vnet &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
@@ -270,7 +270,7 @@ XXXXXXXXXXX
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh exoscale
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
 &lt;p>Create a S3 bucket for Terraform states:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/exoscale.mk exo-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/exoscale.mk exo-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
 &lt;h3 id="sks">SKS&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/exoscale/sks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
@@ -280,9 +280,9 @@ XXXXXXXXXXX
 &lt;p>Authenticate on the Google Cloud Platform:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ gcloud auth application-default login
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable APIs:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk gcp-enable-apis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-enable-apis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a bucket for the Terraform tfstates:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk gcp-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/portefaix.sh&lt;/code>:&lt;/p>
 &lt;p>And load environment :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh gcp
@@ -343,20 +343,20 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ sudo dd &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/zero &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/mmcblk0 &lt;span style="color:#000">conv&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>noerror &lt;span style="color:#000">status&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>progress
 ❯ sudo./hack/scripts/sdcard.sh &amp;lt;hostname&amp;gt; /dev/mmcblk0
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable SSH :&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk sdcard-mount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
-❯ sudo touch /mnt/portefaix/root/ssh
-❯ make -f hack/k3s.mk sdcard-unmount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk sdcard-mount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+❯ sudo touch /mnt/portefaix/boot/ssh
+❯ make -f hack/build/k3s.mk sdcard-unmount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy keys to each node:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ansible">Ansible&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="k3sup">K3Sup&lt;/h2>
 &lt;p>Create the master :&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3s-create &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk k3s-create &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>For each node, add it to the cluster:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3s-join &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">AGENT_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk k3s-join &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">AGENT_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Check Kubernetes cluster:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/k3s.mk k3s-kube-credentials &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk k3s-kube-credentials &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 ❯ kubectl get node -o wide
 NAME STATUS ROLES AGE VERSION INTERNAL-IP EXTERNAL-IP OS-IMAGE KERNEL-VERSION CONTAINER-RUNTIME
 portefaix-3 Ready &amp;lt;none&amp;gt; 3m44s v1.19.1+k3s1 192.168.1.30 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
@@ -639,22 +639,22 @@ corresponding tools for each platform.&lt;/p>
 &lt;p>See the &lt;a href="/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-debug
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-debug
 Test infrastructure
 ────────────────────────────── Platform Details ──────────────────────────────
 Name: aws
 Families: cloud, api
 Release: train-aws: v0.1.15, aws-sdk-core: v3.94.0
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You could upload JSON results file to &lt;a href="https://heimdall-lite.mitre.org/">Heimdall Lite&lt;/a> to display ressults&lt;/p>
 &lt;h2 id="cis-aws-foundations-benchmark">CIS AWS Foundations Benchmark&lt;/h2>
 &lt;p>You could perform tests according to the &lt;a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-cis.html">CIS AWS Foundations Benchmark&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-aws-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-aws-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="cis-kubernetes-benchmark">CIS Kubernetes Benchmark&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-aws-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-aws-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vpc">VPC&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-vpc.png"
 alt="VPC"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -685,7 +685,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="eks">EKS&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/eks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/eks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-eks.png"
 alt="EKS"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -724,7 +724,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="sops">Sops&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-sops.png"
 alt="Sops"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -747,7 +747,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="observability">Observability&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-observability.png"
 alt="Observability"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -818,7 +818,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="velero">Velero&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-velero.png"
 alt="Velero"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -849,7 +849,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="vector">Vector&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-aws-vector.png"
 alt="Vector"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -882,18 +882,18 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;h2 id="inspec">Inspec&lt;/h2>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk inspec-debug
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/azure.mk inspec-debug
 Test infrastructure
 ────────────────────────────── Platform Details ──────────────────────────────
 Name: azure
 Families: cloud, api
 Release: azure_mgmt_resources-v0.17.8
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/azure.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/azure/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You could upload JSON results file to &lt;a href="https://heimdall-lite.mitre.org/">Heimdall Lite&lt;/a> to display ressults&lt;/p>
 &lt;h3 id="microsoft-azure-cis-foundations">Microsoft Azure CIS Foundations&lt;/h3>
 &lt;p>You could perform tests accoring the &lt;a href="https://azure.microsoft.com/fr-fr/resources/cis-microsoft-azure-foundations-security-benchmark/">CIS Microsoft Azure Foundations Security Benchmark&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/azure.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/azure.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="aks">AKS&lt;/h3>
 &lt;p>&lt;img src="/docs/images/inspec-azure-aks.png"
 alt="AKS"
@@ -928,22 +928,22 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;h4 class="alert-heading">Not Available&lt;/h4>
 &lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/gcp/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-debug
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-debug
 Test infrastructure
 ────────────────────────────── Platform Details ──────────────────────────────
 Name: gcp
 Families: cloud, api
 Release: google-api-client-v0.34.1
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You could upload JSON results file to &lt;a href="https://heimdall-lite.mitre.org/">Heimdall Lite&lt;/a> to display ressults&lt;/p>
 &lt;h2 id="cis-kubernetes-benchmark">CIS Kubernetes Benchmark&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-gcp-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-gcp-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gcp-cis">GCP CIS&lt;/h2>
 &lt;p>You could perform tests accoring the &lt;a href="https://opensource.googleblog.com/2020/08/assess-security-of-cloud-deployments.html">GCP CIS&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vpc">VPC&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vpc.png"
 alt="VPC"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -966,7 +966,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="gke">GKE&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-gke.png"
 alt="GKE"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -1025,7 +1025,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="sops">Sops&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-sops.png"
 alt="Sops"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -1048,7 +1048,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="observability">Observability&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-observability.png"
 alt="Observability"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -1107,7 +1107,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="velero">Velero&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-velero.png"
 alt="Velero"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -1134,7 +1134,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="vector">Vector&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vector.png"
 alt="Vector"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
@@ -1161,7 +1161,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="external-dns">External-DNS&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>prod
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-external-dns.png"
 alt="External-DNS"
 class="mt-3 mb-3 border border-info rounded">&lt;/p>
