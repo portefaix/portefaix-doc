@@ -27,7 +27,7 @@ Enable SSH :
 
 ```shell
 ❯ make -f hack/k3s.mk sdcard-mount ENV=homelab
-❯ sudo touch /mnt/portefaix/root/ssh
+❯ sudo touch /mnt/portefaix/boot/ssh
 ❯ make -f hack/k3s.mk sdcard-unmount ENV=homelab
 ```
 
