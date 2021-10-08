@@ -62,23 +62,30 @@ Check Kubernetes cluster:
 ```shell
 ❯ make -f hack/build/k3s.mk k3s-kube-credentials ENV=homelab
 ❯ kubectl get node -o wide
-NAME          STATUS   ROLES    AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION   CONTAINER-RUNTIME
-portefaix-3   Ready    <none>   3m44s   v1.19.1+k3s1   192.168.1.30    <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.0-k3s1
-portefaix-1   Ready    master   8m35s   v1.19.1+k3s1   192.168.1.114   <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.0-k3s1
-portefaix-2   Ready    <none>   6m18s   v1.19.1+k3s1   192.168.1.123   <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.0-k3s1
-portefaix-4   Ready    <none>   47s     v1.19.1+k3s1   192.168.1.32    <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.0-k3s1
+NAME          STATUS   ROLES                  AGE    VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION   CONTAINER-RUNTIME
+portefaix-4   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.32    <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
+portefaix-1   Ready    control-plane,master   32d    v1.21.4+k3s1   192.168.1.4     <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
+portefaix-3   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.30    <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
+portefaix-5   Ready    <none>                 129m   v1.21.4+k3s1   192.168.1.126   <none>        Debian GNU/Linux 10 (buster)   5.10.63-v8+      containerd://1.4.9-k3s1
+portefaix-2   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.123   <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
 ```
 
-### Encryption
+## Taints
 
-Creates the *PGP* key:
+We taint the master `portefaix-1`:
 
 ```shell
-❯ make sops-pgp-key CLOUD=k3s ENV=homelab
+❯ kubectl taint nodes portefaix-1 node.kubernetes.io/fluxcd:NoSchedule
 ```
 
-Create the `sops-secret` secret:
+We taint the Raspiberry PI 3:
 
 ```shell
-❯ make sops-pgp-secret CLOUD=k3s ENV=homelab
+❯ kubectl taint nodes portefaix-2 node.kubernetes.io/legacy:NoSchedule
+❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
+❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule
 ```
+
+## Applications
+
+See: [](development/gitops/)
