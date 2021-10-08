@@ -88,4 +88,4 @@ We taint the Raspiberry PI 3:
 
 ## Applications
 
-See: [](development/gitops/)
+See: [Gitops](development/gitops/)

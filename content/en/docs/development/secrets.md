@@ -9,11 +9,23 @@ weight = 20
 
 [Sops](https://github.com/mozilla/sops) is used to manage secrets.
 
-### Store
+### Age
+
+Create for each cloud provider and environment an [Age](https://age-encryption.org/) key. Store it into:
+
+`.secrets/<CLOUD_PROVIDER>/<ENV>/age/age.agekey`
+
+Create the Kubernetes secret:
+
+```shell
+❯ make sops-age-secret CLOUD=<CLOUD_PROVIDER> ENV=<ENV>
+```
+
+## Store
 
 Put your sensitive data into the directory `.secrets` or `.secrets/<CLOUD_PROVIDER>/<ENV>/<APPLICATION>`
 
-### Kubernetes secret
+## Kubernetes secret
 
 Create a Kubernetes secret file from sensitive file.
 
@@ -32,7 +44,7 @@ config:
 ❯ make kubernetes-secret NAME=thanos-object-storage NAMESPACE=monitoring FILE=.secrets/aws/object-store.yaml > thanos-object-storage.yaml
 ```
 
-### Encrypt
+## Encrypt
 
 Encrypt the file using Sops:
 
@@ -46,7 +58,7 @@ You can now safely store this file into Git.
 ❯ mv thanos-object-storage.yaml kubernetes/overlays/staging/monitoring/thanos/
 ```
 
-### Decrypt
+## Decrypt
 
 Check you can decrypt the file:
 
