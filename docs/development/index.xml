@@ -19,9 +19,14 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Secrets</title><link>/docs/development/secrets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/secrets/</guid><description>
 &lt;h2 id="secrets">Secrets&lt;/h2>
 &lt;p>&lt;a href="https://github.com/mozilla/sops">Sops&lt;/a> is used to manage secrets.&lt;/p>
-&lt;h3 id="store">Store&lt;/h3>
+&lt;h3 id="age">Age&lt;/h3>
+&lt;p>Create for each cloud provider and environment an &lt;a href="https://age-encryption.org/">Age&lt;/a> key. Store it into:&lt;/p>
+&lt;p>&lt;code>.secrets/&amp;lt;CLOUD_PROVIDER&amp;gt;/&amp;lt;ENV&amp;gt;/age/age.agekey&lt;/code>&lt;/p>
+&lt;p>Create the Kubernetes secret:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-age-secret &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;CLOUD_PROVIDER&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ENV&amp;gt;
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="store">Store&lt;/h2>
 &lt;p>Put your sensitive data into the directory &lt;code>.secrets&lt;/code> or &lt;code>.secrets/&amp;lt;CLOUD_PROVIDER&amp;gt;/&amp;lt;ENV&amp;gt;/&amp;lt;APPLICATION&amp;gt;&lt;/code>&lt;/p>
-&lt;h3 id="kubernetes-secret">Kubernetes secret&lt;/h3>
+&lt;h2 id="kubernetes-secret">Kubernetes secret&lt;/h2>
 &lt;p>Create a Kubernetes secret file from sensitive file.&lt;/p>
 &lt;p>Ex: for Thanos configuration :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#000">❯ cat .secrets/aws/object-store.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -31,12 +36,12 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">s3.eu-west-3.amazonaws.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">region&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">eu-west-3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-secret &lt;span style="color:#000">NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>thanos-object-storage &lt;span style="color:#000">NAMESPACE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>monitoring &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>.secrets/aws/object-store.yaml &amp;gt; thanos-object-storage.yaml
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="encrypt">Encrypt&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="encrypt">Encrypt&lt;/h2>
 &lt;p>Encrypt the file using Sops:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-encrypt &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>aws &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>thanos-object-storage.yaml
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You can now safely store this file into Git.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ mv thanos-object-storage.yaml kubernetes/overlays/staging/monitoring/thanos/
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="decrypt">Decrypt&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="decrypt">Decrypt&lt;/h2>
 &lt;p>Check you can decrypt the file:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-decrypt &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/overlays/staging/monitoring/thanos/thanos-object-storage.yaml
 apiVersion: v1
@@ -48,7 +53,7 @@ creationTimestamp: null
 name: thanos-object-storage
 namespace: monitoring
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="cicd">CI/CD&lt;/h2>
-&lt;h3 id="age">AGE&lt;/h3>
+&lt;h3 id="age-1">AGE&lt;/h3>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Work In Progress&lt;/h4>
 &lt;/div>
