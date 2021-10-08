@@ -19,20 +19,13 @@ a single-node cluster which you can use on a desktop or server or in the cloud).
 &lt;h3 id="installing-portefaix-on-a-public-cloud">Installing Portefaix on a public cloud&lt;/h3>
 &lt;p>Choose the Portefaix deployment guide for your chosen cloud:&lt;/p>
 &lt;ul>
-&lt;li>To use Portefaix on Google Kubernetes Engine (GKE),
-follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
-follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
-follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
-follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Google Kubernetes Engine (GKE), follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS), follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS), follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK), follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix as your Homelab, follow the &lt;a href="/docs/homelab/deploy">Raspberry PI Homelab&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;!-- * To use Portefaix on IBM Cloud (IKS),
-follow the [IKS deployment guide](/docs/ibm/).
-* To use Portefaix on IBM Cloud (IKS),
-follow the [IKS deployment guide](/docs/ibm/).
-* To use Portefaix on IBM Cloud (IKS),
 follow the [IKS deployment guide](/docs/ibm/). -->
 &lt;h2 id="deployment-quick-reference">Deployment quick reference&lt;/h2>
 &lt;p>Below is a matrix of the platforms where you can deploy Portefaix and the

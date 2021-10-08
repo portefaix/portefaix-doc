@@ -359,16 +359,20 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk k3s-kube-credentials &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 ❯ kubectl get node -o wide
 NAME STATUS ROLES AGE VERSION INTERNAL-IP EXTERNAL-IP OS-IMAGE KERNEL-VERSION CONTAINER-RUNTIME
-portefaix-3 Ready &amp;lt;none&amp;gt; 3m44s v1.19.1+k3s1 192.168.1.30 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
-portefaix-1 Ready master 8m35s v1.19.1+k3s1 192.168.1.114 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
-portefaix-2 Ready &amp;lt;none&amp;gt; 6m18s v1.19.1+k3s1 192.168.1.123 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
-portefaix-4 Ready &amp;lt;none&amp;gt; 47s v1.19.1+k3s1 192.168.1.32 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.0-k3s1
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="encryption">Encryption&lt;/h3>
-&lt;p>Creates the &lt;em>PGP&lt;/em> key:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-pgp-key &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the &lt;code>sops-secret&lt;/code> secret:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-pgp-secret &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Kyverno</title><link>/docs/components/kyvrno/kyverno/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/kyverno/</guid><description>
+portefaix-4 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.32 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.9-k3s1
+portefaix-1 Ready control-plane,master 32d v1.21.4+k3s1 192.168.1.4 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.9-k3s1
+portefaix-3 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.30 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.9-k3s1
+portefaix-5 Ready &amp;lt;none&amp;gt; 129m v1.21.4+k3s1 192.168.1.126 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.63-v8+ containerd://1.4.9-k3s1
+portefaix-2 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.123 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.9-k3s1
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="taints">Taints&lt;/h2>
+&lt;p>We taint the master &lt;code>portefaix-1&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-1 node.kubernetes.io/fluxcd:NoSchedule
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We taint the Raspiberry PI 3:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-2 node.kubernetes.io/legacy:NoSchedule
+❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
+❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="applications">Applications&lt;/h2>
+&lt;p>See: &lt;a href="development/gitops/">&lt;/a>&lt;/p></description></item><item><title>Docs: Kyverno</title><link>/docs/components/kyvrno/kyverno/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/kyverno/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>
 &lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/kyverno/kyverno" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kyverno&lt;/b>: Kubernetes Native Policy Management&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/kyverno/kyverno">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
 &lt;h2 id="gitops">Gitops&lt;/h2>
@@ -555,20 +559,13 @@ a single-node cluster which you can use on a desktop or server or in the cloud).
 &lt;h3 id="installing-portefaix-on-a-public-cloud">Installing Portefaix on a public cloud&lt;/h3>
 &lt;p>Choose the Portefaix deployment guide for your chosen cloud:&lt;/p>
 &lt;ul>
-&lt;li>To use Portefaix on Google Kubernetes Engine (GKE),
-follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS),
-follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS),
-follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
-&lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK),
-follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Google Kubernetes Engine (GKE), follow the &lt;a href="/docs/gcp/deploy/">GKE deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Amazon Elastic Kubernetes Service (EKS), follow the &lt;a href="/docs/aws/deploy/">EKS deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on Microsoft Azure Kubernetes Service (AKS), follow the &lt;a href="/docs/azure/deploy/">AKS deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix on AlibabaCloud Container Service for Kubernetes (ACK), follow the &lt;a href="/docs/alicloud/deploy">ACK deployment guide&lt;/a>.&lt;/li>
+&lt;li>To use Portefaix as your Homelab, follow the &lt;a href="/docs/homelab/deploy">Raspberry PI Homelab&lt;/a>.&lt;/li>
 &lt;/ul>
 &lt;!-- * To use Portefaix on IBM Cloud (IKS),
-follow the [IKS deployment guide](/docs/ibm/).
-* To use Portefaix on IBM Cloud (IKS),
-follow the [IKS deployment guide](/docs/ibm/).
-* To use Portefaix on IBM Cloud (IKS),
 follow the [IKS deployment guide](/docs/ibm/). -->
 &lt;h2 id="deployment-quick-reference">Deployment quick reference&lt;/h2>
 &lt;p>Below is a matrix of the platforms where you can deploy Portefaix and the
