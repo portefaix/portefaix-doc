@@ -1,7 +1,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Linkerd</title><link>/docs/components/linkerd/</link><description>Recent content in Linkerd on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/components/linkerd/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Linkerd</title><link>/docs/components/linkerd/linkerd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/linkerd/linkerd/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>
 &lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/linkerd2-edge/linkerd2" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>linkerd2&lt;/b>: Linkerd gives you observability, reliability, and security for your microservices — with no code change required. &lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/linkerd2-edge/linkerd2">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
-&lt;h2 id="gitops">Gitops&lt;/h2>
+&lt;h2 id="certificates-and-keys">Certificates and keys&lt;/h2>
+&lt;p>Use a script ./hack/scripts/linkerd-certificates.sh. Ex for Homelab:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#000">STEP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>step-cli ./hack/scripts/linkerd-certificates.sh k3sh omelab Generate secrets into: .secrets/k3s/homelab/linkerd
+Trust anchor certificate
+✔ Would you like to overwrite .secrets/k3s/homelab/linkerd/ca.crt &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>y/n&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: y
+Your certificate has been saved in .secrets/k3s/homelab/linkerd/ca.crt.: y
+Your private key has been saved in .secrets/k3s/homelab/linkerd/ca.key.
+Issuer certificate and key
+✔ Would you like to overwrite .secrets/k3s/homelab/linkerd/issuer.key &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>y/n&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: y
+✔ Would you like to overwrite .secrets/k3s/homelab/linkerd/issuer.crt &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>y/n&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>: y
+Your certificate has been saved in .secrets/k3s/homelab/linkerd/issuer.crt.
+Your private key has been saved in .secrets/k3s/homelab/linkerd/issuer.key.
+Create Kubernetes secret
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Encrypt using Sops and update manifests:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-encrypt &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>k3s &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>secrets.yaml
+❯ mv secrets.yaml ./kubernetes/overlays/k3s/homelab/linkerd/linkerd/certificates.yaml
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitops">Gitops&lt;/h2>
 &lt;!-- BEGIN_PORTEFAIX_DOC -->
 &lt;ul>
 &lt;li>Repository URL: &lt;a href="https://helm.linkerd.io/edge">https://helm.linkerd.io/edge&lt;/a>&lt;/li>
