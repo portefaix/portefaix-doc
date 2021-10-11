@@ -14,7 +14,7 @@ weight = 10
 * Repository URL: https://charts.bitnami.com/bitnami
 * Repository: `bitnami`
 * Chart: `external-dns`
-* Version: `5.1.1`
+* Version: `5.4.1`
 * Namespace: `dns`
 
 <!-- END_PORTEFAIX_DOC -->

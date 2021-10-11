@@ -14,7 +14,7 @@ weight = 30
 * Repository URL: https://charts.portefaix.xyz
 * Repository: `portefaix-hub`
 * Chart: `grafana-mixin`
-* Version: `0.7.0`
+* Version: `0.8.0`
 * Namespace: `monitoring`
 
 <!-- END_PORTEFAIX_DOC -->

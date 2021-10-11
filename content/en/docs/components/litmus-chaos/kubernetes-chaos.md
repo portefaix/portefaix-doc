@@ -14,7 +14,7 @@ weight = 20
 * Repository URL: https://litmuschaos.github.io/litmus-helm/
 * Repository: `litmuschaos`
 * Chart: `kubernetes-chaos`
-* Version: `2.11.0`
+* Version: `2.14.0`
 * Namespace: `litmus`
 
 <!-- END_PORTEFAIX_DOC -->

@@ -14,7 +14,7 @@ weight = 10
 * Repository URL: https://falcosecurity.github.io/charts
 * Repository: `falcosecurity`
 * Chart: `falco-exporter`
-* Version: `0.5.1`
+* Version: `0.5.2`
 * Namespace: `security`
 
 <!-- END_PORTEFAIX_DOC -->

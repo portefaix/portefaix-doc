@@ -15,7 +15,7 @@ weight = 10
 * Repository URL: https://charts.jetstack.io/
 * Repository: `jetstack`
 * Chart: `cert-manager`
-* Version: `v1.4.0`
+* Version: `v1.5.3`
 * Namespace: `cert-manager`
 
 <!-- END_PORTEFAIX_DOC -->

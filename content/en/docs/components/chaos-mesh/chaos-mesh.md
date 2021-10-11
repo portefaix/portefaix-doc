@@ -14,7 +14,7 @@ weight = 10
 * Repository URL: https://charts.chaos-mesh.org
 * Repository: `chaos-mesh`
 * Chart: `chaos-mesh`
-* Version: `v0.5.1`
+* Version: `v0.5.3`
 * Namespace: `chaos-mesh`
 
 <!-- END_PORTEFAIX_DOC -->

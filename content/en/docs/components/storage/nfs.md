@@ -14,7 +14,7 @@ weight = 20
 * Repository URL: https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
 * Repository: `kubernetes-sigs-nfs-subdir-external-provisioner-charts`
 * Chart: `nfs-subdir-external-provisioner`
-* Version: `4.0.10`
+* Version: `4.0.13`
 * Namespace: `storage`
 
 <!-- END_PORTEFAIX_DOC -->

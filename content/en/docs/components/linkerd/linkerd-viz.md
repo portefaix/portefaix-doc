@@ -14,7 +14,7 @@ weight = 20
 * Repository URL: https://helm.linkerd.io/edge
 * Repository: `linkerd-edge`
 * Chart: `linkerd-viz`
-* Version: `21.6.2`
+* Version: `21.9.1`
 * Namespace: `linkerd-viz`
 
 <!-- END_PORTEFAIX_DOC -->

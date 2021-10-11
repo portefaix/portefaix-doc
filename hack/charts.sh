@@ -15,7 +15,7 @@
 # limitations under the License.
 
 PORTEFAIX_URL="https://github.com/portefaix/portefaix.git"
-PORTEFAIX_VERSION="v0.15.0"
+PORTEFAIX_VERSION="v0.20.0"
 PROJECT="portefaix"
 
 NO_COLOR="\033[0m"

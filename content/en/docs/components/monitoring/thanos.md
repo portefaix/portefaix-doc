@@ -12,7 +12,7 @@ weight = 100
 <!-- BEGIN_PORTEFAIX_DOC -->
 
 * Repository URL: https://charts.portefaix.xyz
-* Repository: `portefaix`
+* Repository: `portefaix-hub`
 * Chart: `thanos-mixin`
 * Version: `0.13.0`
 * Namespace: `monitoring`

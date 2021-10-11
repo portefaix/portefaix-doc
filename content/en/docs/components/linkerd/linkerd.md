@@ -40,7 +40,7 @@ Encrypt using Sops and update manifests:
 * Repository URL: https://helm.linkerd.io/edge
 * Repository: `linkerd-edge`
 * Chart: `linkerd2`
-* Version: `21.6.2`
+* Version: `21.9.1`
 * Namespace: `linkerd`
 
 <!-- END_PORTEFAIX_DOC -->

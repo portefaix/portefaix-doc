@@ -14,7 +14,7 @@ weight = 20
 * Repository URL: https://operator.min.io/
 * Repository: `minio`
 * Chart: `minio-operator`
-* Version: `4.1.4`
+* Version: `4.2.5`
 * Namespace: `storage`
 
 <!-- END_PORTEFAIX_DOC -->

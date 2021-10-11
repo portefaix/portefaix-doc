@@ -14,7 +14,7 @@ weight = 10
 * Repository URL: https://kubernetes.github.io/ingress-nginx
 * Repository: `kubernetes-ingress-nginx`
 * Chart: `ingress-nginx`
-* Version: `3.33.0`
+* Version: `4.0.3`
 * Namespace: `ingress-controllers`
 
 <!-- END_PORTEFAIX_DOC -->

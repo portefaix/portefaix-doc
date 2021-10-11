@@ -14,7 +14,7 @@ weight = 20
 * Repository URL: https://k8s-at-home.com/charts/
 * Repository: `k8s-at-home`
 * Chart: `blocky`
-* Version: `6.4.0`
+* Version: `9.0.3`
 * Namespace: `dns`
 
 <!-- END_PORTEFAIX_DOC -->

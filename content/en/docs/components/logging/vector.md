@@ -14,7 +14,7 @@ weight = 30
 * Repository URL: https://packages.timber.io/helm/latest
 * Repository: `vector`
 * Chart: `vector-agent`
-* Version: `0.14.0`
+* Version: `0.16.0`
 * Namespace: `logging`
 
 <!-- END_PORTEFAIX_DOC -->

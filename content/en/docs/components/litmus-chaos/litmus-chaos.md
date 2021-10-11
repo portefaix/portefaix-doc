@@ -13,8 +13,8 @@ weight = 10
 
 * Repository URL: https://litmuschaos.github.io/litmus-helm/
 * Repository: `litmuschaos`
-* Chart: `litmus-2-0-0-beta`
-* Version: `2.0.22-Beta8`
+* Chart: `litmus`
+* Version: `2.0.32`
 * Namespace: `litmus`
 
 <!-- END_PORTEFAIX_DOC -->

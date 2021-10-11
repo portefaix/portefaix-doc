@@ -14,7 +14,7 @@ weight = 10
 * Repository URL: https://vmware-tanzu.github.io/helm-charts
 * Repository: `vmware-tanzu`
 * Chart: `velero`
-* Version: `2.22.0`
+* Version: `2.23.6`
 * Namespace: `storage`
 
 <!-- END_PORTEFAIX_DOC -->
