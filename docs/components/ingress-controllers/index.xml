@@ -7,7 +7,7 @@
 &lt;li>Repository URL: &lt;a href="https://kubernetes.github.io/ingress-nginx">https://kubernetes.github.io/ingress-nginx&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>kubernetes-ingress-nginx&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>ingress-nginx&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>3.33.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.0.3&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>ingress-controllers&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>

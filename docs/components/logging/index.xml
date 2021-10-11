@@ -24,7 +24,7 @@
 &lt;li>Repository URL: &lt;a href="https://packages.timber.io/helm/latest">https://packages.timber.io/helm/latest&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>vector&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>vector-agent&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>0.14.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.16.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>logging&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>

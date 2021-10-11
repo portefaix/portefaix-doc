@@ -7,7 +7,7 @@
 &lt;li>Repository URL: &lt;a href="https://charts.bitnami.com/bitnami">https://charts.bitnami.com/bitnami&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>bitnami&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>external-dns&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>5.1.1&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>5.4.1&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Blocky</title><link>/docs/components/dns/blocky/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/blocky/</guid><description>
@@ -19,7 +19,7 @@
 &lt;li>Repository URL: &lt;a href="https://k8s-at-home.com/charts/">https://k8s-at-home.com/charts/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>k8s-at-home&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>blocky&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>6.4.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>9.0.3&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>

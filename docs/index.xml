@@ -64,7 +64,7 @@ Done
 &lt;li>Repository URL: &lt;a href="https://charts.jetstack.io/">https://charts.jetstack.io/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>jetstack&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>cert-manager&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>v1.4.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>v1.5.3&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>cert-manager&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Chaos Mesh</title><link>/docs/components/chaos-mesh/chaos-mesh/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/chaos-mesh/chaos-mesh/</guid><description>
@@ -76,7 +76,7 @@ Done
 &lt;li>Repository URL: &lt;a href="https://charts.chaos-mesh.org">https://charts.chaos-mesh.org&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>chaos-mesh&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>chaos-mesh&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>v0.5.1&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>v0.5.3&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>chaos-mesh&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: External DNS</title><link>/docs/components/dns/external-dns/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/external-dns/</guid><description>
@@ -88,7 +88,7 @@ Done
 &lt;li>Repository URL: &lt;a href="https://charts.bitnami.com/bitnami">https://charts.bitnami.com/bitnami&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>bitnami&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>external-dns&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>5.1.1&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>5.4.1&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Falco</title><link>/docs/components/security/falco/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/security/falco/</guid><description>
@@ -100,7 +100,7 @@ Done
 &lt;li>Repository URL: &lt;a href="https://falcosecurity.github.io/charts">https://falcosecurity.github.io/charts&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>falcosecurity&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>falco-exporter&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>0.5.1&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.5.2&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>security&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Gitops</title><link>/docs/development/gitops/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/gitops/</guid><description>
@@ -150,7 +150,7 @@ monitoring
 &lt;li>Repository URL: &lt;a href="https://kubernetes.github.io/ingress-nginx">https://kubernetes.github.io/ingress-nginx&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>kubernetes-ingress-nginx&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>ingress-nginx&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>3.33.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.0.3&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>ingress-controllers&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
@@ -409,7 +409,7 @@ Create Kubernetes secret
 &lt;li>Repository URL: &lt;a href="https://helm.linkerd.io/edge">https://helm.linkerd.io/edge&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>linkerd-edge&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>linkerd2&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>21.6.2&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>21.9.1&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>linkerd&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Litmus Chaos</title><link>/docs/components/litmus-chaos/litmus-chaos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/litmus-chaos/litmus-chaos/</guid><description>
@@ -420,8 +420,8 @@ Create Kubernetes secret
 &lt;ul>
 &lt;li>Repository URL: &lt;a href="https://litmuschaos.github.io/litmus-helm/">https://litmuschaos.github.io/litmus-helm/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>litmuschaos&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>litmus-2-0-0-beta&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>2.0.22-Beta8&lt;/code>&lt;/li>
+&lt;li>Chart: &lt;code>litmus&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.0.32&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>litmus&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Loki</title><link>/docs/components/logging/loki/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/loki/</guid><description>
@@ -479,7 +479,7 @@ environments.&lt;/p>
 &lt;li>Repository URL: &lt;a href="https://vmware-tanzu.github.io/helm-charts">https://vmware-tanzu.github.io/helm-charts&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>vmware-tanzu&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>velero&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>2.22.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.23.6&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Blocky</title><link>/docs/components/dns/blocky/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/dns/blocky/</guid><description>
@@ -491,7 +491,7 @@ environments.&lt;/p>
 &lt;li>Repository URL: &lt;a href="https://k8s-at-home.com/charts/">https://k8s-at-home.com/charts/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>k8s-at-home&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>blocky&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>6.4.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>9.0.3&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>dns&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Continuous Integration</title><link>/docs/other-guides/cicd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/other-guides/cicd/</guid><description>
@@ -1200,7 +1200,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>Repository URL: &lt;a href="https://litmuschaos.github.io/litmus-helm/">https://litmuschaos.github.io/litmus-helm/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>litmuschaos&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>kubernetes-chaos&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>2.11.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.14.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>litmus&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Let's Encrypt</title><link>/docs/components/cert-manager/letsencrypt/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/cert-manager/letsencrypt/</guid><description>
@@ -1214,7 +1214,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>Repository URL: &lt;a href="https://helm.linkerd.io/edge">https://helm.linkerd.io/edge&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>linkerd-edge&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>linkerd-viz&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>21.6.2&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>21.9.1&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>linkerd-viz&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Minio</title><link>/docs/components/storage/minio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/minio/</guid><description>
@@ -1225,7 +1225,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>Repository URL: &lt;a href="https://operator.min.io/">https://operator.min.io/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>minio&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>minio-operator&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>4.1.4&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.2.5&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: NFS Client Provisionner</title><link>/docs/components/storage/nfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/nfs/</guid><description>
@@ -1237,7 +1237,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>Repository URL: &lt;a href="https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/">https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>kubernetes-sigs-nfs-subdir-external-provisioner-charts&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>nfs-subdir-external-provisioner&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>4.0.10&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.0.13&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Policy Reporter</title><link>/docs/components/kyvrno/policy-reporter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/policy-reporter/</guid><description>
@@ -1345,7 +1345,7 @@ which will be used by Flux.&lt;/p></description></item><item><title>Docs: Alertm
 &lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>grafana-mixin&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>0.7.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>0.8.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>

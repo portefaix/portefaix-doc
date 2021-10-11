@@ -7,7 +7,7 @@
 &lt;li>Repository URL: &lt;a href="https://vmware-tanzu.github.io/helm-charts">https://vmware-tanzu.github.io/helm-charts&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>vmware-tanzu&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>velero&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>2.22.0&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>2.23.6&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Minio</title><link>/docs/components/storage/minio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/minio/</guid><description>
@@ -18,7 +18,7 @@
 &lt;li>Repository URL: &lt;a href="https://operator.min.io/">https://operator.min.io/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>minio&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>minio-operator&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>4.1.4&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.2.5&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: NFS Client Provisionner</title><link>/docs/components/storage/nfs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/storage/nfs/</guid><description>
@@ -30,7 +30,7 @@
 &lt;li>Repository URL: &lt;a href="https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/">https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/&lt;/a>&lt;/li>
 &lt;li>Repository: &lt;code>kubernetes-sigs-nfs-subdir-external-provisioner-charts&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>nfs-subdir-external-provisioner&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>4.0.10&lt;/code>&lt;/li>
+&lt;li>Version: &lt;code>4.0.13&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>storage&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>
