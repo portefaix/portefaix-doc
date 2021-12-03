@@ -16,45 +16,8 @@ and configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/port
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk aws-s3-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a DynamoDB table :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk aws-dynamodb-create-table &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
-&lt;h3 id="vpc--internet-gateway">VPC / Internet Gateway&lt;/h3>
-&lt;p>Create an Elastic IP for Internet Gateway:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/elastic_ips/internet-gateway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create the VPC and Internet Gateway :&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="eks">EKS&lt;/h3>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/eks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kubernetes-components">Kubernetes components&lt;/h3>
-&lt;h4 id="sops">Sops&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-Outputs:
-&lt;span style="color:#000">kms_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:kms:eu-west-3:447241706233:key/cf77f24a-00db-4d6a-8b4b-a8dec3976ff2
-&lt;span style="color:#000">role_arn_eks&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::447241706233:role/portefaix-staging-eks-sops-eks
-&lt;span style="color:#000">role_arn_users&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::447241706233:role/portefaix-staging-eks-sops-users
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="observability">Observability&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-Outputs:
-&lt;span style="color:#000">loki_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-loki
-&lt;span style="color:#000">prometheus_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-loki
-&lt;span style="color:#000">tempo_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-tempo
-&lt;span style="color:#000">thanos_role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxx:role/portefaix-staging-eks-thanos
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="external-dns">External DNS&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-Outputs:
-&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxx:role/portefaix-staging-eks-external-dns
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="velero">Velero&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-Outputs:
-&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxxxxxx:role/portefaix-staging-eks-velero
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="vector">Vector&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-Outputs:
-&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxxxxxx:role/portefaix-staging-eks-vector
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="cert-manager">Cert-Manager&lt;/h4>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/aws/cert-manager &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-Outputs:
-&lt;span style="color:#000">role_arn&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> arn:aws:iam::xxxxxxxxxxxxxxxxx:role/portefaix-staging-eks-cert-manager
-&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform-cloud--github-actions">Terraform Cloud / Github Actions&lt;/h2>
+&lt;p>&lt;a href="https://terraform.cloud">Terraform Cloud&lt;/a> is used as the remote backend. &lt;a href="https://github.com/features/actions">Github Actions&lt;/a> perform tasks to deploy the AWS infrastructure.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-debug
