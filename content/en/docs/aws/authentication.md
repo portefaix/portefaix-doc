@@ -15,6 +15,20 @@ Setup credentials
 Done
 ```
 
+## Bastion
+
+You would use the [AWS System Manager plugin](https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html) to connect to EC2 and EKS instances:
+
+```shell
+❯ aws ec2 describe-instances --output table
+-------------------
+|DescribeInstances|
++-----------------+
+
+❯ aws ssm start-session --target i-019042b3847f5c81f
+Starting session with SessionId: portefaix-admin-031b2ba6d981142b0
+```
+
 ## Configure kubectl
 
 ```shell

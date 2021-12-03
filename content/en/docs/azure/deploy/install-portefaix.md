@@ -65,48 +65,6 @@ Set permissions:
 
 ## Terraform
 
-### Virtual Network
+[Github Actions](https://github.com/features/actions) with [Terraform Cloud](https://www.terraform.io/cloud) could used to deploy the infrastructure:
 
-```shell
-❯ make terraform-apply SERVICE=iac/azure/vnet ENV=dev
-```
-
-### NAT Gateway
-
-Public IP addresses :
-
-```shell
-❯ make terraform-apply SERVICE=iac/azure/public-ips/nat-gateway ENV=dev
-```
-
-NAT Gateway service:
-
-```shell
-❯ make terraform-apply SERVICE=iac/azure/nat-gateway ENV=dev
-```
-
-### AKS
-
-```shell
-❯ make terraform-apply SERVICE=iac/azure/aks ENV=dev
-```
-
-### Kubernetes components
-
-#### Sops
-
-```shell
-❯ make terraform-apply SERVICE=iac/azure/sops ENV=dev
-```
-
-#### Observability
-
-```shell
-❯ make terraform-apply SERVICE=iac/azure/observability ENV=dev
-```
-
-#### Velero
-
-```shell
-❯ make terraform-apply SERVICE=iac/azure/velero ENV=dev
-```
+<img src="/docs/images/portefaix-azure-deploy.png" alt="Portefaix Azure deployment" class="mt-3 mb-3 rounded">
