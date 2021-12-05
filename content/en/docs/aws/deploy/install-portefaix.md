@@ -43,3 +43,5 @@ Create a DynamoDB table :
 ## Terraform Cloud / Github Actions
 
 [Terraform Cloud](https://terraform.cloud) is used as the remote backend. [Github Actions](https://github.com/features/actions) perform tasks to deploy the AWS infrastructure.
+
+<img src="/docs/images/portefaix-aws-deploy.png" alt="Portefaix AWS deployment" class="mt-3 mb-3 rounded">
