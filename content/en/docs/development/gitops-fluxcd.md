@@ -1,31 +1,56 @@
 +++
-title = "Secrets"
-description = "Secrets managment"
-weight = 20
+title = "FluxCD"
+description = "Gitops model for Kubernetes using Flux v2"
+weight = 10
 
 +++
 
+[Gitops](https://www.weave.works/technologies/gitops/) model used is [Flux v2](https://toolkit.fluxcd.io/)
+
+<img src="/docs/images/gitops-toolkit.png"
+ alt="Flux v2"
+ class="mt-3 mb-3 border border-info rounded">
+
+## Organization
+
+Manifests files :
+
+* `kubernetes/base` directory contains manifests for all components
+* `kubernetes/overlays/**` directory contains [Kustomize](https://kustomize.io/) overlays
+
+Flux components are deployed for each cluster on `clusters/<CLOUD>/<ENV>/` :
+
+* `clusters/<CLOUD>/<ENV>/flux-system` : Flux core components
+* `clusters/<CLOUD>/<ENV>/*.yaml` : [Flux Kustomization](https://toolkit.fluxcd.io/components/kustomize/kustomization/) files for components
+
+
+## Sync
+
+```shell
+❯ make fluxcd-bootstrap ENV=<environment> CLOUD=<cloud provider> BRANCH=<git branch to use>
+```
+
 ## Secrets
 
-[Sops](https://github.com/mozilla/sops) is used to manage secrets.
+### Bootstrap
 
-### Age
+[Sops](https://github.com/mozilla/sops) is used to manage secrets.
 
 Create for each cloud provider and environment an [Age](https://age-encryption.org/) key. Store it into:
 
 `.secrets/<CLOUD_PROVIDER>/<ENV>/age/age.agekey`
 
-Create the Kubernetes secret:
+Put your sensitive data into the directory `.secrets` or `.secrets/<CLOUD_PROVIDER>/<ENV>/<APPLICATION>`
+
+Then deploy the Age key into a Kubernetes secret:
 
 ```shell
 ❯ make sops-age-secret CLOUD=<CLOUD_PROVIDER> ENV=<ENV>
 ```
 
-## Store
+### Usage
 
-Put your sensitive data into the directory `.secrets` or `.secrets/<CLOUD_PROVIDER>/<ENV>/<APPLICATION>`
-
-## Kubernetes secret
+#### File
 
 Create a Kubernetes secret file from sensitive file.
 
@@ -44,7 +69,7 @@ config:
 ❯ make kubernetes-secret NAME=thanos-object-storage NAMESPACE=monitoring FILE=.secrets/aws/object-store.yaml > thanos-object-storage.yaml
 ```
 
-## Encrypt
+#### Encrypt
 
 Encrypt the file using Sops:
 
@@ -58,7 +83,7 @@ You can now safely store this file into Git.
 ❯ mv thanos-object-storage.yaml kubernetes/overlays/staging/monitoring/thanos/
 ```
 
-## Decrypt
+#### Decrypt
 
 Check you can decrypt the file:
 
@@ -74,14 +99,14 @@ metadata:
     namespace: monitoring
 ```
 
-## CI/CD
+### CI/CD
 
-### AGE
+#### AGE
 
 {{% alert title="Work In Progress" color="warning" %}}
 {{% /alert %}}
 
-### PGP
+#### PGP
 
 Generate a GPG key with OpenPGP without specifying a passphrase:
 

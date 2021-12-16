@@ -4,7 +4,7 @@ description = "Instructions for check Portefaix infrastructure on AWS"
 weight = 20
 +++
 
-[inspec](http://inspec.io/) is used to check infrastructure.
+[Inspec](http://inspec.io/) is used to check infrastructure.
 
 Check:
 

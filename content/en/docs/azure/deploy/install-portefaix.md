@@ -68,3 +68,7 @@ Set permissions:
 [Github Actions](https://github.com/features/actions) with [Terraform Cloud](https://www.terraform.io/cloud) could used to deploy the infrastructure:
 
 <img src="/docs/images/portefaix-azure-deploy.png" alt="Portefaix Azure deployment" class="mt-3 mb-3 rounded">
+
+## Gitops for Kubernetes
+
+See : [Gitops with FluxCD](/docs/development/gitops-fluxcd) or [Gitops with ArgoCD](/docs/development/gitops-argocd/)
