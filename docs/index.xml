@@ -63,6 +63,16 @@ Done
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>exoscale &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/scaleway/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/scaleway/authentication/</guid><description>
+&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Scaleway&lt;/p>
+&lt;h2 id="configure-scaleway">Configure Scaleway&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh scaleway
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+Setup credentials
+Done
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>scaleway &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sandbox
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Cert-Manager</title><link>/docs/components/cert-manager/cert-manager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/cert-manager/cert-manager/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>
 &lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/cert-manager/cert-manager" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>cert-manager&lt;/b>: A Helm chart for cert-manager&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/cert-manager/cert-manager">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
@@ -387,7 +397,29 @@ portefaix-2 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.123 &amp;lt;no
 ❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
 ❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="applications">Applications&lt;/h2>
-&lt;p>See: &lt;a href="development/gitops/">Gitops&lt;/a>&lt;/p></description></item><item><title>Docs: Kyverno</title><link>/docs/components/kyvrno/kyverno/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/kyverno/</guid><description>
+&lt;p>See: &lt;a href="development/gitops/">Gitops&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/scaleway/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/scaleway/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="scaleway">&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Scaleway&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">function&lt;/span> setup_scaleway&lt;span style="color:#ce5c00;font-weight:bold">()&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">SCW_ACCESS_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">SCW_SECRET_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">SCW_DEFAULT_PROJECT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">SCW_DEFAULT_ORGANIZATION_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">SCW_DEFAULT_PROJECT_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_ACCESS_KEY_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">SCW_ACCESS_KEY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_SECRET_ACCESS_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">SCW_SECRET_KEY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_DEFAULT_REGION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;eu-west-3&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_REGION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;eu-west-3&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh scaleway
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
+&lt;p>Create a S3 bucket for Terraform states:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/scw.mk scw-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sandbox
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="sks">SKS&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/scaleway/kapsule &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>sandbox
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Kyverno</title><link>/docs/components/kyvrno/kyverno/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/kyvrno/kyverno/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>
 &lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/kyverno/kyverno" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kyverno&lt;/b>: Kubernetes Native Policy Management&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/kyverno/kyverno">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
 &lt;h2 id="gitops">Gitops&lt;/h2>
@@ -1234,7 +1266,10 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure service account and IAM binding exists&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Kubernetes Chaos</title><link>/docs/components/litmus-chaos/kubernetes-chaos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/litmus-chaos/kubernetes-chaos/</guid><description>
+&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/scaleway/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/scaleway/deploy/inspec-portefaix/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Not Available&lt;/h4>
+&lt;/div></description></item><item><title>Docs: Kubernetes Chaos</title><link>/docs/components/litmus-chaos/kubernetes-chaos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/litmus-chaos/kubernetes-chaos/</guid><description>
 &lt;h2 id="hub">Hub&lt;/h2>
 &lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/litmuschaos/kubernetes-chaos" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kubernetes-chaos&lt;/b>: A Helm chart to install litmus chaos experiments for kubernetes category (chaos-chart)&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/litmuschaos/kubernetes-chaos">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
 &lt;h2 id="gitops">Gitops&lt;/h2>
@@ -1336,10 +1371,4 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>Version: &lt;code>0.8.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Hub</title><link>/docs/development/hub/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/hub/</guid><description>
-&lt;h2 id="portefaix-hub">Portefaix Hub&lt;/h2>
-&lt;p>&lt;a href="https://charts.portefaix.xyz/">Portefaix Hub&lt;/a> is the Helm charts repository of the Portefaix project.&lt;/p>
-&lt;p>All charts could be find on &lt;a href="https://artifacthub.io/packages/search?repo=portefaix-hub">Artifact Hub&lt;/a>&lt;/p></description></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/aws/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/uninstall-portefaix/</guid><description/></item><item><title>Docs: Uninstall Portefaix</title><link>/docs/azure/deploy/uninstall-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/uninstall-portefaix/</guid><description>
-&lt;h2 id="terraform">Terraform&lt;/h2>
-&lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> with &lt;a href="https://www.terraform.io/cloud">Terraform Cloud&lt;/a> could be used to delete the infrastructure:&lt;/p>
-&lt;img src="/docs/images/portefaix-azure-undeploy.png" alt="Portefaix Azure deletion" class="mt-3 mb-3 rounded"></description></item></channel></rss>
+&lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>
