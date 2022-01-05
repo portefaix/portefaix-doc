@@ -9,5 +9,5 @@ weight = 40
 ### GKE
 
 ```shell
-❯ make terraform-destroy SERVICE=iac/gcp/gke ENV=prod
+❯ make terraform-destroy SERVICE=iac/gcp/gke ENV=dev
 ```

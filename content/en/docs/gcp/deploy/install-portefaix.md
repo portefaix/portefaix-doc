@@ -17,13 +17,25 @@ Authenticate on the Google Cloud Platform:
 Enable APIs:
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-enable-apis ENV=prod
+❯ make -f hack/build/gcp.mk gcp-enable-apis ENV=dev
 ```
 
 Create a bucket for the Terraform tfstates:
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-bucket ENV=prod
+❯ make -f hack/build/gcp.mk gcp-bucket ENV=dev
+```
+
+Create a service account for Terraform:
+
+```shell
+❯ make -f hack/build/gcp.mk gcp-terraform-sa ENV=dev
+```
+
+And a key:
+
+```shell
+❯ make -f hack/build/gcp.mk gcp-terraform-key ENV=dev
 ```
 
 Configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh`:
@@ -34,116 +46,22 @@ And load environment :
 ❯ . ./portefaix.sh gcp
 ```
 
-<a id="terraform"></a>
+<a id="gcp-terraform-cloud"></a>
 
-## Terraform
+## Terraform Cloud / Github Actions
 
-### VPC
+[Terraform Cloud](https://terraform.cloud) is used as the remote backend. [Github Actions](https://github.com/features/actions) perform tasks to deploy the GCP infrastructure.
 
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/vpc ENV=prod
-```
-
-### Cloud DNS
+Configure Terraform Cloud workspaces:
 
 ```shell
-❯ make terraform-apply SERVICE=iac/gcp/dns ENV=prod
+❯ make terraform-apply SERVICE=terraform/gcp/terraform-cloud ENV=dev
 ```
 
-### Cloud NAT
+<img src="/docs/images/portefaix-gcp-deploy.png" alt="Portefaix GCP deployment" class="mt-3 mb-3 rounded">
 
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/external-ips/cloud-nat ENV=prod
-```
+<a id="gcp-gitops"></a>
 
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/cloud-nat ENV=prod
-```
+## Gitops for Kubernetes
 
-### GKE
-
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/gke ENV=prod
-```
-
-### Encryption
-
-Creates the [Age](https://age-encryption.org/) key:
-
-```shell
-❯ make sops-age-key CLOUD=gcp ENV=prod
-```
-
-Create the `sops-secret` secret:
-
-```shell
-❯ make sops-age-secret CLOUD=gcp ENV=prod
-```
-
-
-
-### Kubernetes components
-
-#### Sops
-
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/sops ENV=prod
-
-Outputs:
-
-email = xxxxxxxxxxxx-sops@xxxxxxxxxxxx.iam.gserviceaccount.com
-key = projects/xxxxxxxxxxxx/locations/europe-west1/keyRings/xxxxxxxxxxxx-sops/cryptoKeys/xxxxxxxxxxxx-sops
-```
-
-#### Observability
-
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/observability ENV=prod
-
-Outputs:
-
-loki_service_account = xxxxxxxxxx-loki@xxxxxxxxxx.iam.gserviceaccount.com
-prometheus_service_account = xxxxxxxxxx-loki@xxxxxxxxxx.iam.gserviceaccount.com
-tempo_service_account = xxxxxxxxxx-tempo@xxxxxxxxxx.iam.gserviceaccount.com
-thanos_service_account = xxxxxxxxxx-thanos@xxxxxxxxxx.iam.gserviceaccount.com
-```
-
-#### Cert Manager
-
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/cert-manager ENV=prod
-
-Outputs:
-
-cert_manager_service_account = xxxxxxxxxxx-cert-manager@xxxxxxxxxxx.iam.gserviceaccount.com
-```
-
-#### External DNS
-
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/external-dns ENV=prod
-
-Outputs:
-
-external_dns_service_account = xxxxxxxxxxx-external-dns@xxxxxxxxxxx.iam.gserviceaccount.com
-```
-
-#### Velero
-
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/velero ENV=prod
-
-Outputs:
-
-velero_service_account = xxxxxxxxxxx-velero@xxxxxxxxxxx.iam.gserviceaccount.com
-```
-
-#### Vector
-
-```shell
-❯ make terraform-apply SERVICE=iac/gcp/vector ENV=prod
-
-Outputs:
-
-vector_service_account = xxxxxxxxxxx-vector@xxxxxxxxxxx.iam.gserviceaccount.com
-```
+See : [Gitops with FluxCD](/docs/development/gitops-fluxcd) or [Gitops with ArgoCD](/docs/development/gitops-argocd/)

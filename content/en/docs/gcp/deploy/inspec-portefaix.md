@@ -20,7 +20,7 @@ Release:   google-api-client-v0.34.1
 Execute tests:
 
 ```shell
-❯ make -f hack/build/gcp.mk inspec-test SERVICE=iac/gcp/<SERVICE> ENV=prod
+❯ make -f hack/build/gcp.mk inspec-test SERVICE=iac/gcp/<SERVICE> ENV=dev
 ```
 
 You could upload JSON results file to [Heimdall Lite](https://heimdall-lite.mitre.org/) to display ressults
@@ -28,7 +28,7 @@ You could upload JSON results file to [Heimdall Lite](https://heimdall-lite.mitr
 ## CIS Kubernetes Benchmark
 
 ```shell
-❯ make -f hack/build/gcp.mk inspec-gcp-kubernetes ENV=prod
+❯ make -f hack/build/gcp.mk inspec-gcp-kubernetes ENV=dev
 ```
 
 ## GCP CIS
@@ -36,13 +36,13 @@ You could upload JSON results file to [Heimdall Lite](https://heimdall-lite.mitr
 You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com/2020/08/assess-security-of-cloud-deployments.html):
 
 ```shell
-❯ make -f hack/build/gcp.mk inspec-cis ENV=prod
+❯ make -f hack/build/gcp.mk inspec-cis ENV=dev
 ```
 
 ## VPC
 
 ```shell
-❯ make -f hack/build/gcp.mk inspec-test SERVICE=iac/gcp/vpc ENV=prod
+❯ make -f hack/build/gcp.mk inspec-test SERVICE=iac/gcp/vpc ENV=dev
 ```
 
 <img src="/docs/images/inspec-gcp-vpc.png"
@@ -57,7 +57,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 ## GKE
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/gke ENV=prod
+❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/gke ENV=dev
 ```
 
 <img src="/docs/images/inspec-gcp-gke.png"
@@ -81,7 +81,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 ## Sops
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/sops ENV=prod
+❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/sops ENV=dev
 ```
 
 <img src="/docs/images/inspec-gcp-sops.png"
@@ -96,7 +96,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 ## Observability
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/observability ENV=prod
+❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/observability ENV=dev
 ```
 
 <img src="/docs/images/inspec-gcp-observability.png"
@@ -120,7 +120,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 ## Velero
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/velero ENV=prod
+❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/velero ENV=dev
 ```
 
 <img src="/docs/images/inspec-gcp-velero.png"
@@ -136,7 +136,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 ## Vector
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/vector ENV=prod
+❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/vector ENV=dev
 ```
 
 <img src="/docs/images/inspec-gcp-vector.png"
@@ -152,7 +152,7 @@ You could perform tests accoring the [GCP CIS](https://opensource.googleblog.com
 ## External-DNS
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/external-dns ENV=prod
+❯ make -f hack/build/gcp.mk gcp-inspec-test SERVICE=iac/gcp/external-dns ENV=dev
 ```
 
 <img src="/docs/images/inspec-gcp-external-dns.png"

@@ -14,10 +14,16 @@ and configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh
 
 ```shell
 # AWS
-export AWS_ACCESS_KEY_ID="....."
-export AWS_SECRET_ACCESS_KEY="....."
-export AWS_DEFAULT_REGION="..."
-export AWS_REGION="...."
+function setup_aws() {
+    export AWS_ACCESS_KEY_ID="....."
+    export AWS_SECRET_ACCESS_KEY="....."
+    export AWS_DEFAULT_REGION="..."
+    export AWS_REGION="...."
+    # For Terraform Cloud
+    export TF_VAR_access_key="${AWS_ACCESS_KEY_ID}"
+    export TF_VAR_secret_key="${AWS_SECRET_ACCESS_KEY}"
+    export TF_VAR_slack_webhook_url="${SLACK_WEBHOOK_NOTIFS}"
+}
 ```
 
 And load environment :
@@ -40,11 +46,15 @@ Create a DynamoDB table :
 ❯ make -f hack/build/aws.mk aws-dynamodb-create-table ENV=staging
 ```
 
+<a id="aws-terraform-cloud"></a>
+
 ## Terraform Cloud / Github Actions
 
 [Terraform Cloud](https://terraform.cloud) is used as the remote backend. [Github Actions](https://github.com/features/actions) perform tasks to deploy the AWS infrastructure.
 
 <img src="/docs/images/portefaix-aws-deploy.png" alt="Portefaix AWS deployment" class="mt-3 mb-3 rounded">
+
+<a id="aws-gitops"></a>
 
 ## Gitops for Kubernetes
 
