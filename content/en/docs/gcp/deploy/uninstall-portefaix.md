@@ -6,8 +6,6 @@ weight = 40
 
 ## Terraform
 
-### GKE
+[Github Actions](https://github.com/features/actions) with [Terraform Cloud](https://www.terraform.io/cloud) could be used to delete the infrastructure:
 
-```shell
-❯ make terraform-destroy SERVICE=iac/gcp/gke ENV=dev
-```
+<img src="/docs/images/portefaix-gcp-undeploy.png" alt="Portefaix GCP deletion" class="mt-3 mb-3 rounded">
