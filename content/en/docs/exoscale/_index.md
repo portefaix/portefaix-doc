@@ -1,7 +1,7 @@
 +++
 title = "Portefaix on Exoscale"
 description = "Running Portefaix on Exoscale SKS"
-weight = 50
+weight = 70
 +++
 
 <img src="/docs/images/portefaix-exoscale-infra.svg" alt="Infrastructure" class="mt-3 mb-3 rounded">
