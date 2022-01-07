@@ -32,7 +32,25 @@ We use &lt;a href="https://gohugo.io/">Hugo&lt;/a> to format and generate our we
 &lt;h2 id="versioning">Versioning&lt;/h2>
 &lt;p>&lt;a href="https://portefaix.xyz/docs">portefaix.xyz/docs&lt;/a> points to the &lt;strong>master&lt;/strong> branch of the docs. You can access
 other versions by clicking the version dropdown at top right of the website
-menu bar.&lt;/p></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/authentication/</guid><description>
+menu bar.&lt;/p></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/alicloud/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/alicloud/authentication/</guid><description>
+&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Alibaba Cloud&lt;/p>
+&lt;h2 id="configure-alibaba-cloud">Configure Alibaba Cloud&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh alicloud
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+Setup credentials
+Done
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="bastion">Bastion&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Work In Progress&lt;/h4>
+&lt;/div>
+&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Work In Progress&lt;/h4>
+&lt;/div>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>alicloud &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/aws/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Amazon Webservices (AWS)&lt;/p>
 &lt;h2 id="configure-aws">Configure AWS&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
@@ -225,7 +243,36 @@ monitoring
 &lt;li>Version: &lt;code>4.0.3&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>ingress-controllers&lt;/code>&lt;/li>
 &lt;/ul>
-&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
+&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Install Portefaix</title><link>/docs/alicloud/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/alicloud/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="alicloud">&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>Create an admin user, then API Keys.
+And configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/portefaix.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Alicloud&lt;/span>
+&lt;span style="color:#204a87;font-weight:bold">function&lt;/span> setup_alicloud&lt;span style="color:#ce5c00;font-weight:bold">()&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># Alicloud User: Portefaix Admin&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ALICLOUD_ACCESS_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ALICLOUD_SECRET_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">ALICLOUD_REGION&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;eu-central-1&amp;#34;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># For Terraform Cloud&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_access_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ALICLOUD_ACCESS_KEY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_secret_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ALICLOUD_SECRET_KEY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_region&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ALICLOUD_REGION&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh alicloud
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
+&lt;p>Create an OSS bucket for Terraform states:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/alicloud.mk aliyun-bucket-create &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a TableStore instance:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/alicloud.mk aliyun-tablestore-create &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a id="alicloud-terraform-cloud">&lt;/a>&lt;/p>
+&lt;h2 id="terraform-cloud--github-actions">Terraform Cloud / Github Actions&lt;/h2>
+&lt;p>&lt;a href="https://terraform.cloud">Terraform Cloud&lt;/a> is used as the remote backend. &lt;a href="https://github.com/features/actions">Github Actions&lt;/a> perform tasks to deploy the Alibaba Cloud infrastructure.&lt;/p>
+&lt;img src="/docs/images/portefaix-alicloud-deploy.png" alt="Portefaix Alibaba Cloud deployment" class="mt-3 mb-3 rounded">
+&lt;p>&lt;a id="alicloud-gitops">&lt;/a>&lt;/p>
+&lt;h2 id="gitops-for-kubernetes">Gitops for Kubernetes&lt;/h2>
+&lt;p>See : &lt;a href="/docs/development/gitops-fluxcd">Gitops with FluxCD&lt;/a> or &lt;a href="/docs/development/gitops-argocd/">Gitops with ArgoCD&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="aws">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>.
@@ -699,7 +746,17 @@ corresponding tools for each platform.&lt;/p>
 &lt;/table>
 &lt;/div>
 &lt;h2 id="troubleshooting">Troubleshooting&lt;/h2>
-&lt;p>See the &lt;a href="/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
+&lt;p>See the &lt;a href="/docs/other-guides/troubleshooting/">Portefaix troubleshooting guide&lt;/a>.&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/alicloud/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/alicloud/deploy/inspec-portefaix/</guid><description>
+&lt;p>&lt;a href="http://inspec.io/">Inspec&lt;/a> is used to check infrastructure.&lt;/p>
+&lt;p>Check:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/alicloud.mk inspec-alicloud-debug
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Work In Progress&lt;/h4>
+&lt;/div>
+&lt;h2 id="cis-kubernetes-benchmark">CIS Kubernetes Benchmark&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/alicloud.mk inspec-alicloud-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/aws/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/inspec-portefaix/</guid><description>
 &lt;p>&lt;a href="http://inspec.io/">Inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk inspec-debug
@@ -1315,35 +1372,6 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
 &lt;li>Chart: &lt;code>alertmanager-mixin&lt;/code>&lt;/li>
 &lt;li>Version: &lt;code>0.2.0&lt;/code>&lt;/li>
-&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Promtail</title><link>/docs/components/logging/promtail/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/logging/promtail/</guid><description>
-&lt;h2 id="hub">Hub&lt;/h2>
-&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/grafana/promtail" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>promtail&lt;/b>: Promtail is an agent which ships the contents of local logs to a Loki instance&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/grafana/promtail">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
-&lt;h2 id="gitops">Gitops&lt;/h2>
-&lt;!-- BEGIN_PORTEFAIX_DOC -->
-&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Alertmanager</title><link>/docs/components/monitoring/alertmanager/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/alertmanager/</guid><description>
-&lt;h2 id="hub">Hub&lt;/h2>
-&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kube-prometheus-stack&lt;/b>: kube-prometheus-stack collects Kubernetes manifests, Grafana dashboards, and Prometheus rules combined with documentation and scripts to provide easy to operate end-to-end Kubernetes cluster monitoring with Prometheus using the Prometheus Operator.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
-&lt;h2 id="gitops">Gitops&lt;/h2>
-&lt;!-- BEGIN_PORTEFAIX_DOC -->
-&lt;ul>
-&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>alertmanager-mixin&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>0.2.0&lt;/code>&lt;/li>
-&lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;!-- END_PORTEFAIX_DOC --></description></item><item><title>Docs: Grafana</title><link>/docs/components/monitoring/grafana/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/monitoring/grafana/</guid><description>
-&lt;h2 id="hub">Hub&lt;/h2>
-&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/grafana/grafana" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>grafana&lt;/b>: The leading tool for querying and visualizing time series and metrics.&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/grafana/grafana">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
-&lt;h2 id="gitops">Gitops&lt;/h2>
-&lt;!-- BEGIN_PORTEFAIX_DOC -->
-&lt;ul>
-&lt;li>Repository URL: &lt;a href="https://charts.portefaix.xyz">https://charts.portefaix.xyz&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>portefaix-hub&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>grafana-mixin&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>0.8.0&lt;/code>&lt;/li>
 &lt;li>Namespace: &lt;code>monitoring&lt;/code>&lt;/li>
 &lt;/ul>
 &lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>
