@@ -91,6 +91,26 @@ Done
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>exoscale &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/ibmcloud/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/ibmcloud/authentication/</guid><description>
+&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in IBMCloud&lt;/p>
+&lt;h2 id="configure-ibmcloud">Configure IBMCloud&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh ibmcloud
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+✔ Configuration file
+✔ Flux
+✔ PagerDuty
+✔ Terraform Cloud
+✔ IBMCloud
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/ibmcloud.mk ibmcloud-kube-credentials &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ibmcloud &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+10.242.0.10 Ready &amp;lt;none&amp;gt; 13m v1.22.7+IKS
+10.242.0.7 Ready &amp;lt;none&amp;gt; 29m v1.22.7+IKS
+10.242.128.10 Ready &amp;lt;none&amp;gt; 12m v1.22.7+IKS
+10.242.128.7 Ready &amp;lt;none&amp;gt; 29m v1.22.7+IKS
+10.242.64.6 Ready &amp;lt;none&amp;gt; 29m v1.22.7+IKS
+10.242.64.8 Ready &amp;lt;none&amp;gt; 13m v1.22.7+IKS
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/oci/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/oci/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Exoscale&lt;/p>
 &lt;h2 id="configure-exoscale">Configure Exoscale&lt;/h2>
@@ -458,7 +478,31 @@ portefaix-2 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.123 &amp;lt;no
 ❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
 ❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="applications">Applications&lt;/h2>
-&lt;p>See: &lt;a href="development/gitops/">Gitops&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/oci/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/oci/deploy/install-portefaix/</guid><description>
+&lt;p>See: &lt;a href="development/gitops/">Gitops&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/ibmcloud/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/ibmcloud/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="exo">&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># IBMCloud&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">IAAS_CLASSIC_USERNAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">IC_API_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">IAAS_CLASSIC_API_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># For Terraform Backend S3&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># See &lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh ibmcloud
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Authentication:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/ibmcloud.mk ibmcloud-init &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then, generate the right set of HMAC credentials : &lt;a href="https://www.ibm.com/cloud/blog/store-terraform-states-cloud-object-storage">documentation&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_ACCESS_KEY_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxx&amp;#34;&lt;/span>
+❯ &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_SECRET_ACCESS_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
+&lt;p>Create a S3 bucket for Terraform states:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/ibmcloud.mk ibmcloud-bucket-create &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="vpc">VPC&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/ibmcloud/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="iks">IKS&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/ibmcloud/iks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/oci/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/oci/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="exo">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Configure Oracle CLI&lt;/p>
@@ -1353,22 +1397,7 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;td>Ensure service account and IAM binding exists&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/oci/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/oci/deploy/inspec-portefaix/</guid><description>
+&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/ibmcloud/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/ibmcloud/deploy/inspec-portefaix/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Not Available&lt;/h4>
-&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/scaleway/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/scaleway/deploy/inspec-portefaix/</guid><description>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Not Available&lt;/h4>
-&lt;/div></description></item><item><title>Docs: Kubernetes Chaos</title><link>/docs/components/litmus-chaos/kubernetes-chaos/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/components/litmus-chaos/kubernetes-chaos/</guid><description>
-&lt;h2 id="hub">Hub&lt;/h2>
-&lt;div class="artifacthub-widget" data-url="https://artifacthub.io/packages/helm/litmuschaos/kubernetes-chaos" data-theme="light" data-header="true" data-responsive="false">&lt;blockquote>&lt;p lang="en" dir="ltr">&lt;b>kubernetes-chaos&lt;/b>: A Helm chart to install litmus chaos experiments for kubernetes category (chaos-chart)&lt;/p>&amp;mdash; Open in &lt;a href="https://artifacthub.io/packages/helm/litmuschaos/kubernetes-chaos">Artifact Hub&lt;/a>&lt;/blockquote>&lt;/div>&lt;script async src="https://artifacthub.io/artifacthub-widget.js">&lt;/script>
-&lt;h2 id="gitops">Gitops&lt;/h2>
-&lt;!-- BEGIN_PORTEFAIX_DOC -->
-&lt;ul>
-&lt;li>Repository URL: &lt;a href="https://litmuschaos.github.io/litmus-helm/">https://litmuschaos.github.io/litmus-helm/&lt;/a>&lt;/li>
-&lt;li>Repository: &lt;code>litmuschaos&lt;/code>&lt;/li>
-&lt;li>Chart: &lt;code>kubernetes-chaos&lt;/code>&lt;/li>
-&lt;li>Version: &lt;code>2.14.0&lt;/code>&lt;/li>
-&lt;li>Namespace: &lt;code>litmus&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;!-- END_PORTEFAIX_DOC --></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
