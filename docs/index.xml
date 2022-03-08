@@ -503,17 +503,17 @@ portefaix-2 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.123 &amp;lt;no
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="iks">IKS&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/ibmcloud/iks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/oci/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/oci/deploy/install-portefaix/</guid><description>
-&lt;p>&lt;a id="exo">&lt;/a>&lt;/p>
+&lt;p>&lt;a id="oci">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
-&lt;p>Configure Oracle CLI&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;p>Configure Oracle CLI. See &lt;a href="https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm">https://docs.oracle.com/en-us/iaas/Content/API/Concepts/apisigningkey.htm&lt;/a>&lt;/p>
+&lt;p>Load environment :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh oci
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then authentication:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/oci.mk oci-authenticate &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="create-a-new-compartment">Create a new compartment&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/oci.mk oci-compartment &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
-&lt;p>Retrive Compartement ID :&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ oci iam compartment list
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a S3 bucket for Terraform states:&lt;/p>
+&lt;p>Check compartement ID from output of the previous command and create a S3 bucket for Terraform states:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/oci.mk oci-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging &lt;span style="color:#000">COMPARTMENT_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ocid1.compartment.oc1....
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terraform">Terraform&lt;/h2></description></item><item><title>Docs: Install Portefaix</title><link>/docs/scaleway/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/scaleway/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="scaleway">&lt;/a>&lt;/p>
