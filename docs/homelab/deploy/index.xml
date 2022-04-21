@@ -12,11 +12,13 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable SSH :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk sdcard-mount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 ❯ sudo touch /mnt/portefaix/boot/ssh
+❯ &lt;span style="color:#204a87">echo&lt;/span> portefaix-xxx &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /mnt/portefaix/root/etc/hostname
 ❯ make -f hack/build/k3s.mk sdcard-unmount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy keys to each node:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ansible">Ansible&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk ansible-deps &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ansible/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+❯ make -f hack/build/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ansible/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="k3sup">K3Sup&lt;/h2>
 &lt;p>Create the master :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk k3s-create &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
@@ -32,9 +34,9 @@ portefaix-3 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.30 &amp;lt;non
 portefaix-5 Ready &amp;lt;none&amp;gt; 129m v1.21.4+k3s1 192.168.1.126 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.63-v8+ containerd://1.4.9-k3s1
 portefaix-2 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.123 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.9-k3s1
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="taints">Taints&lt;/h2>
-&lt;p>We taint the master &lt;code>portefaix-1&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-1 node.kubernetes.io/fluxcd:NoSchedule
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We taint the Raspiberry PI 3:&lt;/p>
+&lt;p>We could taint the master &lt;code>portefaix-1&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-1 node.kubernetes.io/gitops:NoSchedule
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We could taint the Raspiberry PI 3:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-2 node.kubernetes.io/legacy:NoSchedule
 ❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
 ❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule

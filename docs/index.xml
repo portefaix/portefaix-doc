@@ -71,6 +71,21 @@ Starting session with SessionId: portefaix-admin-031b2ba6d981142b0
 NAME STATUS ROLES AGE VERSION
 ip-10-0-31-216.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
 ip-10-0-40-203.eu-west-3.compute.internal Ready &amp;lt;none&amp;gt; 101m v1.18.9-eks-d1db3c
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/civo/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/civo/authentication/</guid><description>
+&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Civo&lt;/p>
+&lt;h2 id="configure-civo">Configure Civo&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh civo
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+ Flux
+ Pagerduty
+ TerraformCloud
+ Civo
+✔ Done
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/civo.mk civo-kube-credentials &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+k3s-portefaix-dev-civo-691a-de1391-node-pool-8c2e-859cq Ready &amp;lt;none&amp;gt; 6m29s v1.22.2+k3s1
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/digitalocean/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/digitalocean/authentication/</guid><description>
 &lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Digital Ocean&lt;/p>
 &lt;h2 id="configure-digital-ocean">Configure Digital Ocean&lt;/h2>
@@ -378,7 +393,23 @@ XXXXXXXXXXX
 &lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> with &lt;a href="https://www.terraform.io/cloud">Terraform Cloud&lt;/a> could used to deploy the infrastructure:&lt;/p>
 &lt;img src="/docs/images/portefaix-azure-deploy.png" alt="Portefaix Azure deployment" class="mt-3 mb-3 rounded">
 &lt;h2 id="gitops-for-kubernetes">Gitops for Kubernetes&lt;/h2>
-&lt;p>See : &lt;a href="/docs/development/gitops-fluxcd">Gitops with FluxCD&lt;/a> or &lt;a href="/docs/development/gitops-argocd/">Gitops with ArgoCD&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/digitalocean/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/digitalocean/deploy/install-portefaix/</guid><description>
+&lt;p>See : &lt;a href="/docs/development/gitops-fluxcd">Gitops with FluxCD&lt;/a> or &lt;a href="/docs/development/gitops-argocd/">Gitops with ArgoCD&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/civo/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/civo/deploy/install-portefaix/</guid><description>
+&lt;p>&lt;a id="civo">&lt;/a>&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Civo&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">CIVO_TOKEN&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxxxxxxxxxxxx&amp;#34;&lt;/span>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh civo
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Work In Progress&lt;/h4>
+&lt;/div>
+&lt;h2 id="terraform">Terraform&lt;/h2>
+&lt;h3 id="network">Network&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/civo/network &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="kubernetes">Kubernetes&lt;/h3>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/civo/kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/digitalocean/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/digitalocean/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="do">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># Digital Ocean&lt;/span>
@@ -451,11 +482,13 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable SSH :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk sdcard-mount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 ❯ sudo touch /mnt/portefaix/boot/ssh
+❯ &lt;span style="color:#204a87">echo&lt;/span> portefaix-xxx &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /mnt/portefaix/root/etc/hostname
 ❯ make -f hack/build/k3s.mk sdcard-unmount &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy keys to each node:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="ansible">Ansible&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk ansible-deps &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ansible/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
+❯ make -f hack/build/k3s.mk ansible-run &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>ansible/k3s/machines &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="k3sup">K3Sup&lt;/h2>
 &lt;p>Create the master :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/k3s.mk k3s-create &lt;span style="color:#000">SERVER_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>x.x.x.x &lt;span style="color:#000">USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>pi &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>homelab
@@ -471,9 +504,9 @@ portefaix-3 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.30 &amp;lt;non
 portefaix-5 Ready &amp;lt;none&amp;gt; 129m v1.21.4+k3s1 192.168.1.126 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.63-v8+ containerd://1.4.9-k3s1
 portefaix-2 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.123 &amp;lt;none&amp;gt; Debian GNU/Linux &lt;span style="color:#0000cf;font-weight:bold">10&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>buster&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span> 5.10.17-v8+ containerd://1.4.9-k3s1
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="taints">Taints&lt;/h2>
-&lt;p>We taint the master &lt;code>portefaix-1&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-1 node.kubernetes.io/fluxcd:NoSchedule
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>We taint the Raspiberry PI 3:&lt;/p>
+&lt;p>We could taint the master &lt;code>portefaix-1&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-1 node.kubernetes.io/gitops:NoSchedule
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>We could taint the Raspiberry PI 3:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl taint nodes portefaix-2 node.kubernetes.io/legacy:NoSchedule
 ❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
 ❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule
@@ -1143,261 +1176,6 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Not Available&lt;/h4>
 &lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/exoscale/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/exoscale/deploy/inspec-portefaix/</guid><description>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Not Available&lt;/h4>
-&lt;/div></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/gcp/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/inspec-portefaix/</guid><description>
-&lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-debug
-Test infrastructure
-────────────────────────────── Platform Details ──────────────────────────────
-Name: gcp
-Families: cloud, api
-Release: google-api-client-v0.34.1
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Execute tests:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/&amp;lt;SERVICE&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>You could upload JSON results file to &lt;a href="https://heimdall-lite.mitre.org/">Heimdall Lite&lt;/a> to display ressults&lt;/p>
-&lt;h2 id="cis-kubernetes-benchmark">CIS Kubernetes Benchmark&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-gcp-kubernetes &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gcp-cis">GCP CIS&lt;/h2>
-&lt;p>You could perform tests accoring the &lt;a href="https://opensource.googleblog.com/2020/08/assess-security-of-cloud-deployments.html">GCP CIS&lt;/a>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-cis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="vpc">VPC&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vpc &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vpc.png"
-alt="VPC"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Code&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>vpc-1&lt;/code>&lt;/td>
-&lt;td>Ensure default network is deleted&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>vpc-2&lt;/code>&lt;/td>
-&lt;td>Ensure network is correctly configure&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="gke">GKE&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/gke &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-gke.png"
-alt="GKE"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Code&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>gke-1&lt;/code>&lt;/td>
-&lt;td>Stackdriver Logging and Monitoring is configured&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-2&lt;/code>&lt;/td>
-&lt;td>Basic Authentication is disabled&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-3&lt;/code>&lt;/td>
-&lt;td>Ensure GKE Nodes are not public&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-4&lt;/code>&lt;/td>
-&lt;td>Ensure the GKE Control Plane is not public&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-5&lt;/code>&lt;/td>
-&lt;td>Ensure the Network Policy managed addon is enabled&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-6&lt;/code>&lt;/td>
-&lt;td>Ensure OAuth Access Scopes and dedicated Service Accounts for node pools&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-7&lt;/code>&lt;/td>
-&lt;td>Ensure GKE Node Pools should use the COS or COS_CONTAINERD Operating System&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-8&lt;/code>&lt;/td>
-&lt;td>GKE Workload Identity should be enabled on all node pools&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-9&lt;/code>&lt;/td>
-&lt;td>GKE Shielded Nodes should be enabled on all NodePools&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-10&lt;/code>&lt;/td>
-&lt;td>Ensure instances have labels&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>gke-11&lt;/code>&lt;/td>
-&lt;td>Ensure instances have tags&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="sops">Sops&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/sops &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-sops.png"
-alt="Sops"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Code&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>sops-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>sops-2&lt;/code>&lt;/td>
-&lt;td>Ensure that Kms key exist&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="observability">Observability&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/observability &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-observability.png"
-alt="Observability"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Code&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>grafana-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>prometheus-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>thanos-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>thanos-2&lt;/code>&lt;/td>
-&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>thanos-3&lt;/code>&lt;/td>
-&lt;td>Ensure that Kms key exist&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>loki-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>loki-2&lt;/code>&lt;/td>
-&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>loki-3&lt;/code>&lt;/td>
-&lt;td>Ensure that Kms key exist&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>tempo-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>tempo-2&lt;/code>&lt;/td>
-&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>tempo-3&lt;/code>&lt;/td>
-&lt;td>Ensure that Kms key exist&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="velero">Velero&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/velero &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-velero.png"
-alt="Velero"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Code&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>velero-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>velero-2&lt;/code>&lt;/td>
-&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>velero-3&lt;/code>&lt;/td>
-&lt;td>Ensure that Kms key exist&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="vector">Vector&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/vector &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-vector.png"
-alt="Vector"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Code&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>vector-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>vector-2&lt;/code>&lt;/td>
-&lt;td>Ensure that bucket exists and labels correcly set&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td>&lt;code>vector-3&lt;/code>&lt;/td>
-&lt;td>Ensure that Kms key exist&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="external-dns">External-DNS&lt;/h2>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-inspec-test &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/gcp/external-dns &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/inspec-gcp-external-dns.png"
-alt="External-DNS"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th>Code&lt;/th>
-&lt;th>Description&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td>&lt;code>external_dns-1&lt;/code>&lt;/td>
-&lt;td>Ensure service account and IAM binding exists&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/ibmcloud/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/ibmcloud/deploy/inspec-portefaix/</guid><description>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Not Available&lt;/h4>
 &lt;/div></description></item></channel></rss>

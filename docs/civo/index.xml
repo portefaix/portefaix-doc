@@ -1,0 +1,19 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Portefaix – Portefaix on Civo</title><link>/docs/civo/</link><description>Recent content in Portefaix on Civo on Portefaix</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="/docs/civo/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Deployment</title><link>/docs/civo/deploy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/civo/deploy/</guid><description>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Work In Progress&lt;/h4>
+&lt;/div></description></item><item><title>Docs: Authentication and Authorization</title><link>/docs/civo/authentication/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/civo/authentication/</guid><description>
+&lt;p>This section shows the how to setup Portefaix with authentication and authorization support in Civo&lt;/p>
+&lt;h2 id="configure-civo">Configure Civo&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh civo
+&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> Portefaix &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+ Flux
+ Pagerduty
+ TerraformCloud
+ Civo
+✔ Done
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configure-kubectl">Configure kubectl&lt;/h2>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/civo.mk civo-kube-credentials &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
+&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+k3s-portefaix-dev-civo-691a-de1391-node-pool-8c2e-859cq Ready &amp;lt;none&amp;gt; 6m29s v1.22.2+k3s1
+&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Troubleshooting Deployments on Civo</title><link>/docs/civo/troubleshooting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/civo/troubleshooting/</guid><description/></item></channel></rss>
