@@ -28,6 +28,7 @@ Enable SSH :
 ```shell
 ❯ make -f hack/build/k3s.mk sdcard-mount ENV=homelab
 ❯ sudo touch /mnt/portefaix/boot/ssh
+❯ echo portefaix-xxx | sudo tee /mnt/portefaix/root/etc/hostname
 ❯ make -f hack/build/k3s.mk sdcard-unmount ENV=homelab
 ```
 
@@ -40,7 +41,8 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 ## Ansible
 
 ```shell
-❯ make -f hack/build/k3s.mk ansible-run SERVICE=iac/k3s/machines ENV=homelab
+❯ make -f hack/build/k3s.mk ansible-deps SERVICE=ansible/k3s/machines ENV=homelab
+❯ make -f hack/build/k3s.mk ansible-run SERVICE=ansible/k3s/machines ENV=homelab
 ```
 
 ## K3Sup
@@ -72,13 +74,13 @@ portefaix-2   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.12
 
 ## Taints
 
-We taint the master `portefaix-1`:
+We could taint the master `portefaix-1`:
 
 ```shell
-❯ kubectl taint nodes portefaix-1 node.kubernetes.io/fluxcd:NoSchedule
+❯ kubectl taint nodes portefaix-1 node.kubernetes.io/gitops:NoSchedule
 ```
 
-We taint the Raspiberry PI 3:
+We could taint the Raspiberry PI 3:
 
 ```shell
 ❯ kubectl taint nodes portefaix-2 node.kubernetes.io/legacy:NoSchedule
