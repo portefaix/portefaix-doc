@@ -5,31 +5,40 @@ weight = 20
 
 +++
 <img src="/docs/images/argocd_architecture.png"
- alt="ArgoCD"
+ alt="Argo-CD"
  class="mt-3 mb-3 border border-info rounded">
 
 ## Organization
 
-Bootstrap:
+* `gitops/argocd/bootstrap` : Argo-CD deployment
+* `gitops/argocd/stacks` : Portefaix stacks : Argo-CD projects and applications
+* `gitops/argocd/apps/<CLOUD>/<ENVIRONMENT>` : Argo-CD applications deployed into the Kubernetes cluster
+* `gitops/argocd/charts` : Helm charts configurations
 
-* `gitops/argocd/charts` : directory which contains deployed applications using Helm charts
-* `gitops/argocd/apps/<CLOUD>/<ENVIRONMENT>` : directory which contains applications deployed into a Kubernetes cluster
-
-To configure the Helm chart, we use YAML files :
+To configure the Helm charts, we use YAML files :
 
 * `values.yaml`: common configuration to all Kubernetes cluster
 * `values-<CLOUD>-<ENVIRONMENT>.yaml` : configuration of the Helm chart for a Kubernetes cluster
 
+## Bootstrap
 
-## Sync
+### Argo-CD
 
 ```shell
 ❯ make argocd-bootstrap ENV=<environment> CLOUD=<cloud provider> CHOICE=helm
 ```
 
-## Secrets
+### Stacks
 
-### Bootstrap
+Install a stack into the cluster:
+
+```shell
+❯ make argocd-stack-install ENV=<environment> CLOUD=<cloud provider> STACK=<stack name>
+```
+
+Go to Argo-CD dashboard, you will see Argo-CD corresponding applications.
+
+## Secrets
 
 [sealed-secrets](https://github.com/bitnami-labs/sealed-secrets) is used to store secrets into Kubernetes.
 
@@ -38,8 +47,6 @@ Fetch the certificate that you will use to encrypt your secrets, and store it in
 ```shell
 ❯ kubeseal --fetch-cert --controller-name=sealed-secrets -n kube-system > .secrets/aws/staging/sealed-secrets/cert.pm
 ```
-
-### Usage
 
 Create a SealedSecrets from a file : 
 
