@@ -75,36 +75,47 @@ monitoring
 &lt;h3 id="infrastructure">Infrastructure&lt;/h3>
 &lt;ul>
 &lt;li>&lt;input checked="" disabled="" type="checkbox"> Development environment&lt;/span>&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Google Cloud Platform&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/1">#1&lt;/a> ]&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Amazon AWS&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/2">#2&lt;/a> ]&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Microsoft Azure&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/3">#3&lt;/a> ]&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Scaleway&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/17">#17&lt;/a> ]&lt;/li>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Digital Ocean&lt;/span> [ &lt;a href="https://github.com/portefaix/portefaix/issues/18">#18&lt;/a> ]&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Google Cloud Platform&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Amazon AWS&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Microsoft Azure&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Alicloud&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Digital Ocean&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Scaleway&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Exoscale&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for IBM Cloud&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Vultr&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Terraform code for Civo&lt;/span>&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Terraform code for Oracle Cloud&lt;/span>&lt;/li>
 &lt;/ul>
 &lt;h3 id="core">Core&lt;/h3>
 &lt;ul>
-&lt;li>&lt;input checked="" disabled="" type="checkbox"> Flux v2 bootstrap&lt;/span>&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Sops (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Gitops using Argo-CD&lt;/span>&lt;/li>
+&lt;li>&lt;input checked="" disabled="" type="checkbox"> Gitops using Flux v2&lt;/span>&lt;/li>
 &lt;/ul>
 &lt;h3 id="observability">Observability&lt;/h3>
 &lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Monitoring: Prometheus, Thanos, Alertmanager (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Logging: Loki, FluentBit, Vector (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> Tracing: Tempo (GKE, EKS, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Monitoring: Prometheus, Alertmanager, Thanos, Mimir, &amp;hellip; (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, Homelab)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Logging: Loki, Vector (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, Homelab)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code>Tracing: Tempo (GKE, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, Homelab)&lt;/li>
 &lt;/ul>
-&lt;h3 id="networking">Networking&lt;/h3>
+&lt;h3 id="system">System&lt;/h3>
 &lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> External-DNS, Cert-Manager (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Oauth2-Proxy (GKE, EKS, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> External-DNS, Cert-Manager (&lt;i class="fas fa-check"> GKE &lt;/i>, &lt;i class="fas fa-check"> EKS &lt;/i>, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Autoscaling (GKE, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, &lt;i class="fas fa-check"> Homelab &lt;/i>)&lt;/li>
+&lt;/ul>
+&lt;p>### Authentication&lt;/p>
+&lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Argo-CD with Dex (Auth0, Github) (GKE, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, &lt;i class="fas fa-check"> Homelab &lt;/i>)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Oauth2-Proxy (GKE, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI)&lt;/li>
 &lt;/ul>
 &lt;h3 id="service-mesh">Service Mesh&lt;/h3>
 &lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Open Service Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Open Service Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, Homelab)&lt;/li>
 &lt;/ul>
 &lt;h3 id="chaos">Chaos&lt;/h3>
 &lt;ul>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Chaos Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
-&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Litmus Chaos (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Chaos Mesh (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, Homelab)&lt;/li>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;code>WIP&lt;/code> Litmus Chaos (&lt;i class="fas fa-check"> GKE &lt;/i>, EKS, AKS, Alicloud, Scaleway, Exoscale, IBM, OCI, Homelab)&lt;/li>
 &lt;/ul>
 &lt;h2 id="v2">v2&lt;/h2>
 &lt;h3 id="service-mesh-cloud-providers">Service Mesh Cloud Providers&lt;/h3>
@@ -123,6 +134,7 @@ monitoring
 &lt;/ul>
 &lt;h3 id="managing-cloud-services-via-kubernetes-crds">Managing Cloud Services via Kubernetes CRDs&lt;/h3>
 &lt;ul>
+&lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://crossplane.io/">Crossplane&lt;/a>&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/aws/aws-controllers-k8s">AWS Controllers for Kubernetes (ACK)&lt;/a>&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://github.com/Azure/azure-service-operator">Azure Service Operator (for Kubernetes)&lt;/a>&lt;/li>
 &lt;li>&lt;input disabled="" type="checkbox"> &lt;a href="https://cloud.google.com/config-connector/docs/overview">Google Config Connector&lt;/a>&lt;/li>
