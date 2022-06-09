@@ -71,9 +71,7 @@ Change &lt;span style="color:#ce5c00;font-weight:bold">(&lt;/span>N&lt;span styl
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Add this output into a Github Secret &lt;code>SOPS_GPG_KEY&lt;/code>.&lt;/p>
 &lt;p>On the &lt;code>e2e&lt;/code> Github Action workflow, we create a Kubernetes secret &lt;code>sops-gpg&lt;/code>
 which will be used by Flux.&lt;/p></description></item><item><title>Docs: ArgoCD</title><link>/docs/development/gitops-argocd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/development/gitops-argocd/</guid><description>
-&lt;p>&lt;img src="/docs/images/argocd_architecture.png"
-alt="Argo-CD"
-class="mt-3 mb-3 border border-info rounded">&lt;/p>
+&lt;img src="/docs/images/argocd_architecture.png" alt="Argo-CD" class="mt-3 mb-3 border border-info rounded">
 &lt;h2 id="organization">Organization&lt;/h2>
 &lt;ul>
 &lt;li>&lt;code>gitops/argocd/bootstrap&lt;/code> : Argo-CD deployment&lt;/li>
@@ -92,7 +90,18 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stacks">Stacks&lt;/h3>
 &lt;p>Install a stack into the cluster:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make argocd-stack-install &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;environment&amp;gt; &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;cloud provider&amp;gt; &lt;span style="color:#000">STACK&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;stack name&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Go to Argo-CD dashboard, you will see Argo-CD corresponding applications.&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;img src="/docs/images/argocd_stacks.png" alt="Argo-CD Stacks" class="mt-3 mb-3 border border-info rounded">
+&lt;p>You can list stack installed:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ helm list -A
+NAME NAMESPACE REVISION UPDATED STATUS CHART APP VERSION
+argo-cd argocd &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-06-08 07:40:20.039787662 +0200 CEST deployed argo-cd-1.0.0 4.5.0
+core argocd &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-06-08 07:42:03.285558277 +0200 CEST deployed stack-0.1.0 0.1.0
+system argocd &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-06-08 07:41:21.749647011 +0200 CEST deployed stack-0.1.0 0.1.0
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Argo-CD applications installs others Argo-CD applications :&lt;/p>
+&lt;img src="/docs/images/argocd_app_observability.png" alt="Argo-CD Observability" class="mt-3 mb-3 border border-info rounded">
+&lt;img src="/docs/images/argocd_app_grafana.png" alt="Argo-CD Grafana" class="mt-3 mb-3 border border-info rounded">
+&lt;p>Go to Argo-CD dashboard, you will see Argo-CD corresponding applications.&lt;/p>
+&lt;p>You can list &lt;strong>Stack&lt;/strong> applications using the labels &lt;code>app.kubernetes.io/component: portefaix-stack&lt;/code>&lt;/p>
 &lt;h2 id="secrets">Secrets&lt;/h2>
 &lt;p>&lt;a href="https://github.com/bitnami-labs/sealed-secrets">sealed-secrets&lt;/a> is used to store secrets into Kubernetes.&lt;/p>
 &lt;p>Fetch the certificate that you will use to encrypt your secrets, and store it into &lt;code>.secrets/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/sealed-secrets/cert.pem&lt;/code> :&lt;/p>
