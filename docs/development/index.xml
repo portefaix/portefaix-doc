@@ -14,18 +14,39 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/flux-system&lt;/code> : Flux core components&lt;/li>
 &lt;li>&lt;code>clusters/&amp;lt;CLOUD&amp;gt;/&amp;lt;ENV&amp;gt;/*.yaml&lt;/code> : &lt;a href="https://toolkit.fluxcd.io/components/kustomize/kustomization/">Flux Kustomization&lt;/a> files for components&lt;/li>
 &lt;/ul>
-&lt;h2 id="sync">Sync&lt;/h2>
+&lt;h2 id="bootstrap">Bootstrap&lt;/h2>
+&lt;h3 id="fluxcd">FluxCD&lt;/h3>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make fluxcd-bootstrap &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;environment&amp;gt; &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;cloud provider&amp;gt; &lt;span style="color:#000">BRANCH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;git branch to use&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="secrets">Secrets&lt;/h2>
-&lt;h3 id="bootstrap">Bootstrap&lt;/h3>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="secrets">Secrets&lt;/h3>
 &lt;p>&lt;a href="https://github.com/mozilla/sops">Sops&lt;/a> is used to manage secrets.&lt;/p>
 &lt;p>Create for each cloud provider and environment an &lt;a href="https://age-encryption.org/">Age&lt;/a> key. Store it into:&lt;/p>
 &lt;p>&lt;code>.secrets/&amp;lt;CLOUD_PROVIDER&amp;gt;/&amp;lt;ENV&amp;gt;/age/age.agekey&lt;/code>&lt;/p>
 &lt;p>Put your sensitive data into the directory &lt;code>.secrets&lt;/code> or &lt;code>.secrets/&amp;lt;CLOUD_PROVIDER&amp;gt;/&amp;lt;ENV&amp;gt;/&amp;lt;APPLICATION&amp;gt;&lt;/code>&lt;/p>
 &lt;p>Then deploy the Age key into a Kubernetes secret:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-age-secret &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;CLOUD_PROVIDER&amp;gt; &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;ENV&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="usage">Usage&lt;/h3>
-&lt;h4 id="file">File&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stacks">Stacks&lt;/h3>
+&lt;p>You can list stack installed:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ kubectl -n flux-system get kustomization -l &lt;span style="color:#4e9a06">&amp;#34;app.kubernetes.io/component=portefaix-stack&amp;#34;&lt;/span>
+NAME AGE READY STATUS
+core 107m True Applied revision: feat/weave-gitops/2ea4d23f1ae31bfb6afbe57a4662b5990dcf3307
+observability 109m True Applied revision: feat/weave-gitops/2ea4d23f1ae31bfb6afbe57a4662b5990dcf3307
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>And Helm releases:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ helm list -A
+NAME NAMESPACE REVISION UPDATED STATUS CHART APP VERSION
+alertmanager-mixin monitoring &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 10:57:51.540267795 +0000 UTC deployed alertmanager-mixin-0.6.0 0.23.0
+kube-prometheus-stack monitoring &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 10:57:52.701498295 +0000 UTC deployed kube-prometheus-stack-35.0.3 0.56.0
+kube-state-metrics-mixin monitoring &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 10:57:52.285323133 +0000 UTC deployed kube-state-metrics-mixin-0.10.0 2.2.4
+kubernetes-mixin monitoring &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 10:57:52.528376605 +0000 UTC deployed kubernetes-mixin-0.8.0 0.8.0
+kyverno flux-system &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 09:00:31.649605165 +0000 UTC deployed kyverno-crds-v2.0.3 v1.4.3
+metrics-server kube-system &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 10:57:41.851963826 +0000 UTC failed metrics-server-3.8.2 0.6.1
+prometheus-mixin monitoring &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 10:57:53.019370201 +0000 UTC deployed prometheus-mixin-0.10.0 2.31.1
+prometheus-operator-mixin monitoring &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 10:57:53.815678548 +0000 UTC deployed prometheus-operator-mixin-0.8.0 0.52.1
+weawe-gitops flux-system &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-08-08 07:49:32.97390968 +0000 UTC deployed weave-gitops-2.2.5 v0.9.1
+&lt;/code>&lt;/pre>&lt;/div>&lt;img src="/docs/images/fluxcd-applications.png" alt="Flux-CD Applications" class="mt-3 mb-3 border border-info rounded">
+&lt;img src="/docs/images/fluxcd-kustomization-details.png" alt="Details" class="mt-3 mb-3 border border-info rounded">
+&lt;img src="/docs/images/fluxcd-kustomization-graph.png" alt="Graph" class="mt-3 mb-3 border border-info rounded">
+&lt;h2 id="secrets-1">Secrets&lt;/h2>
+&lt;h3 id="file">File&lt;/h3>
 &lt;p>Create a Kubernetes secret file from sensitive file.&lt;/p>
 &lt;p>Ex: for Thanos configuration :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="color:#000">❯ cat .secrets/aws/object-store.yaml&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
@@ -35,12 +56,12 @@ class="mt-3 mb-3 border border-info rounded">&lt;/p>
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">endpoint&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">s3.eu-west-3.amazonaws.com&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#204a87;font-weight:bold">region&lt;/span>&lt;span style="color:#000;font-weight:bold">:&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline"> &lt;/span>&lt;span style="color:#000">eu-west-3&lt;/span>&lt;span style="color:#f8f8f8;text-decoration:underline">
 &lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make kubernetes-secret &lt;span style="color:#000">NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>thanos-object-storage &lt;span style="color:#000">NAMESPACE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>monitoring &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>.secrets/aws/object-store.yaml &amp;gt; thanos-object-storage.yaml
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="encrypt">Encrypt&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="encrypt">Encrypt&lt;/h3>
 &lt;p>Encrypt the file using Sops:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-encrypt &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>aws &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>thanos-object-storage.yaml
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>You can now safely store this file into Git.&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ mv thanos-object-storage.yaml kubernetes/overlays/staging/monitoring/thanos/
-&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="decrypt">Decrypt&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="decrypt">Decrypt&lt;/h3>
 &lt;p>Check you can decrypt the file:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make sops-decrypt &lt;span style="color:#000">FILE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>kubernetes/overlays/staging/monitoring/thanos/thanos-object-storage.yaml
 apiVersion: v1
@@ -51,12 +72,12 @@ metadata:
 creationTimestamp: null
 name: thanos-object-storage
 namespace: monitoring
-&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="cicd">CI/CD&lt;/h3>
-&lt;h4 id="age">AGE&lt;/h4>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="cicd">CI/CD&lt;/h2>
+&lt;h3 id="age">AGE&lt;/h3>
 &lt;div class="alert alert-warning" role="alert">
 &lt;h4 class="alert-heading">Work In Progress&lt;/h4>
 &lt;/div>
-&lt;h4 id="pgp">PGP&lt;/h4>
+&lt;h3 id="pgp">PGP&lt;/h3>
 &lt;p>Generate a GPG key with OpenPGP without specifying a passphrase:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ gpg --full-generate-key
 Real name: nlamirault
