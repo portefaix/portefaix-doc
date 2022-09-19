@@ -8,11 +8,25 @@ weight = 10
 
 ## Setup
 
-Create an [admin user](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html).
-Then [API Keys](https://console.aws.amazon.com/iam/home?#/security_credentials),
-and configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh`:
+Creates an [AWS Organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html), and enable Service Control Policies in AWS organizations.
+
+Now that we’ve created an organization, you’ll notice that all the policies are disabled by default.
+
+There you need to enable AWS Service Control Policies in the AWS console by clicking on the button Enable service control policies. Do the same action for the AWS Tag Policies.
+
+Navigate to Personal Health Dashboard service in the console. On the left side panel, expand Organizational view and choose configurations. Then, enable organizational view for AWS Health
+
+Create an [admin user](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html), and configure [account alias for IAM Users access](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_how-users-sign-in.html)
+
+
+Then [API Keys](https://console.aws.amazon.com/iam/home?#/security_credentials).
+
+Configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh`:
 
 ```shell
+HOME_IP=$(curl -s http://ifconfig.me)
+SLACK_WEBHOOK_NOTIFS="https://hooks.slack.com/services/xxx/xxx"
+
 # AWS
 function setup_aws() {
     export AWS_ACCESS_KEY_ID="....."
@@ -23,10 +37,14 @@ function setup_aws() {
     export TF_VAR_access_key="${AWS_ACCESS_KEY_ID}"
     export TF_VAR_secret_key="${AWS_SECRET_ACCESS_KEY}"
     export TF_VAR_slack_webhook_url="${SLACK_WEBHOOK_NOTIFS}"
+    export TF_VAR_org_email="xxxxxx"    # for Root Account
+    export TF_VAR_org_email_domain="gmail.com"
+    export TF_VAR_org_admin_username="xxxxxx"
+    export TF_VAR_admin_ipv4="[\"${HOME_IP}/32\"]" # for WAF
 }
 ```
 
-And load environment :
+Load environment :
 
 ```shell
 ❯ . ./portefaix.sh aws
@@ -46,11 +64,26 @@ Create a DynamoDB table :
 ❯ make -f hack/build/aws.mk aws-dynamodb-create-table ENV=staging
 ```
 
+## AWS Organization Units and Accounts
+
+Configure the AWS Organization:
+
+```shell
+❯ make terraform-apply SERVICE=terraform/aws/root ENV=main
+```
+
+<img src="/docs/images/aws_organization.png" alt="
+Portefaix AWS organization" class="mt-3 mb-3 rounded">
+
 <a id="aws-terraform-cloud"></a>
 
 ## Terraform Cloud / Github Actions
 
 [Terraform Cloud](https://terraform.cloud) is used as the remote backend. [Github Actions](https://github.com/features/actions) perform tasks to deploy the AWS infrastructure.
+
+```shell
+❯ make terraform-apply SERVICE=terraform/aws/terraform-cloud ENV=main
+```
 
 <img src="/docs/images/portefaix-aws-deploy.png" alt="Portefaix AWS deployment" class="mt-3 mb-3 rounded">
 
