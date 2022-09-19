@@ -291,10 +291,16 @@ And configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/port
 &lt;p>See : &lt;a href="/docs/development/gitops-fluxcd">Gitops with FluxCD&lt;/a> or &lt;a href="/docs/development/gitops-argocd/">Gitops with ArgoCD&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/aws/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/aws/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="aws">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
-&lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>.
-Then &lt;a href="https://console.aws.amazon.com/iam/home?#/security_credentials">API Keys&lt;/a>,
-and configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/portefaix.sh&lt;/code>:&lt;/p>
-&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#8f5902;font-style:italic"># AWS&lt;/span>
+&lt;p>Creates an &lt;a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">AWS Organization&lt;/a>, and enable Service Control Policies in AWS organizations.&lt;/p>
+&lt;p>Now that we’ve created an organization, you’ll notice that all the policies are disabled by default.&lt;/p>
+&lt;p>There you need to enable AWS Service Control Policies in the AWS console by clicking on the button Enable service control policies. Do the same action for the AWS Tag Policies.&lt;/p>
+&lt;p>Navigate to Personal Health Dashboard service in the console. On the left side panel, expand Organizational view and choose configurations. Then, enable organizational view for AWS Health&lt;/p>
+&lt;p>Create an &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html">admin user&lt;/a>, and configure &lt;a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_how-users-sign-in.html">account alias for IAM Users access&lt;/a>&lt;/p>
+&lt;p>Then &lt;a href="https://console.aws.amazon.com/iam/home?#/security_credentials">API Keys&lt;/a>.&lt;/p>
+&lt;p>Configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/portefaix.sh&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">&lt;span style="color:#000">HOME_IP&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#204a87;font-weight:bold">$(&lt;/span>curl -s http://ifconfig.me&lt;span style="color:#204a87;font-weight:bold">)&lt;/span>
+&lt;span style="color:#000">SLACK_WEBHOOK_NOTIFS&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;https://hooks.slack.com/services/xxx/xxx&amp;#34;&lt;/span>
+&lt;span style="color:#8f5902;font-style:italic"># AWS&lt;/span>
 &lt;span style="color:#204a87;font-weight:bold">function&lt;/span> setup_aws&lt;span style="color:#ce5c00;font-weight:bold">()&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_ACCESS_KEY_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;.....&amp;#34;&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">AWS_SECRET_ACCESS_KEY&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;.....&amp;#34;&lt;/span>
@@ -304,18 +310,28 @@ and configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/port
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_access_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">AWS_ACCESS_KEY_ID&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_secret_key&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">AWS_SECRET_ACCESS_KEY&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
 &lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_slack_webhook_url&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">SLACK_WEBHOOK_NOTIFS&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_org_email&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxx&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># for Root Account&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_org_email_domain&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;gmail.com&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_org_admin_username&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;xxxxxx&amp;#34;&lt;/span>
+&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">TF_VAR_admin_ipv4&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;[\&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">HOME_IP&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">/32\&amp;#34;]&amp;#34;&lt;/span> &lt;span style="color:#8f5902;font-style:italic"># for WAF&lt;/span>
 &lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>And load environment :&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Load environment :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ . ./portefaix.sh aws
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="storage-for-terraform">Storage for Terraform&lt;/h2>
 &lt;p>Create a S3 bucket for Terraform states:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk aws-s3-bucket &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a DynamoDB table :&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk aws-dynamodb-create-table &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;a id="aws-terraform-cloud">&lt;/a>&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="aws-organization-units-and-accounts">AWS Organization Units and Accounts&lt;/h2>
+&lt;p>Configure the AWS Organization:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/aws/root &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>main
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="/docs/images/aws_organization.png" alt="
+Portefaix AWS organization" class="mt-3 mb-3 rounded">&lt;/p>
+&lt;p>&lt;a id="aws-terraform-cloud">&lt;/a>&lt;/p>
 &lt;h2 id="terraform-cloud--github-actions">Terraform Cloud / Github Actions&lt;/h2>
 &lt;p>&lt;a href="https://terraform.cloud">Terraform Cloud&lt;/a> is used as the remote backend. &lt;a href="https://github.com/features/actions">Github Actions&lt;/a> perform tasks to deploy the AWS infrastructure.&lt;/p>
-&lt;img src="/docs/images/portefaix-aws-deploy.png" alt="Portefaix AWS deployment" class="mt-3 mb-3 rounded">
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/aws/terraform-cloud &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>main
+&lt;/code>&lt;/pre>&lt;/div>&lt;img src="/docs/images/portefaix-aws-deploy.png" alt="Portefaix AWS deployment" class="mt-3 mb-3 rounded">
 &lt;p>&lt;a id="aws-gitops">&lt;/a>&lt;/p>
 &lt;h2 id="gitops-for-kubernetes">Gitops for Kubernetes&lt;/h2>
 &lt;p>See : &lt;a href="/docs/development/gitops-fluxcd">Gitops with FluxCD&lt;/a> or &lt;a href="/docs/development/gitops-argocd/">Gitops with ArgoCD&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/azure/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/install-portefaix/</guid><description>
