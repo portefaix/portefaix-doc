@@ -34,7 +34,7 @@ XXXXXXXXXXX
 &lt;p>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> with &lt;a href="https://www.terraform.io/cloud">Terraform Cloud&lt;/a> could used to deploy the infrastructure:&lt;/p>
 &lt;img src="/docs/images/portefaix-azure-deploy.png" alt="Portefaix Azure deployment" class="mt-3 mb-3 rounded">
 &lt;h2 id="gitops-for-kubernetes">Gitops for Kubernetes&lt;/h2>
-&lt;p>See : &lt;a href="/docs/development/gitops-fluxcd">Gitops with FluxCD&lt;/a> or &lt;a href="/docs/development/gitops-argocd/">Gitops with ArgoCD&lt;/a>&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/azure/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/inspec-portefaix/</guid><description>
+&lt;p>Next: &lt;a href="/docs/gitops">Gitops&lt;/a>&lt;/p></description></item><item><title>Docs: Inspec Portefaix</title><link>/docs/azure/deploy/inspec-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/inspec-portefaix/</guid><description>
 &lt;h2 id="inspec">Inspec&lt;/h2>
 &lt;p>&lt;a href="http://inspec.io/">inspec&lt;/a> is used to check infrastructure.&lt;/p>
 &lt;p>Check:&lt;/p>

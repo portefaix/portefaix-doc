@@ -41,4 +41,4 @@ portefaix-2 Ready &amp;lt;none&amp;gt; 32d v1.21.4+k3s1 192.168.1.123 &amp;lt;no
 ❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
 ❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule
 &lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="applications">Applications&lt;/h2>
-&lt;p>See: &lt;a href="development/gitops/">Gitops&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>Next: &lt;a href="/docs/gitops">Gitops&lt;/a>&lt;/p></description></item></channel></rss>
