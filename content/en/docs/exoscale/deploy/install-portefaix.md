@@ -37,3 +37,7 @@ Create a S3 bucket for Terraform states:
 ```shell
 ❯ make terraform-apply SERVICE=iac/exoscale/sks ENV=dev
 ```
+
+## Gitops for Kubernetes
+
+Next: [Gitops](/docs/gitops)

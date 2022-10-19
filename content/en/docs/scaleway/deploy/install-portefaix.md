@@ -43,3 +43,7 @@ Create a S3 bucket for Terraform states:
 ```shell
 ❯ make terraform-apply SERVICE=iac/scaleway/kapsule ENV=sandbox
 ```
+
+## Gitops for Kubernetes
+
+Next: [Gitops](/docs/gitops)

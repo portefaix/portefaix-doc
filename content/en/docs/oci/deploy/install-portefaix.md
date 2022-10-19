@@ -36,5 +36,6 @@ Check compartement ID from output of the previous command and create a S3 bucket
 ❯ make -f hack/build/oci.mk oci-bucket ENV=staging COMPARTMENT_ID=ocid1.compartment.oc1....
 ```
 
-## Terraform
+## Gitops for Kubernetes
 
+Next: [Gitops](/docs/gitops)

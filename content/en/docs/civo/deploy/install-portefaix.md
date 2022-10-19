@@ -37,3 +37,7 @@ And load environment :
 ```shell
 ❯ make terraform-apply SERVICE=terraform/civo/kubernetes ENV=dev
 ```
+
+## Gitops for Kubernetes
+
+Next: [Gitops](/docs/gitops)

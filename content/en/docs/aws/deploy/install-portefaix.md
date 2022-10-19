@@ -115,4 +115,4 @@ ip-10-0-70-76.eu-west-1.compute.internal    Ready    <none>   81m   v1.23.9-eks-
 
 ## Gitops for Kubernetes
 
-See : [Gitops with FluxCD](/docs/development/gitops-fluxcd) or [Gitops with ArgoCD](/docs/development/gitops-argocd/)
+Next: [Gitops](/docs/gitops)

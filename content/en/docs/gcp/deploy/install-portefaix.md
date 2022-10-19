@@ -116,4 +116,4 @@ Configure Terraform Cloud workspaces:
 
 ## Gitops for Kubernetes
 
-See : [Gitops with FluxCD](/docs/development/gitops-fluxcd) or [Gitops with ArgoCD](/docs/development/gitops-argocd/)
+Next: [Gitops](/docs/gitops)

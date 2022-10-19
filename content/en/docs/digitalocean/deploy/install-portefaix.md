@@ -35,3 +35,7 @@ Create a S3 bucket for Terraform states:
 ```shell
 ❯ make -f hack/build/digitalocean.mk exo-bucket ENV=dev
 ```
+
+## Gitops for Kubernetes
+
+Next: [Gitops](/docs/gitops)

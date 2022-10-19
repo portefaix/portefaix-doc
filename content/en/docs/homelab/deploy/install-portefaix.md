@@ -90,4 +90,4 @@ We could taint the Raspiberry PI 3:
 
 ## Applications
 
-See: [Gitops](development/gitops/)
+Next: [Gitops](/docs/gitops)

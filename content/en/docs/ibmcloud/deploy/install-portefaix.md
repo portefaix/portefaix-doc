@@ -58,3 +58,7 @@ Create a S3 bucket for Terraform states:
 ```shell
 ❯ make terraform-apply SERVICE=terraform/ibmcloud/iks ENV=staging
 ```
+
+## Gitops for Kubernetes
+
+Next: [Gitops](/docs/gitops)
