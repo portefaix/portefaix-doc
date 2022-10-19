@@ -38,7 +38,8 @@ corresponding tools for each platform.
     <thead class="thead-light">
       <tr>
         <th>Cloud Provider</th>
-        <th>Sops</th>
+        <th>Github Actions</th>
+        <th>Terraform Cloud</th>
         <th>Tfsec</th>
         <th>Inspec</th>
       </tr>
@@ -46,49 +47,85 @@ corresponding tools for each platform.
     <tbody>
       <tr>
         <td>Google Cloud Platform</td>
-        <td><a href="https://cloud.google.com/security-key-management"> GCP KMS </a></td>
+        <td><i class="fas fa-check"></i></td>
+        <td><i class="fas fa-check"></i></td>
         <td><i class="fas fa-check"></i></td>
         <td><i class="fas fa-check"></i></td>
       </tr>
       <tr>
         <td>Amazon AWS</td>
-        <td><a href="https://aws.amazon.com/kms/">AWS KMS</a></td>
+        <td><i class="fas fa-check"></i></td>
+        <td><i class="fas fa-check"></i></td>
         <td><i class="fas fa-check"></i></td>
         <td><i class="fas fa-check"></i></td>
       </tr>
       <tr>
         <td>Microsoft Azure</td>
-        <td><a href="https://azure.microsoft.com/en-us/services/key-vault/">Azure KeyVault</a></td>
+        <td><i class="fas fa-check"></i></td>
+        <td><i class="fas fa-check"></i></td>
         <td><i class="fas fa-check"></i></td>
         <td><i class="fas fa-check"></i></td>
       </tr>
       <tr>
         <td>AlibabaCloud</td>
-        <td><a href="https://www.openpgp.org/">OpenPGP</a></td>
+        <td><i class="fas fa-check"></i></td>
+        <td><i class="fas fa-check"></i></td>
+        <td><i class="fas fa-check"></i></td>
+        <td><i class="fas fa-check"></i></td>
+      </tr>
+      <tr>
+        <td>Scaleway</td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
       </tr>
       <tr>
-        <td>Scaleway</td>
-        <td><a href="https://www.openpgp.org/">OpenPGP</a></td>
+        <td>Exoscale</td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+      </tr>
+      <tr>
+        <td>Vultr</td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+      </tr>
+      <tr>
+        <td>IBMCloud</td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
       </tr>
       <tr>
         <td>Digital Ocean</td>
-        <td><a href="https://www.openpgp.org/">OpenPGP</a></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
+      </tr>
+      <tr>
+        <td>Civo</td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
       </tr>
       <tr>
         <td>K3S</td>
-        <td><a href="https://www.openpgp.org/">OpenPGP</a></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
       </tr>
       <tr>
         <td>Kind</td>
-        <td><a href="https://www.openpgp.org/">OpenPGP</a></td>
+        <td><i class="fas fa-times"></i></td>
+        <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
         <td><i class="fas fa-times"></i></td>
       </tr>
