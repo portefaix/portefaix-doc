@@ -709,7 +709,8 @@ corresponding tools for each platform.&lt;/p>
 &lt;thead class="thead-light">
 &lt;tr>
 &lt;th>Cloud Provider&lt;/th>
-&lt;th>Sops&lt;/th>
+&lt;th>Github Actions&lt;/th>
+&lt;th>Terraform Cloud&lt;/th>
 &lt;th>Tfsec&lt;/th>
 &lt;th>Inspec&lt;/th>
 &lt;/tr>
@@ -717,49 +718,85 @@ corresponding tools for each platform.&lt;/p>
 &lt;tbody>
 &lt;tr>
 &lt;td>Google Cloud Platform&lt;/td>
-&lt;td>&lt;a href="https://cloud.google.com/security-key-management"> GCP KMS &lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Amazon AWS&lt;/td>
-&lt;td>&lt;a href="https://aws.amazon.com/kms/">AWS KMS&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Microsoft Azure&lt;/td>
-&lt;td>&lt;a href="https://azure.microsoft.com/en-us/services/key-vault/">Azure KeyVault&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>AlibabaCloud&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-check">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Scaleway&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>Scaleway&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>Exoscale&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Vultr&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>IBMCloud&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Digital Ocean&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Civo&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>K3S&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>Kind&lt;/td>
-&lt;td>&lt;a href="https://www.openpgp.org/">OpenPGP&lt;/a>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
+&lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;td>&lt;i class="fas fa-times">&lt;/i>&lt;/td>
 &lt;/tr>
