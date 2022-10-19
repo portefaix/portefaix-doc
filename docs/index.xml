@@ -329,11 +329,27 @@ And configure Portefaix environment file &lt;code>${HOME}/.config/portefaix/port
 Portefaix AWS organization" class="mt-3 mb-3 rounded">&lt;/p>
 &lt;p>&lt;a id="aws-terraform-cloud">&lt;/a>&lt;/p>
 &lt;h2 id="terraform-cloud--github-actions">Terraform Cloud / Github Actions&lt;/h2>
-&lt;p>&lt;a href="https://terraform.cloud">Terraform Cloud&lt;/a> is used as the remote backend. &lt;a href="https://github.com/features/actions">Github Actions&lt;/a> perform tasks to deploy the AWS infrastructure.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://terraform.cloud">Terraform Cloud&lt;/a> is used as the remote backend.&lt;/li>
+&lt;li>&lt;a href="https://github.com/features/actions">Github Actions&lt;/a> perform tasks to deploy the AWS infrastructure.&lt;/li>
+&lt;/ul>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>terraform/aws/terraform-cloud &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>main
 &lt;/code>&lt;/pre>&lt;/div>&lt;img src="/docs/images/portefaix-aws-deploy.png" alt="Portefaix AWS deployment" class="mt-3 mb-3 rounded">
 &lt;p>&lt;a id="aws-gitops">&lt;/a>&lt;/p>
-&lt;h2 id="gitops-for-kubernetes">Gitops for Kubernetes&lt;/h2>
+&lt;h2 id="authentication">Authentication&lt;/h2>
+&lt;p>Perform an AWS authentication:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging aws-admin
+&lt;span style="color:#204a87">source&lt;/span> ./hack/scripts/aws-auth.sh xxxxxx Administrator portefaix-staging-eks eu-west-1
+❯ &lt;span style="color:#204a87">source&lt;/span> ./hack/scripts/aws-auth.sh xxxxxxx Administrator portefaix-staging-eks eu-west-1
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Update Kubernetes configuration file:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/aws.mk &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>staging aws-kube-credentials
+❯ kubectl get nodes
+NAME STATUS ROLES AGE VERSION
+ip-10-0-13-85.eu-west-1.compute.internal Ready &amp;lt;none&amp;gt; 81m v1.23.9-eks-ba74326
+ip-10-0-29-115.eu-west-1.compute.internal Ready &amp;lt;none&amp;gt; 81m v1.23.9-eks-ba74326
+ip-10-0-60-137.eu-west-1.compute.internal Ready &amp;lt;none&amp;gt; 81m v1.23.9-eks-ba74326
+ip-10-0-70-76.eu-west-1.compute.internal Ready &amp;lt;none&amp;gt; 81m v1.23.9-eks-ba74326
+&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitops-for-kubernetes">Gitops for Kubernetes&lt;/h2>
 &lt;p>See : &lt;a href="/docs/development/gitops-fluxcd">Gitops with FluxCD&lt;/a> or &lt;a href="/docs/development/gitops-argocd/">Gitops with ArgoCD&lt;/a>&lt;/p></description></item><item><title>Docs: Install Portefaix</title><link>/docs/azure/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/azure/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="azure">&lt;/a>&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
@@ -423,9 +439,25 @@ XXXXXXXXXXX
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make terraform-apply &lt;span style="color:#000">SERVICE&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>iac/exoscale/sks &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Install Portefaix</title><link>/docs/gcp/deploy/install-portefaix/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/docs/gcp/deploy/install-portefaix/</guid><description>
 &lt;p>&lt;a id="gcloud"/>&lt;/a>&lt;/p>
-&lt;h2 id="setup">Setup&lt;/h2>
+&lt;h2 id="organization">Organization&lt;/h2>
+&lt;p>Create a Google Cloud Organization using &lt;strong>Google Workspace&lt;/strong> or &lt;strong>Cloud Identity&lt;/strong>&lt;/p>
+&lt;p>See: &lt;a href="https://cloud.google.com/resource-manager/docs/creating-managing-organization?hl=fr">https://cloud.google.com/resource-manager/docs/creating-managing-organization?hl=fr&lt;/a>&lt;/p>
+&lt;h2 id="bootstrap">Bootstrap&lt;/h2>
 &lt;p>Authenticate on the Google Cloud Platform:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ gcloud auth application-default login
+xxxxxxxxxx
+❯ gcloud organizations list
+DISPLAY_NAME ID DIRECTORY_CUSTOMER_ID
+xxxxxxx xxxxxx xxxxxxxx
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Bootstrap the organization:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-organization-bootstrap &lt;span style="color:#000">GCP_ORG_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>xxxxxxxxxxx &lt;span style="color:#000">GCP_USER&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>xxxxxxxxxxxxxxxxx
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then go to &lt;a href="https://console.cloud.google.com/cloud-setup/organization">https://console.cloud.google.com/cloud-setup/organization&lt;/a> to creates groups and create the billing account.&lt;/p>
+&lt;p>Then create the bootstrap project:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-organization-project &lt;span style="color:#000">GCP_ORG_NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>xxxx &lt;span style="color:#000">GCP_ORG_ID&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>xxxxxxxxxxx
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Associate this project to the Billing Account (on GCP console or using gcloud):&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">gcloud alpha billing accounts projects link my-project --billing-account&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>xxxxxxx
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then create the bucket for boostraping the organization:&lt;/p>
+&lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-bucket &lt;span style="color:#000">GCP_ORG_NAME&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>xxxxxxx
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable APIs:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make -f hack/build/gcp.mk gcp-enable-apis &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>dev
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a bucket for the Terraform tfstates:&lt;/p>
