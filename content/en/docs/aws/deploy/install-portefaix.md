@@ -18,7 +18,6 @@ Navigate to Personal Health Dashboard service in the console. On the left side p
 
 Create an [admin user](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html), and configure [account alias for IAM Users access](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_how-users-sign-in.html)
 
-
 Then [API Keys](https://console.aws.amazon.com/iam/home?#/security_credentials).
 
 Configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh`:
@@ -79,7 +78,8 @@ Portefaix AWS organization" class="mt-3 mb-3 rounded">
 
 ## Terraform Cloud / Github Actions
 
-[Terraform Cloud](https://terraform.cloud) is used as the remote backend. [Github Actions](https://github.com/features/actions) perform tasks to deploy the AWS infrastructure.
+* [Terraform Cloud](https://terraform.cloud) is used as the remote backend.
+* [Github Actions](https://github.com/features/actions) perform tasks to deploy the AWS infrastructure.
 
 ```shell
 ❯ make terraform-apply SERVICE=terraform/aws/terraform-cloud ENV=main
@@ -88,6 +88,30 @@ Portefaix AWS organization" class="mt-3 mb-3 rounded">
 <img src="/docs/images/portefaix-aws-deploy.png" alt="Portefaix AWS deployment" class="mt-3 mb-3 rounded">
 
 <a id="aws-gitops"></a>
+
+## Authentication
+
+Perform an AWS authentication:
+
+```shell
+❯ make -f hack/build/aws.mk ENV=staging aws-admin
+source ./hack/scripts/aws-auth.sh xxxxxx Administrator portefaix-staging-eks eu-west-1
+
+❯ source ./hack/scripts/aws-auth.sh xxxxxxx Administrator portefaix-staging-eks eu-west-1
+```
+
+Update Kubernetes configuration file:
+
+```shell
+❯ make -f hack/build/aws.mk ENV=staging aws-kube-credentials
+
+❯ kubectl get nodes
+NAME                                        STATUS   ROLES    AGE   VERSION
+ip-10-0-13-85.eu-west-1.compute.internal    Ready    <none>   81m   v1.23.9-eks-ba74326
+ip-10-0-29-115.eu-west-1.compute.internal   Ready    <none>   81m   v1.23.9-eks-ba74326
+ip-10-0-60-137.eu-west-1.compute.internal   Ready    <none>   81m   v1.23.9-eks-ba74326
+ip-10-0-70-76.eu-west-1.compute.internal    Ready    <none>   81m   v1.23.9-eks-ba74326
+```
 
 ## Gitops for Kubernetes
 

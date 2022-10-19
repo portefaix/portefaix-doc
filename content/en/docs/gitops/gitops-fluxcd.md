@@ -23,7 +23,6 @@ Flux components are deployed for each cluster on `clusters/<CLOUD>/<ENV>/` :
 * `clusters/<CLOUD>/<ENV>/flux-system` : Flux core components
 * `clusters/<CLOUD>/<ENV>/*.yaml` : [Flux Kustomization](https://toolkit.fluxcd.io/components/kustomize/kustomization/) files for components
 
-
 ## Bootstrap
 
 ### FluxCD
