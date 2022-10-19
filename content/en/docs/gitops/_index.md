@@ -1,10 +1,8 @@
 +++
 title = "Gitops"
-description = "Gitops"
+description = "Gitops managed applications"
 weight = 200
 +++
-
-## OpenGitops
 
 [OpenGitops principles](https://opengitops.dev):
 
