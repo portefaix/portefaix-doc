@@ -53,10 +53,13 @@ Create the master :
 ❯ make -f hack/build/k3s.mk  k3s-create ENV=homelab SERVER_IP=x.x.x.x 
 ```
 
-For each node, add it to the cluster:
+For each node, add it to the cluster, then add a label:
 
 ```shell
-❯ make -f hack/build/k3s.mk k3s-join ENV=homelab SERVER_IP=x.x.x.x AGENT_IP=x.x.x.x 
+❯ make -f hack/build/k3s.mk k3s-join ENV=homelab SERVER_IP=x.x.x.x AGENT_IP=x.x.x.x
+
+❯ kubectl label node <NODE_NAME> node-role.kubernetes.io/worker=
+node/<NODE_NAME> labeled
 ```
 
 Check Kubernetes cluster:
@@ -65,11 +68,11 @@ Check Kubernetes cluster:
 ❯ make -f hack/build/k3s.mk k3s-kube-credentials ENV=homelab
 
 ❯ kubectl get node -o wide
-NAME          STATUS   ROLES                  AGE    VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
-portefaix-2   Ready    <none>                 10m    v1.24.6+k3s1   192.168.0.116   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
-portefaix-1   Ready    control-plane,master   21m    v1.24.6+k3s1   192.168.0.208   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
-portefaix-4   Ready    <none>                 101s   v1.24.6+k3s1   192.168.0.234   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
-portefaix-3   Ready    <none>                 6m5s   v1.24.6+k3s1   192.168.0.252   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+NAME          STATUS   ROLES                  AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
+portefaix-1   Ready    control-plane,master   22m     v1.24.6+k3s1   192.168.0.208   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+portefaix-2   Ready    worker                 12m     v1.24.6+k3s1   192.168.0.116   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+portefaix-3   Ready    worker                 7m35s   v1.24.6+k3s1   192.168.0.252   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+portefaix-4   Ready    worker                 3m11s   v1.24.6+k3s1   192.168.0.234   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
 ```
 
 ## Applications
