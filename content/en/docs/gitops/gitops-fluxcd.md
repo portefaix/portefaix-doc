@@ -31,22 +31,6 @@ Flux components are deployed for each cluster on `clusters/<CLOUD>/<ENV>/` :
 ❯ make fluxcd-bootstrap ENV=<environment> CLOUD=<cloud provider> BRANCH=<git branch to use>
 ```
 
-### Secrets
-
-[Sops](https://github.com/mozilla/sops) is used to manage secrets.
-
-Create for each cloud provider and environment an [Age](https://age-encryption.org/) key. Store it into:
-
-`.secrets/<CLOUD_PROVIDER>/<ENV>/age/age.agekey`
-
-Put your sensitive data into the directory `.secrets` or `.secrets/<CLOUD_PROVIDER>/<ENV>/<APPLICATION>`
-
-Then deploy the Age key into a Kubernetes secret:
-
-```shell
-❯ make sops-age-secret CLOUD=<CLOUD_PROVIDER> ENV=<ENV> NAMESPACE=flux-system
-```
-
 ### Stacks
 
 You can list stack installed:
