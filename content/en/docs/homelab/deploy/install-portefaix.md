@@ -50,13 +50,13 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 Create the master :
 
 ```shell
-❯ make -f hack/build/k3s.mk  k3s-create SERVER_IP=x.x.x.x USER=pi ENV=homelab
+❯ make -f hack/build/k3s.mk  k3s-create ENV=homelab SERVER_IP=x.x.x.x 
 ```
 
 For each node, add it to the cluster:
 
 ```shell
-❯ make -f hack/build/k3s.mk k3s-join SERVER_IP=x.x.x.x USER=pi AGENT_IP=x.x.x.x ENV=homelab
+❯ make -f hack/build/k3s.mk k3s-join ENV=homelab SERVER_IP=x.x.x.x AGENT_IP=x.x.x.x 
 ```
 
 Check Kubernetes cluster:
