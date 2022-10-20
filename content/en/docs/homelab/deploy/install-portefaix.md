@@ -72,22 +72,6 @@ portefaix-5   Ready    <none>                 129m   v1.21.4+k3s1   192.168.1.12
 portefaix-2   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.123   <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
 ```
 
-## Taints
-
-We could taint the master `portefaix-1`:
-
-```shell
-❯ kubectl taint nodes portefaix-1 node.kubernetes.io/gitops:NoSchedule
-```
-
-We could taint the Raspiberry PI 3:
-
-```shell
-❯ kubectl taint nodes portefaix-2 node.kubernetes.io/legacy:NoSchedule
-❯ kubectl taint nodes portefaix-3 node.kubernetes.io/legacy:NoSchedule
-❯ kubectl taint nodes portefaix-4 node.kubernetes.io/legacy:NoSchedule
-```
-
 ## Applications
 
 Next: [Gitops](/docs/gitops)
