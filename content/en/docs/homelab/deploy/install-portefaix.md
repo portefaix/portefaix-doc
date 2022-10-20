@@ -63,13 +63,13 @@ Check Kubernetes cluster:
 
 ```shell
 ❯ make -f hack/build/k3s.mk k3s-kube-credentials ENV=homelab
+
 ❯ kubectl get node -o wide
-NAME          STATUS   ROLES                  AGE    VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                       KERNEL-VERSION   CONTAINER-RUNTIME
-portefaix-4   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.32    <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
-portefaix-1   Ready    control-plane,master   32d    v1.21.4+k3s1   192.168.1.4     <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
-portefaix-3   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.30    <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
-portefaix-5   Ready    <none>                 129m   v1.21.4+k3s1   192.168.1.126   <none>        Debian GNU/Linux 10 (buster)   5.10.63-v8+      containerd://1.4.9-k3s1
-portefaix-2   Ready    <none>                 32d    v1.21.4+k3s1   192.168.1.123   <none>        Debian GNU/Linux 10 (buster)   5.10.17-v8+      containerd://1.4.9-k3s1
+NAME          STATUS   ROLES                  AGE    VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
+portefaix-2   Ready    <none>                 10m    v1.24.6+k3s1   192.168.0.116   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+portefaix-1   Ready    control-plane,master   21m    v1.24.6+k3s1   192.168.0.208   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+portefaix-4   Ready    <none>                 101s   v1.24.6+k3s1   192.168.0.234   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+portefaix-3   Ready    <none>                 6m5s   v1.24.6+k3s1   192.168.0.252   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
 ```
 
 ## Applications
