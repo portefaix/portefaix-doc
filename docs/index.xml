@@ -602,14 +602,24 @@ environments.&lt;/p>
 &lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="stacks">Stacks&lt;/h3>
 &lt;p>Install a stack into the cluster:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ make argocd-stack-install &lt;span style="color:#000">ENV&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;environment&amp;gt; &lt;span style="color:#000">CLOUD&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;cloud provider&amp;gt; &lt;span style="color:#000">STACK&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&amp;lt;stack name&amp;gt;
-&lt;/code>&lt;/pre>&lt;/div>&lt;img src="/docs/images/argocd_stacks.png" alt="Argo-CD Stacks" class="mt-3 mb-3 border border-info rounded">
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Stacks:&lt;/p>
+&lt;ul>
+&lt;li>Core&lt;/li>
+&lt;li>System&lt;/li>
+&lt;li>Networking&lt;/li>
+&lt;li>Security&lt;/li>
+&lt;li>Observability&lt;/li>
+&lt;li>Chaos&lt;/li>
+&lt;li>Tools&lt;/li>
+&lt;/ul>
+&lt;img src="/docs/images/argocd_stacks.png" alt="Argo-CD Stacks" class="mt-3 mb-3 border border-info rounded">
 &lt;p>You can list stack installed:&lt;/p>
 &lt;div class="highlight">&lt;pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-shell" data-lang="shell">❯ helm list -A
 NAME NAMESPACE REVISION UPDATED STATUS CHART APP VERSION
 argo-cd argocd &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-06-08 07:40:20.039787662 +0200 CEST deployed argo-cd-1.0.0 4.5.0
 core argocd &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-06-08 07:42:03.285558277 +0200 CEST deployed stack-0.1.0 0.1.0
 system argocd &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> 2022-06-08 07:41:21.749647011 +0200 CEST deployed stack-0.1.0 0.1.0
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>Argo-CD applications installs others Argo-CD applications :&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>Argo-CD applications installs others Argo-CD applications:&lt;/p>
 &lt;img src="/docs/images/argocd_app_observability.png" alt="Argo-CD Observability" class="mt-3 mb-3 border border-info rounded">
 &lt;img src="/docs/images/argocd_app_grafana.png" alt="Argo-CD Grafana" class="mt-3 mb-3 border border-info rounded">
 &lt;p>Go to Argo-CD dashboard, you will see Argo-CD corresponding applications.&lt;/p>
