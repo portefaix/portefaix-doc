@@ -34,6 +34,16 @@ Install a stack into the cluster:
 ❯ make argocd-stack-install ENV=<environment> CLOUD=<cloud provider> STACK=<stack name>
 ```
 
+Stacks:
+
+* Core
+* System
+* Networking
+* Security
+* Observability
+* Chaos
+* Tools
+
 <img src="/docs/images/argocd_stacks.png" alt="Argo-CD Stacks" class="mt-3 mb-3 border border-info rounded">
 
 You can list stack installed:
@@ -46,7 +56,7 @@ core    argocd          1               2022-06-08 07:42:03.285558277 +0200 CEST
 system  argocd          1               2022-06-08 07:41:21.749647011 +0200 CEST        deployed        stack-0.1.0     0.1.0
 ```
 
-Argo-CD applications installs others Argo-CD applications : 
+Argo-CD applications installs others Argo-CD applications: 
 
 <img src="/docs/images/argocd_app_observability.png" alt="Argo-CD Observability" class="mt-3 mb-3 border border-info rounded">
 

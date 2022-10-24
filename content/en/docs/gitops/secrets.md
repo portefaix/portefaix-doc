@@ -7,7 +7,7 @@ weight = 50
 
 ## Kubeseal
 
-[sealed-secrets](https://github.com/bitnami-labs/sealed-secrets) could be used to store secrets into Kubernetes.
+[sealed-secrets](https://github.com/bitnami-labs/sealed-secrets) could be used to store secrets into Kubernetes with Argo-CD.
 
 Fetch the certificate that you will use to encrypt your secrets, and store it into `.secrets/<CLOUD>/<ENV>/sealed-secrets/cert.pem` :
 
@@ -26,7 +26,7 @@ Create a SealedSecrets from a file:
 
 ## Sops
 
-[Sops](https://github.com/mozilla/sops) is used to manage secrets.
+[Sops](https://github.com/mozilla/sops) is used to manage secrets with FluxCD.
 
 Create for each cloud provider and environment an [Age](https://age-encryption.org/) key. Store it into:
 
@@ -42,5 +42,12 @@ Then deploy the Age key into a Kubernetes secret:
 
 ## External Secrets Operator
 
-{{% alert title="Work In Progress" color="warning" %}}
-{{% /alert %}}
+[ESO](https://external-secrets.io/) is a Kubernetes operator which read informations from external APIs
+and automatically injects the values into a Kubernetes Secret.
+
+Usage on Portefaix:
+
+* AWS Secrets Manager
+* Google Secrets Manager
+* Azure Key Vault
+* AKeyless
