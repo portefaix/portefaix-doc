@@ -75,6 +75,62 @@ portefaix-3   Ready    worker                 7m35s   v1.24.6+k3s1   192.168.0.2
 portefaix-4   Ready    worker                 3m11s   v1.24.6+k3s1   192.168.0.234   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
 ```
 
+## Cloudflare
+
+[R2](https://www.cloudflare.com/products/r2/) is used to store the Terraform states and for S3 buckets
+
+Setup your Cloudflare Account ID, and your AWS credentials
+
+```shell
+function setup_cloudflare() {
+    echo_info "Cloudflare"
+    export CLOUDFLARE_ACCOUNT_ID="xxxxxxxx"
+    export AWS_ACCESS_KEY_ID="xxxxxxxxxxx"
+    export AWS_SECRET_ACCESS_KEY="xxxxxxxxxxxx"
+}
+
+function setup_cloud_provider {
+    case $1 in
+    
+        ...
+
+        "k3s")
+            setup_tailscale
+            setup_freebox
+            setup_cloudflare
+            ;;
+        *)
+            echo -e "${KO_COLOR}Invalid cloud provider: $1.${NO_COLOR}"
+            usage
+            ;;
+    esac
+}
+```
+
+The creates the bucket for Terraform:
+
+```shell
+❯ make -f hack/build/k3s.mk cloudflare-bucket-create ENV=homelab
+[portefaix] Create bucket for Terraform states
+{
+    "Location": "/portefaix-homelab-tfstates"
+}
+```
+
+## Terraform
+
+Configure DNS:
+
+```shell
+❯ make terraform-apply SERVICE=terraform/k3s/dns ENV=homelab
+```
+
+Creates the R2 buckets for Observability components:
+
+```shell
+❯ make terraform-apply SERVICE=terraform/k3s/observability ENV=homelab
+```
+
 ## Applications
 
 Next: [Gitops](/docs/gitops)

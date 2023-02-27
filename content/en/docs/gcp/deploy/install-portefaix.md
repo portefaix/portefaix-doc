@@ -17,12 +17,21 @@ See: https://cloud.google.com/resource-manager/docs/creating-managing-organizati
 Authenticate on the Google Cloud Platform:
 
 ```shell
-❯ gcloud auth application-default login
+❯ gcloud auth login
 xxxxxxxxxx
 
 ❯ gcloud organizations list
 DISPLAY_NAME             ID  DIRECTORY_CUSTOMER_ID
-xxxxxxx  xxxxxx              xxxxxxxx
+xxxxxxx              xxxxxx               xxxxxxxx
+```
+
+You could find the `GCP_USER`:
+
+```shell
+❯ gcloud auth list
+            Credentialed Accounts
+ACTIVE  ACCOUNT
+*       xxxxxxxxxxxx@portefaix.xyz
 ```
 
 Bootstrap the organization:
@@ -51,51 +60,10 @@ Then create the bucket for boostraping the organization:
 ❯ make -f hack/build/gcp.mk gcp-bucket GCP_ORG_NAME=xxxxxxx
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Enable APIs:
+Bootstrap:
 
 ```shell
-❯ make -f hack/build/gcp.mk gcp-enable-apis ENV=dev
-```
-
-Create a bucket for the Terraform tfstates:
-
-```shell
-❯ make -f hack/build/gcp.mk gcp-bucket ENV=dev
-```
-
-Create a service account for Terraform:
-
-```shell
-❯ make -f hack/build/gcp.mk gcp-terraform-sa ENV=dev
-```
-
-And a key:
-
-```shell
-❯ make -f hack/build/gcp.mk gcp-terraform-key ENV=dev
-```
-
-Configure Portefaix environment file `${HOME}/.config/portefaix/portefaix.sh`:
-
-And load environment :
-
-```shell
-❯ . ./portefaix.sh gcp
+❯ make terraform-apply SERVICE=terraform/gcp/root ENV=main
 ```
 
 <a id="gcp-terraform-cloud"></a>

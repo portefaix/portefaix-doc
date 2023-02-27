@@ -63,6 +63,12 @@ Set permissions:
 ❯ make -f hack/build/azure.mk azure-permissions ENV=dev
 ```
 
+Enable preview features:
+
+```shell
+❯ make -f hack/build/azure.mk azure-wasi ENV=dev
+```
+
 ## Terraform
 
 [Github Actions](https://github.com/features/actions) with [Terraform Cloud](https://www.terraform.io/cloud) could used to deploy the infrastructure:
