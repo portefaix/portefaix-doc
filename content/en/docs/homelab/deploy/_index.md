@@ -1,6 +1,6 @@
 +++
 title = "Deploying Portefaix"
-description = "Instructions for deploying and deleting Portefaix on Raspberry PI"
+description = "Instructions for deploying and deleting Portefaix on Homelab"
 weight = 30
 +++
 

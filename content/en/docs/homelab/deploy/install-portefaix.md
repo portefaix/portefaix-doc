@@ -1,6 +1,6 @@
 +++
 title = "Install Portefaix"
-description = "Instructions for deploying Portefaix infrastructure on Raspberry PI"
+description = "Instructions for deploying Portefaix infrastructure on Homelab"
 weight = 10
 +++
 
@@ -41,8 +41,8 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 ## Ansible
 
 ```shell
-❯ make -f hack/build/k3s.mk ansible-deps SERVICE=ansible/k3s/machines ENV=homelab
-❯ make -f hack/build/k3s.mk ansible-run SERVICE=ansible/k3s/machines ENV=homelab
+❯ make ansible-deps SERVICE=ansible/k3s/machines CLOUD=k3s ENV=homelab
+❯ make ansible-run SERVICE=ansible/k3s/machines CLOUD=k3s ENV=homelab
 ```
 
 ## K3Sup
@@ -68,11 +68,12 @@ Check Kubernetes cluster:
 ❯ make -f hack/build/k3s.mk k3s-kube-credentials ENV=homelab
 
 ❯ kubectl get node -o wide
-NAME          STATUS   ROLES                  AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION   CONTAINER-RUNTIME
-portefaix-1   Ready    control-plane,master   22m     v1.24.6+k3s1   192.168.0.208   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
-portefaix-2   Ready    worker                 12m     v1.24.6+k3s1   192.168.0.116   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
-portefaix-3   Ready    worker                 7m35s   v1.24.6+k3s1   192.168.0.252   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
-portefaix-4   Ready    worker                 3m11s   v1.24.6+k3s1   192.168.0.234   <none>        Debian GNU/Linux 11 (bullseye)   5.15.61-v8+      containerd://1.6.8-k3s1
+NAME          STATUS   ROLES                  AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION      CONTAINER-RUNTIME
+portefaix-2   Ready    worker                 9m32s   v1.26.1+k3s1   192.168.0.116   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
+portefaix     Ready    control-plane,master   29m     v1.26.1+k3s1   192.168.0.62    <none>        Ubuntu 22.04.2 LTS               5.15.0-60-generic   containerd://1.6.15-k3s1
+portefaix-3   Ready    worker                 8m8s    v1.26.1+k3s1   192.168.0.252   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
+portefaix-1   Ready    worker                 12m     v1.26.1+k3s1   192.168.0.208   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
+portefaix-4   Ready    worker                 5m38s   v1.26.1+k3s1   192.168.0.234   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
 ```
 
 ## Cloudflare
