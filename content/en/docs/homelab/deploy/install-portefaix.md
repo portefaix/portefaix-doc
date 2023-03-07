@@ -50,13 +50,13 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub pi@x.x.x.x
 Create the master :
 
 ```shell
-❯ make -f hack/build/k3s.mk  k3s-create ENV=homelab SERVER_IP=x.x.x.x 
+❯ make -f hack/build/k3s.mk  k3s-create ENV=homelab SERVER_IP=x.x.x.x EXTERNAL_IP=x.x.x.x
 ```
 
 For each node, add it to the cluster, then add a label:
 
 ```shell
-❯ make -f hack/build/k3s.mk k3s-join ENV=homelab SERVER_IP=x.x.x.x AGENT_IP=x.x.x.x
+❯ make -f hack/build/k3s.mk k3s-join ENV=homelab SERVER_IP=x.x.x.x AGENT_IP=x.x.x.x EXTERNAL_IP=x.x.x.x
 
 ❯ kubectl label node <NODE_NAME> node-role.kubernetes.io/worker=
 node/<NODE_NAME> labeled
@@ -66,14 +66,6 @@ Check Kubernetes cluster:
 
 ```shell
 ❯ make -f hack/build/k3s.mk k3s-kube-credentials ENV=homelab
-
-❯ kubectl get node -o wide
-NAME          STATUS   ROLES                  AGE     VERSION        INTERNAL-IP     EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION      CONTAINER-RUNTIME
-portefaix-2   Ready    worker                 9m32s   v1.26.1+k3s1   192.168.0.116   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
-portefaix     Ready    control-plane,master   29m     v1.26.1+k3s1   192.168.0.62    <none>        Ubuntu 22.04.2 LTS               5.15.0-60-generic   containerd://1.6.15-k3s1
-portefaix-3   Ready    worker                 8m8s    v1.26.1+k3s1   192.168.0.252   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
-portefaix-1   Ready    worker                 12m     v1.26.1+k3s1   192.168.0.208   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
-portefaix-4   Ready    worker                 5m38s   v1.26.1+k3s1   192.168.0.234   <none>        Debian GNU/Linux 11 (bullseye)   5.15.84-v8+         containerd://1.6.15-k3s1
 ```
 
 ## Cloudflare
