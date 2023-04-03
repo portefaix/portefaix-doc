@@ -9,6 +9,8 @@ aliases = ["/docs/", "/docs/about/", "/docs/Portefaix/"]
 The Portefaix project is dedicated to create an infrastructure on Cloud Providers
 and deploy Cloud Native applications into a Kubernetes cluster.
 
+<img src="/docs/images/portefaix-landscape.png" alt="Landscape" class="mt-3 mb-3 border border-info rounded">
+
 ## Getting started with Portefaix
 
 Read the [Portefaix overview](/docs/started/overview/) for an

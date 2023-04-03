@@ -68,6 +68,7 @@ Check Kubernetes cluster:
 ❯ make -f hack/build/k3s.mk k3s-kube-credentials ENV=homelab
 ```
 
+The nodes are in a `NotReady` state, due to the Pod Networking CNI plugin is not available.
 [Cilium](https://cilium.io/) must be installed:
 
 ```shell
