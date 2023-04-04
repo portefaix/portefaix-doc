@@ -16,7 +16,8 @@ baseURL = "/"
 title = "Portefaix"
 description = "Portefaix - A Kubernetes experience"
 
-theme = ["docsy"]
+theme = ["github.com/google/docsy", "github.com/google/docsy/dependencies"]
+
 Paginate = 20
 
 # SEO
@@ -224,8 +225,7 @@ no = 'Sorry to hear that. Please <a href="https://github.com/portefaix/portefaix
 # Hugo module configuration
 
 [module]
-  # uncomment line below for temporary local development of module
-  # replacements = "github.com/google/docsy -> ../../docsy"
+  proxy = "direct"
   [module.hugoVersion]
     extended = true
     min = "0.75.0"
