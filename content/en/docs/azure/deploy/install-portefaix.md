@@ -14,6 +14,21 @@ Export Azure credentials:
 ❯ export AZURE_SUBSCRIPTION_ID="xxxxxx"
 ```
 
+create a service principal:
+
+```shell
+❯ make -f hack/build/azure.mk azure-sp
+```
+
+The `appId`, `password`, and `tenant` values are used in the next step:
+
+```shell
+export ARM_SUBSCRIPTION_ID="<azure_subscription_id>"
+export ARM_TENANT_ID="<azure_subscription_tenant_id>"
+export ARM_CLIENT_ID="<service_principal_appid>"
+export ARM_CLIENT_SECRET="<service_principal_password>"
+```
+
 ## Storage for Terraform
 
 Create a [Storage Account](https://portal.azure.com/#create/Microsoft.StorageAccount) :
