@@ -34,6 +34,28 @@ ACTIVE  ACCOUNT
 *       xxxxxxxxxxxx@portefaix.xyz
 ```
 
+Create the Service Account on bootstrap project:
+
+```shell
+❯ make -f hack/build/gcp.mk gcp-bootstrap-sa
+❯ make -f hack/build/gcp.mk gcp-bootstrap-credentials
+❯ make -f hack/build/gcp.mk gcp-bootstrap-iam GCP_ORG_ID=xxxx
+```
+
+Enable APIs on Bootstrap project:
+
+```shell
+❯ make -f hack/build/gcp.mk gcp-bootstrap-apis
+```
+
+
+
+
+
+
+
+
+
 Bootstrap the organization:
 
 ```shell
@@ -75,7 +97,7 @@ Bootstrap:
 Configure Terraform Cloud workspaces:
 
 ```shell
-❯ make terraform-apply SERVICE=terraform/gcp/terraform-cloud ENV=dev
+❯ make terraform-apply SERVICE=terraform/gcp/terraform-cloud ENV=main
 ```
 
 <img src="/docs/images/portefaix-gcp-deploy.png" alt="Portefaix GCP deployment" class="mt-3 mb-3 rounded">

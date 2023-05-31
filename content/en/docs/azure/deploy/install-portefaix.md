@@ -34,7 +34,7 @@ export ARM_CLIENT_SECRET="<service_principal_password>"
 Create a [Storage Account](https://portal.azure.com/#create/Microsoft.StorageAccount) :
 
 ```shell
-❯ make -f hack/build/azure.mk azure-storage-account ENV=dev
+❯ make -f hack/build/azure.mk azure-storage-account
 XXXXXXXXXXX
 ```
 
@@ -43,45 +43,19 @@ You could see the Key on the output.
 Create storage container for Terraform states:
 
 ```shell
-❯ make -f hack/build/azure.mk azure-storage-container ENV=dev KEY="xxxxxxxxxxxxxxxxx"
-```
-
-Create the Service Principal for Terraform:
-
-```shell
-❯ make -f hack/build/azure.mk azure-sp ENV=dev
-{
-  "appId": "xxxxxxxxxxxxxxxxx",
-  "displayName": "portefaix-dev",
-  "name": "http://portefaix-dev",
-  "password": "xxxxxxxxxxxx",
-  "tenant": "xxxxxxxxxxxx"
-}
-```
-
-Extract informations and configure portefaix configuration file (`hack/config/portefaix.sh`):
-
-* `SUBSCRIPTION_ID`
-* `CLIENT_ID`
-* `CLIENT_SECRET`
-* `ARM_TENANT_ID`
-
-And load environment :
-
-```shell
-❯ . ./portefaix.sh azure
+❯ make -f hack/build/azure.mk azure-storage-container AZ_STORAGE_ACCOUNT_KEY="xxxxxxxxxxxxxxxxx"
 ```
 
 Set permissions:
 
 ```shell
-❯ make -f hack/build/azure.mk azure-permissions ENV=dev
+❯ make -f hack/build/azure.mk azure-permissions
 ```
 
 Enable preview features:
 
 ```shell
-❯ make -f hack/build/azure.mk azure-wasi ENV=dev
+❯ make -f hack/build/azure.mk azure-wasi
 ```
 
 ## Terraform
