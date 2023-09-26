@@ -59,8 +59,11 @@ For each node, add it to the cluster, then add a label:
 ❯ make -f hack/build/k3s.mk k3s-join ENV=homelab SERVER_IP=x.x.x.x AGENT_IP=x.x.x.x EXTERNAL_IP=x.x.x.x
 
 ❯ kubectl label node <NODE_NAME> node-role.kubernetes.io/worker=
-node/<NODE_NAME> labeled
 ```
+
+We add also these labels:
+
+* `portefaix.xyz/infra`, with values : `core` and `cheap`
 
 Check Kubernetes cluster:
 
